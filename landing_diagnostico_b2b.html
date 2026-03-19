@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit 360: Bienestar Corporativo | open❤salud</title>
+    <meta name="description" content="Descubre el nivel de madurez emocional de tu empresa. Diagnóstico gratuito de 3 minutos para frenar la fuga de talento y proteger tu rentabilidad.">
+    
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], },
+                    colors: {
+                        brand: {
+                            50: '#eff0fe', 100: '#e0e2fd', 200: '#c7cbfa', 300: '#a3abf6',
+                            400: '#7e83f0', 500: '#645be9', 600: '#523cdb', 700: '#442dbd',
+                            800: '#382699', 900: '#32227a', 950: '#3238c4',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-sans antialiased text-gray-900 bg-white selection:bg-brand-200 selection:text-brand-900">
+
+    <header class="bg-white border-b border-gray-100 py-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-center">
+            <div class="flex-shrink-0 flex items-center">
+                <svg width="200" height="46" viewBox="0 0 574 133" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M281.83 73.0185C279.018 71.9936 275.758 70.315 272.5 68.151V27.0461C275.897 27.3143 279.201 28.7766 281.83 31.5942C284.455 28.7782 287.755 27.3162 291.148 27.0461V68.1585C287.892 70.32 284.636 71.996 281.83 73.0185Z" fill="#CE1126"/>
+                    <path d="M303.169 31.3003C316.15 44.4053 303.65 59.8599 291.148 68.1585V27.0461C295.389 26.7087 299.774 28.2322 303.169 31.3003Z" fill="#CE1126"/>
+                    <path d="M260.49 31.3003C263.884 28.234 268.264 26.7117 272.5 27.0461V68.151C259.997 59.8469 247.517 44.3949 260.49 31.3003Z" fill="#CE1126"/>
+                    <path d="M27.9935 78.9967C22.5344 78.9967 17.6848 77.8719 13.4448 75.6224C9.2667 73.4385 5.82282 70.0746 3.5414 65.9491C1.17794 61.7384 -0.00252506 56.757 4.05523e-06 51.0049V49.4553C4.05523e-06 43.7765 1.18047 38.8349 3.5414 34.6305C5.82336 30.5055 9.2671 27.1418 13.4448 24.9573C17.6836 22.7078 22.5332 21.583 27.9935 21.583C33.4539 21.583 38.3041 22.7078 42.5441 24.9573C46.7207 27.1433 50.164 30.5066 52.4475 34.6305C54.8072 38.8337 55.9876 43.7752 55.9889 49.4553V51.0049C55.9889 56.757 54.8084 61.7359 52.4475 65.9416C50.165 70.0662 46.7214 73.4298 42.5441 75.6148C38.3015 77.8694 33.4513 78.9967 27.9935 78.9967ZM27.9935 69.8146C33.3046 69.8146 37.5826 68.1177 40.8275 64.7239C44.0724 61.33 45.6954 56.683 45.6967 50.783V49.7872C45.6967 43.8884 44.0736 39.2415 40.8275 35.8463C37.5814 32.4512 33.3034 30.7549 27.9935 30.7574C22.7544 30.7574 18.4948 32.4537 15.2145 35.8463C11.9343 39.2389 10.2903 43.8859 10.2828 49.7872V50.783C10.2828 56.6856 11.9267 61.3325 15.2145 64.7239C18.5024 68.1152 22.762 69.8121 27.9935 69.8146Z" fill="#3238C4"/>
+                    <path d="M65.2798 99.5767V23.1219H75.3482V31.3101H77.0098C78.4097 28.8026 80.6037 26.5531 83.5918 24.5615C86.58 22.57 90.7663 21.5742 96.1508 21.5742C100.798 21.5742 105.039 22.68 108.875 24.8916C112.71 27.1032 115.772 30.2934 118.059 34.4624C120.346 38.6352 121.489 43.6299 121.489 49.4465V50.9961C121.489 56.8962 120.346 61.9307 118.059 66.0997C115.773 70.2686 112.711 73.4615 108.875 75.6781C105.039 77.8909 100.798 78.9973 96.1508 78.9973C92.5354 78.9973 89.4746 78.5364 86.9682 77.6146C84.4619 76.6928 82.4329 75.5124 80.8813 74.0735C79.4443 72.7729 78.2131 71.2617 77.2299 69.5915H75.5701V99.5767H65.2798ZM93.2733 69.9234C98.5098 69.9234 102.788 68.2455 106.109 64.8896C109.43 61.5336 111.09 56.831 111.088 50.7818V49.786C111.088 43.7393 109.41 39.0373 106.054 35.6801C102.698 32.3229 98.4378 30.645 93.2733 30.6462C88.1101 30.6462 83.8504 32.3242 80.4943 35.6801C77.1382 39.036 75.4601 43.738 75.4601 49.786V50.7818C75.4601 56.8323 77.1382 61.5349 80.4943 64.8896C83.8504 68.2442 88.1101 69.9222 93.2733 69.9234Z" fill="#3238C4"/>
+                    <path d="M155.683 78.9954C150.151 78.9954 145.319 77.8339 141.187 75.5111C137.094 73.2282 133.75 69.8075 131.561 65.6633C129.276 61.4223 128.133 56.4984 128.133 50.8917V49.564C128.133 43.9598 129.276 39.0543 131.563 34.8474C133.746 30.7506 137.045 27.356 141.077 25.0565C145.135 22.7337 149.82 21.5723 155.131 21.5723C160.366 21.5723 164.94 22.697 168.851 24.9465C172.762 27.196 175.824 30.3673 178.035 34.4605C180.248 38.5548 181.355 43.3674 181.355 48.8983V53.1071H138.532C138.753 58.2699 140.487 62.3631 143.733 65.3864C146.979 68.4098 151.036 69.9221 155.903 69.9234C160.329 69.9234 163.704 68.9276 166.028 66.936C168.302 65.0114 170.101 62.5876 171.284 59.8537L180.025 64.2806C178.919 66.4201 177.388 68.633 175.433 70.9191C173.478 73.2053 170.915 75.1229 167.743 76.6719C164.572 78.2221 160.551 78.9966 155.683 78.9954ZM138.642 44.9189H170.952C170.657 40.4933 169.07 37.0077 166.193 34.4624C163.316 31.917 159.628 30.6449 155.129 30.6462C150.554 30.6462 146.829 31.9182 143.953 34.4624C141.077 37.0065 139.307 40.492 138.642 44.9189Z" fill="#3238C4"/>
+                    <path d="M190.203 77.4476V23.1237H200.272V31.6438H201.931C203.038 29.2842 204.956 27.1081 207.686 25.1153C210.416 23.1224 214.473 22.1267 219.856 22.1279C223.912 22.1279 227.563 23.0314 230.811 24.8383C234.045 26.6363 236.695 29.3249 238.445 32.5845C240.289 35.9417 241.211 39.9798 241.211 44.6989V77.4476H230.921V45.4727C230.921 40.4578 229.667 36.7908 227.159 34.4718C224.652 32.1527 221.221 30.9913 216.869 30.9875C212 30.9875 208.054 32.6098 205.029 35.8545C202.004 39.0991 200.492 43.8201 200.492 50.0173V77.4476H190.203Z" fill="#3238C4"/>
+                    <path d="M348.37 78.5008C341.583 78.5008 335.885 76.9512 331.276 73.8519C326.666 70.7527 323.884 65.9957 322.93 59.581L332.666 57.2557C333.182 60.5041 334.194 63.0489 335.701 64.8899C337.166 66.7017 339.099 68.0789 341.289 68.8731C343.559 69.6956 345.956 70.1079 348.37 70.0908C352.205 70.0908 355.193 69.3529 357.333 67.8773C359.472 66.4016 360.542 64.4505 360.542 62.024C360.542 59.5912 359.53 57.8209 357.507 56.7132C355.484 55.6055 352.622 54.7204 348.922 54.0578L344.829 53.3939C341.45 52.8004 338.147 51.8355 334.98 50.5166C332.029 49.2648 329.669 47.5502 327.899 45.3727C326.13 43.1953 325.245 40.4134 325.244 37.0272C325.244 31.9364 327.162 28.0083 330.997 25.2428C334.832 22.4774 339.886 21.0947 346.156 21.0947C352.277 21.0947 357.293 22.4591 361.204 25.1878C365.115 27.9166 367.624 31.7151 368.729 36.5833L359.102 39.2387C358.438 35.6982 356.963 33.1901 354.677 31.7145C352.391 30.2388 349.551 29.5016 346.156 29.5029C342.837 29.5029 340.218 30.1301 338.3 31.3844C336.381 32.6388 335.422 34.4091 335.422 36.6952C335.422 39.0585 336.345 40.7921 338.19 41.896C340.035 42.9999 342.542 43.8111 345.713 44.3295L349.696 45.1053C353.315 45.6939 356.871 46.6197 360.318 47.8707C363.49 49.0505 365.998 50.7101 367.843 52.8496C369.688 54.9891 370.61 57.8658 370.61 61.4797C370.61 66.9409 368.619 71.1453 364.635 74.0928C360.652 77.0403 355.23 78.5097 348.37 78.5008Z" fill="#3238C4"/>
+                    <path d="M424.89 77.4458H416.149V69.5915H414.488C413.898 70.7725 412.958 72.1186 411.667 73.6296C410.376 75.1407 408.569 76.4127 406.246 77.4458C403.923 78.4802 400.88 78.9967 397.117 78.9954C393.281 78.9954 389.833 78.3316 386.771 77.0039C383.71 75.6762 381.275 73.7219 379.466 71.1411C377.659 68.5603 376.756 65.4623 376.756 61.8472C376.756 58.16 377.659 55.081 379.466 52.6102C381.274 50.1394 383.726 48.2958 386.824 47.0794C389.922 45.8591 393.427 45.2503 397.337 45.2528H414.708V41.4879C414.708 38.0965 413.675 35.3678 411.61 33.3016C409.545 31.2355 406.447 30.2024 402.316 30.2024C398.257 30.2024 395.103 31.1798 392.854 33.1347C390.606 35.0896 389.115 37.6527 388.382 40.824L378.755 37.7267C379.632 34.7927 381.058 32.052 382.959 29.6504C384.878 27.2151 387.46 25.2602 390.705 23.7858C393.95 22.3114 397.859 21.5742 402.433 21.5742C409.442 21.5742 414.937 23.3628 418.921 26.94C422.904 30.5172 424.896 35.5884 424.896 42.1536L424.89 77.4458ZM398.666 70.3673C403.386 70.3673 407.242 68.9662 410.237 66.1641C413.231 63.3621 414.725 59.4896 414.717 54.5467V53.3291H398.01C394.763 53.3291 392.144 54.0296 390.153 55.4306C388.163 56.8317 387.168 58.8605 387.168 61.5172C387.168 64.2472 388.2 66.4044 390.265 67.9888C392.33 69.5732 395.131 70.366 398.666 70.3673Z" fill="#3238C4"/>
+                    <path d="M433.132 77.4467V0H443.423V77.4467H433.132Z" fill="#3238C4"/>
+                    <path d="M472.951 78.4456C468.894 78.4456 465.243 77.5428 461.997 75.7371C458.754 73.9323 456.088 71.2468 454.307 67.9909C452.425 64.635 451.484 60.5963 451.484 55.8747V23.126H461.887V55.1027C461.887 60.0443 463.122 63.6949 465.593 66.0544C468.064 68.4139 471.478 69.5943 475.836 69.5956C480.703 69.5956 484.649 67.9726 487.674 64.7267C490.699 61.4808 492.209 56.7238 492.204 50.4558V23.126H502.604V77.4499H492.426V68.9317H490.766C489.658 71.2938 487.74 73.4693 485.011 75.4583C482.282 77.4473 478.262 78.4431 472.951 78.4456Z" fill="#3238C4"/>
+                    <path d="M537.242 78.9964C532.802 79.0308 528.432 77.8861 524.579 75.6791C520.705 73.4662 517.626 70.2766 515.341 66.1101C513.056 61.9436 511.912 56.9091 511.91 51.0065V49.4569C511.91 43.6327 513.053 38.638 515.341 34.4729C517.629 30.3077 520.689 27.1174 524.524 24.902C528.359 22.6904 532.6 21.5847 537.248 21.5847C540.863 21.5847 543.924 22.0456 546.432 22.9674C548.94 23.8892 550.968 25.0506 552.517 26.4516C553.981 27.7475 555.216 29.2814 556.169 30.9886H557.828V0H568.119V77.4468H558.05V69.2606H556.39C554.989 71.768 552.814 74.0175 549.863 76.0091C546.913 78.0006 542.706 78.9964 537.242 78.9964ZM540.119 69.9244C545.283 69.9244 549.543 68.2464 552.9 64.8905C556.258 61.5346 557.936 56.832 557.935 50.7827V49.787C557.935 43.7402 556.275 39.0383 552.955 35.6811C549.636 32.3239 545.357 30.6459 540.119 30.6472C534.955 30.6472 530.695 32.3251 527.34 35.6811C523.986 39.037 522.306 43.7389 522.302 49.787V50.7827C522.302 56.8333 523.981 61.5359 527.337 64.8905C530.693 68.2452 534.954 69.9231 540.119 69.9244Z" fill="#3238C4"/>
+                </svg>
+            </div>
+        </div>
+    </header>
+
+    <main x-data="{ step: 1 }" class="min-h-[calc(100vh-100px)] bg-brand-50 flex flex-col justify-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 w-full">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                
+                <div class="mb-12 lg:mb-0">
+                    <span class="inline-block py-1 px-3 rounded-full bg-indigo-100 text-brand-700 text-sm font-semibold tracking-wide uppercase mb-4">
+                        Solo para Directivos RRHH
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 tracking-tight mb-6 leading-tight">
+                        ¿Cuál es el nivel de bienestar <span class="text-brand-600">real</span> de tu equipo?
+                    </h1>
+                    <p class="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed">
+                        El coste oculto del estrés, el <i>burnout</i> y el absentismo afecta directamente a la rentabilidad de las empresas españolas. Descúbrelo con este diagnóstico en <strong>menos de 3 minutos</strong>.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-gray-700">Sin tecnicismos ni jerga médica.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-gray-700">Obtén tu Nivel de Madurez Emocional.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="h-6 w-6 text-green-500 mr-3 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            <span class="text-gray-700">Recibe un informe personalizado y accionable.</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-8 pt-8 border-t border-gray-200">
+                        <p class="text-sm text-gray-500 uppercase tracking-wider font-semibold mb-4">Empresas que ya priorizan su talento</p>
+                        <div class="flex items-center gap-6 opacity-60 grayscale">
+                            <span class="text-xl font-bold font-serif">INDITEX</span>
+                            <span class="text-xl font-bold font-sans">BOSCH</span>
+                            <span class="text-xl font-bold italic">Barceló</span>
+                            <span class="text-xl font-bold">MAHOU</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-10 border border-gray-100 relative overflow-hidden">
+                    
+                    <!-- Progress Bar (7 Steps) -->
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gray-100">
+                        <div class="h-full bg-brand-500 transition-all duration-300" :style="'width: ' + ((step / 7) * 100) + '%'"></div>
+                    </div>
+
+                    <form x-data="{
+                        async submitForm(e) {
+                            try {
+                                const formData = new FormData(e.target);
+                                console.log('Enviando datos a n8n (no-cors)...');
+                                
+                                fetch('https://n8n.4ventures.es/webhook/audit-360-informe-v3', {
+                                    method: 'POST',
+                                    body: formData,
+                                    mode: 'no-cors'
+                                }).catch(err => console.warn('Fetch background error:', err));
+                                
+                                console.log('Envío procesado');
+                                step = 7;
+                            } catch (error) {
+                                console.error('Error en el formulario:', error);
+                                step = 7;
+                            }
+                        }
+                    }" @submit.prevent="submitForm($event)">
+                        
+                        <!-- Step 1 -->
+                        <div x-show="step === 1" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 1 de 5</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Empecemos por el tamaño de tu reto.</h3>
+                            <label class="block text-gray-700 font-medium mb-3">¿Cuántos empleados tiene tu empresa?</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" required name="size" value="10 - 50 empleados" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">10 - 50 empleados</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="size" value="51 - 250 empleados" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">51 - 250 empleados</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="size" value="Más de 250 empleados" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">Más de 250 empleados</span>
+                                </label>
+                            </div>
+                            <button @click.prevent="() => { if(document.querySelector('input[name=size]:checked')) step = 2 }" type="button" class="mt-8 w-full bg-brand-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-brand-700 transition-colors text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                                Siguiente pregunta →
+                            </button>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div x-show="step === 2" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 2 de 5</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">El impacto en tu día a día.</h3>
+                            <label class="block text-gray-700 font-medium mb-3">¿Cuál es actualmente tu mayor desafío en RRHH?</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="challenge" value="Alto índice de bajas por estrés / ansiedad" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">Alto índice de bajas por estrés / ansiedad</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="challenge" value="Alta rotación de talento cualificado" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">Alta rotación de talento cualificado</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="challenge" value="Baja productividad y desmotivación" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">Baja productividad y desmotivación</span>
+                                </label>
+                            </div>
+                            <div class="flex gap-4 mt-8">
+                                <button @click.prevent="step = 1" type="button" class="w-1/3 py-4 text-gray-500 font-medium hover:text-gray-900 transition-colors">Atrás</button>
+                                <button @click.prevent="() => { if(document.querySelector('input[name=challenge]:checked')) step = 3 }" type="button" class="w-2/3 bg-brand-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-brand-700 transition-colors text-lg shadow-md">
+                                    Siguiente →
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div x-show="step === 3" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 3 de 5</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Prevención y Plan de Acción.</h3>
+                            <label class="block text-gray-700 font-medium mb-3">¿Tu empresa dispone de un Plan de Acción Específico en Riesgos Psicosociales que vaya más allá del mero cumplimiento de la Ley 31/95?</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="initiatives" value="Sí, es parte de nuestra estrategia real y medible" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">Sí, es parte de nuestra estrategia real y medible (con medidas, responsables y plazos)</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="initiatives" value="Cumplimos la ley con enfoque tradicional" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">Cumplimos la ley (seguridad, higiene, etc.) pero con un enfoque tradicional</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="initiatives" value="No tenemos un plan definido aún" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">No, aún no tenemos un plan definido en materia psicosocial</span>
+                                </label>
+                            </div>
+                            <div class="flex gap-4 mt-8">
+                                <button @click.prevent="step = 2" type="button" class="w-1/3 py-4 text-gray-500 font-medium hover:text-gray-900 transition-colors">Atrás</button>
+                                <button @click.prevent="() => { if(document.querySelector('input[name=initiatives]:checked')) step = 4 }" type="button" class="w-2/3 bg-brand-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-brand-700 transition-colors text-lg shadow-md">
+                                    Siguiente →
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div x-show="step === 4" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 4 de 5</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Vigilancia Integral de la Salud.</h3>
+                            <label class="block text-gray-700 font-medium mb-3">¿Los reconocimientos médicos que ofreces a tu plantilla incluyen la evaluación específica de la salud mental?</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="health_vigilance" value="Sí, evaluación de salud mental incluida" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">Sí, nos permite la comprensión integral de la salud de la organización</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="health_vigilance" value="No, solo vigilancia física clásica" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">No, se centran solo en la vigilancia física/clínica clásica</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="health_vigilance" value="No realizamos reconocimientos médicos regulares" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">No solemos realizar o exigir reconocimientos médicos regulares</span>
+                                </label>
+                            </div>
+                            <div class="flex gap-4 mt-8">
+                                <button @click.prevent="step = 3" type="button" class="w-1/3 py-4 text-gray-500 font-medium hover:text-gray-900 transition-colors">Atrás</button>
+                                <button @click.prevent="() => { if(document.querySelector('input[name=health_vigilance]:checked')) step = 5 }" type="button" class="w-2/3 bg-brand-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-brand-700 transition-colors text-lg shadow-md">
+                                    Siguiente →
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div x-show="step === 5" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 5 de 5</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Diagnóstico, KPIs y Rendimiento.</h3>
+                            <label class="block text-gray-700 font-medium mb-3">¿Monitorizas el clima mediante instrumentos validados (absentismo, rotación, satisfacción, entrevistas de salida)?</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="feedback" value="Sí, monitoreo de KPIs recurrente" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">Sí, monitoreamos KPIs organizacionales recurrentemente y controlamos costes y efectividad</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="feedback" value="Datos básicos o encuestas sueltas" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">Analizamos datos básicos, aplicamos algunas encuestas sueltas o tenemos datos dispersos</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="feedback" value="Nos guiamos por sensaciones" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">No, nos guiamos principalmente por sensaciones o reuniones informales</span>
+                                </label>
+                            </div>
+                            <div class="flex gap-4 mt-8">
+                                <button @click.prevent="step = 4" type="button" class="w-1/3 py-4 text-gray-500 font-medium hover:text-gray-900 transition-colors">Atrás</button>
+                                <button @click.prevent="() => { if(document.querySelector('input[name=feedback]:checked')) step = 6 }" type="button" class="w-2/3 bg-brand-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-brand-700 transition-colors text-lg shadow-md">
+                                    Finalizar Test →
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 6 (Lead Capture) -->
+                        <div x-show="step === 6" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+                            <div class="text-center mb-6">
+                                <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                </div>
+                                <h3 class="text-2xl font-bold text-gray-900">¡Diagnóstico completado!</h3>
+                                <p class="text-gray-600 mt-2">Para enviarte tu <strong>informe detallado de Madurez Emocional y ROI</strong>, indícanos tus datos.</p>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Nombre profesional</label>
+                                    <input type="text" name="nombre_profesional" required class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Email corporativo</label>
+                                    <input type="email" name="email" required placeholder="tu@empresa.com" class="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
+                                    <div class="flex">
+                                        <select required name="country_code" class="px-3 py-3 rounded-l-xl border border-r-0 border-gray-300 focus:ring-2 focus:ring-brand-500 bg-gray-50 outline-none w-28 appearance-none">
+                                            <option value="+34">🇪🇸 +34</option>
+                                            <option value="+52">🇲🇽 +52</option>
+                                            <option value="+54">🇦🇷 +54</option>
+                                            <option value="+56">🇨🇱 +56</option>
+                                            <option value="+57">🇨🇴 +57</option>
+                                            <option value="+1">🇺🇸 +1</option>
+                                        </select>
+                                        <input type="tel" name="phone" required placeholder="600 000 000" class="w-full px-4 py-3 rounded-r-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition-all">
+                                    </div>
+                                </div>
+                                <div class="flex items-start mt-4 pt-2">
+                                    <input type="checkbox" required class="mt-1 h-4 w-4 text-brand-600 rounded border-gray-300">
+                                    <span class="ml-2 text-xs text-gray-500 leading-snug">
+                                        Acepto la Política de Privacidad de OpenSalud. Respetamos tus datos y jamás enviaremos spam.
+                                    </span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="mt-8 w-full bg-gray-900 text-white font-bold py-4 px-6 rounded-xl hover:bg-black transition-colors text-lg shadow-xl transform hover:-translate-y-0.5 flex justify-center items-center gap-2">
+                                <span>Ver mis resultados</span>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                            </button>
+                        </div>
+
+                        <!-- Step 7 (Thank You) -->
+                        <div x-show="step === 7" style="display: none;" class="text-center py-8">
+                            <h3 class="text-3xl font-extrabold text-gray-900 mb-4">Analizando respuestas...</h3>
+                            <p class="text-lg text-gray-600 mb-8">Te estamos enviando el informe completo a tu bandeja de entrada.</p>
+                            
+                            <div class="bg-indigo-50 p-6 rounded-2xl border border-indigo-100 mb-8">
+                                <p class="text-brand-900 font-medium mb-4">¿Quieres ir un paso por delante?</p>
+                                <p class="text-sm text-brand-700 mb-6">Reserva una llamada estratégica de 15 minutos para interpretar tus resultados con un experto en bienestar corporativo y descubrir tu potencial de ahorro.</p>
+                                <a href="#" class="inline-block w-full bg-brand-600 text-white font-bold py-3 px-6 rounded-xl hover:bg-brand-700 transition-colors shadow-md">
+                                    Agendar Sesión de Resultados
+                                </a>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white py-8 border-t border-gray-200 text-center">
+        <p class="text-sm text-gray-400">
+            &copy; 2026 OpenSalud. Todos los derechos reservados. <a href="#" class="underline hover:text-gray-600 text-brand-600 ml-2">Política de Privacidad</a>
+        </p>
+    </footer>
+
+</body>
+</html>
