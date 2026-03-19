@@ -1,27 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informe de Madurez Emocional | open❤salud</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: { brand: { 50: '#eff0fe', 100: '#e0e2fd', 200: '#c7cbfa', 300: '#a3abf6', 400: '#7e83f0', 500: '#645be9', 600: '#523cdb', 700: '#442dbd', 800: '#382699', 900: '#32227a', 950: '#3238c4', red: '#CE1126' } }
-                }
-            }
-        }
-    </script>
-    <style>
+<style>
         /* A4 Reset and print styles */
         @page { size: A4 portrait; margin: 0; }
-        body { margin: 0; padding: 0; background: #e5e7eb; display: flex; flex-direction: column; align-items: center; }
+        body { margin: 0; padding: 0; background: #f8fafc; font-family: 'Inter', sans-serif; }
         .page { 
             width: 210mm;
             height: 297mm;
@@ -30,94 +10,89 @@
             position: relative;
             overflow: hidden;
             break-after: page;
+            box-sizing: border-box;
         }
         @media print {
             body { background: transparent; }
             .page { margin: 0; box-shadow: none; break-after: page; border: none; }
-            .print-break-inside-avoid { break-inside: avoid; }
         }
         
         /* Background decorative shapes */
-        .shape-tl { position: absolute; top: -100px; left: -100px; width: 450px; height: 450px; background: #eff0fe; border-radius: 50%; z-index: 0; }
-        .shape-br { position: absolute; bottom: -150px; right: -100px; width: 400px; height: 400px; background: #eff0fe; border-radius: 50%; z-index: 0; }
-        .content { position: relative; z-index: 10; padding: 15mm 20mm; display: flex; flex-direction: column; height: 100%; box-sizing: border-box; }
-        .footer { position: absolute; bottom: 0; left: 0; width: 100%; height: 15mm; background: #3238c4; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 0 20mm; color: white; font-size: 9pt; box-sizing: border-box; }
+        .shape-tl { position: absolute; top: -120px; left: -120px; width: 400px; height: 400px; background: linear-gradient(135deg, #eff0fe 0%, #e0e2fd 100%); border-radius: 50%; z-index: 0; opacity: 0.6; }
+        .shape-br { position: absolute; bottom: -150px; right: -100px; width: 350px; height: 350px; background: linear-gradient(135deg, #eff0fe 0%, #e0e2fd 100%); border-radius: 50%; z-index: 0; opacity: 0.6; }
+        
+        .content { position: relative; z-index: 10; padding: 20mm; display: flex; flex-direction: column; height: 100%; box-sizing: border-box; }
+        .footer { position: absolute; bottom: 0; left: 0; width: 100%; height: 15mm; background: #3238c4; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 0 20mm; color: white; font-size: 8pt; box-sizing: border-box; }
+        
+        .card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+        .brand-gradient { 
+            background: linear-gradient(90deg, #3238c4 0%, #645be9 100%); 
+            -webkit-background-clip: text; 
+            background-clip: text;
+            -webkit-text-fill-color: transparent; 
+        }
     </style>
 </head>
-<body>
+<body class="text-slate-800">
 
     <!-- PORTADA Y RESUMEN (PÁGINA 1) -->
     <div class="page">
         <div class="shape-tl"></div>
-        
-        <div class="content grid grid-cols-1 grid-rows-[auto_1fr_auto]">
+        <div class="content">
             <!-- Header -->
-            <header class="flex justify-between items-start pt-8 pb-12 border-b-2 border-brand-100">
-                <svg width="200" height="46" viewBox="0 0 574 133" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M281.83 73.0185C279.018 71.9936 275.758 70.315 272.5 68.151V27.0461C275.897 27.3143 279.201 28.7766 281.83 31.5942C284.455 28.7782 287.755 27.3162 291.148 27.0461V68.1585C287.892 70.32 284.636 71.996 281.83 73.0185Z" fill="#CE1126"/>
-                    <path d="M303.169 31.3003C316.15 44.4053 303.65 59.8599 291.148 68.1585V27.0461C295.389 26.7087 299.774 28.2322 303.169 31.3003Z" fill="#CE1126"/>
-                    <path d="M260.49 31.3003C263.884 28.234 268.264 26.7117 272.5 27.0461V68.151C259.997 59.8469 247.517 44.3949 260.49 31.3003Z" fill="#CE1126"/>
-                    <path d="M27.9935 78.9967C22.5344 78.9967 17.6848 77.8719 13.4448 75.6224C9.2667 73.4385 5.82282 70.0746 3.5414 65.9491C1.17794 61.7384 -0.00252506 56.757 4.05523e-06 51.0049V49.4553C4.05523e-06 43.7765 1.18047 38.8349 3.5414 34.6305C5.82336 30.5055 9.2671 27.1418 13.4448 24.9573C17.6836 22.7078 22.5332 21.583 27.9935 21.583C33.4539 21.583 38.3041 22.7078 42.5441 24.9573C46.7207 27.1433 50.164 30.5066 52.4475 34.6305C54.8072 38.8337 55.9876 43.7752 55.9889 49.4553V51.0049C55.9889 56.757 54.8084 61.7359 52.4475 65.9416C50.165 70.0662 46.7214 73.4298 42.5441 75.6148C38.3015 77.8694 33.4513 78.9967 27.9935 78.9967ZM27.9935 69.8146C33.3046 69.8146 37.5826 68.1177 40.8275 64.7239C44.0724 61.33 45.6954 56.683 45.6967 50.783V49.7872C45.6967 43.8884 44.0736 39.2415 40.8275 35.8463C37.5814 32.4512 33.3034 30.7549 27.9935 30.7574C22.7544 30.7574 18.4948 32.4537 15.2145 35.8463C11.9343 39.2389 10.2903 43.8859 10.2828 49.7872V50.783C10.2828 56.6856 11.9267 61.3325 15.2145 64.7239C18.5024 68.1152 22.762 69.8121 27.9935 69.8146Z" fill="#3238C4"/>
-                    <path d="M65.2798 99.5767V23.1219H75.3482V31.3101H77.0098C78.4097 28.8026 80.6037 26.5531 83.5918 24.5615C86.58 22.57 90.7663 21.5742 96.1508 21.5742C100.798 21.5742 105.039 22.68 108.875 24.8916C112.71 27.1032 115.772 30.2934 118.059 34.4624C120.346 38.6352 121.489 43.6299 121.489 49.4465V50.9961C121.489 56.8962 120.346 61.9307 118.059 66.0997C115.773 70.2686 112.711 73.4615 108.875 75.6781C105.039 77.8909 100.798 78.9973 96.1508 78.9973C92.5354 78.9973 89.4746 78.5364 86.9682 77.6146C84.4619 76.6928 82.4329 75.5124 80.8813 74.0735C79.4443 72.7729 78.2131 71.2617 77.2299 69.5915H75.5701V99.5767H65.2798ZM93.2733 69.9234C98.5098 69.9234 102.788 68.2455 106.109 64.8896C109.43 61.5336 111.09 56.831 111.088 50.7818V49.786C111.088 43.7393 109.41 39.0373 106.054 35.6801C102.698 32.3229 98.4378 30.645 93.2733 30.6462C88.1101 30.6462 83.8504 32.3242 80.4943 35.6801C77.1382 39.036 75.4601 43.738 75.4601 49.786V50.7818C75.4601 56.8323 77.1382 61.5349 80.4943 64.8896C83.8504 68.2442 88.1101 69.9222 93.2733 69.9234Z" fill="#3238C4"/>
-                    <path d="M155.683 78.9954C150.151 78.9954 145.319 77.8339 141.187 75.5111C137.094 73.2282 133.75 69.8075 131.561 65.6633C129.276 61.4223 128.133 56.4984 128.133 50.8917V49.564C128.133 43.9598 129.276 39.0543 131.563 34.8474C133.746 30.7506 137.045 27.356 141.077 25.0565C145.135 22.7337 149.82 21.5723 155.131 21.5723C160.366 21.5723 164.94 22.697 168.851 24.9465C172.762 27.196 175.824 30.3673 178.035 34.4605C180.248 38.5548 181.355 43.3674 181.355 48.8983V53.1071H138.532C138.753 58.2699 140.487 62.3631 143.733 65.3864C146.979 68.4098 151.036 69.9221 155.903 69.9234C160.329 69.9234 163.704 68.9276 166.028 66.936C168.302 65.0114 170.101 62.5876 171.284 59.8537L180.025 64.2806C178.919 66.4201 177.388 68.633 175.433 70.9191C173.478 73.2053 170.915 75.1229 167.743 76.6719C164.572 78.2221 160.551 78.9966 155.683 78.9954ZM138.642 44.9189H170.952C170.657 40.4933 169.07 37.0077 166.193 34.4624C163.316 31.917 159.628 30.6449 155.129 30.6462C150.554 30.6462 146.829 31.9182 143.953 34.4624C141.077 37.0065 139.307 40.492 138.642 44.9189Z" fill="#3238C4"/>
-                    <path d="M190.203 77.4476V23.1237H200.272V31.6438H201.931C203.038 29.2842 204.956 27.1081 207.686 25.1153C210.416 23.1224 214.473 22.1267 219.856 22.1279C223.912 22.1279 227.563 23.0314 230.811 24.8383C234.045 26.6363 236.695 29.3249 238.445 32.5845C240.289 35.9417 241.211 39.9798 241.211 44.6989V77.4476H230.921V45.4727C230.921 40.4578 229.667 36.7908 227.159 34.4718C224.652 32.1527 221.221 30.9913 216.869 30.9875C212 30.9875 208.054 32.6098 205.029 35.8545C202.004 39.0991 200.492 43.8201 200.492 50.0173V77.4476H190.203Z" fill="#3238C4"/>
-                    <path d="M348.37 78.5008C341.583 78.5008 335.885 76.9512 331.276 73.8519C326.666 70.7527 323.884 65.9957 322.93 59.581L332.666 57.2557C333.182 60.5041 334.194 63.0489 335.701 64.8899C337.166 66.7017 339.099 68.0789 341.289 68.8731C343.559 69.6956 345.956 70.1079 348.37 70.0908C352.205 70.0908 355.193 69.3529 357.333 67.8773C359.472 66.4016 360.542 64.4505 360.542 62.024C360.542 59.5912 359.53 57.8209 357.507 56.7132C355.484 55.6055 352.622 54.7204 348.922 54.0578L344.829 53.3939C341.45 52.8004 338.147 51.8355 334.98 50.5166C332.029 49.2648 329.669 47.5502 327.899 45.3727C326.13 43.1953 325.245 40.4134 325.244 37.0272C325.244 31.9364 327.162 28.0083 330.997 25.2428C334.832 22.4774 339.886 21.0947 346.156 21.0947C352.277 21.0947 357.293 22.4591 361.204 25.1878C365.115 27.9166 367.624 31.7151 368.729 36.5833L359.102 39.2387C358.438 35.6982 356.963 33.1901 354.677 31.7145C352.391 30.2388 349.551 29.5016 346.156 29.5029C342.837 29.5029 340.218 30.1301 338.3 31.3844C336.381 32.6388 335.422 34.4091 335.422 36.6952C335.422 39.0585 336.345 40.7921 338.19 41.896C340.035 42.9999 342.542 43.8111 345.713 44.3295L349.696 45.1053C353.315 45.6939 356.871 46.6197 360.318 47.8707C363.49 49.0505 365.998 50.7101 367.843 52.8496C369.688 54.9891 370.61 57.8658 370.61 61.4797C370.61 66.9409 368.619 71.1453 364.635 74.0928C360.652 77.0403 355.23 78.5097 348.37 78.5008Z" fill="#3238C4"/>
-                    <path d="M424.89 77.4458H416.149V69.5915H414.488C413.898 70.7725 412.958 72.1186 411.667 73.6296C410.376 75.1407 408.569 76.4127 406.246 77.4458C403.923 78.4802 400.88 78.9967 397.117 78.9954C393.281 78.9954 389.833 78.3316 386.771 77.0039C383.71 75.6762 381.275 73.7219 379.466 71.1411C377.659 68.5603 376.756 65.4623 376.756 61.8472C376.756 58.16 377.659 55.081 379.466 52.6102C381.274 50.1394 383.726 48.2958 386.824 47.0794C389.922 45.8591 393.427 45.2503 397.337 45.2528H414.708V41.4879C414.708 38.0965 413.675 35.3678 411.61 33.3016C409.545 31.2355 406.447 30.2024 402.316 30.2024C398.257 30.2024 395.103 31.1798 392.854 33.1347C390.606 35.0896 389.115 37.6527 388.382 40.824L378.755 37.7267C379.632 34.7927 381.058 32.052 382.959 29.6504C384.878 27.2151 387.46 25.2602 390.705 23.7858C393.95 22.3114 397.859 21.5742 402.433 21.5742C409.442 21.5742 414.937 23.3628 418.921 26.94C422.904 30.5172 424.896 35.5884 424.896 42.1536L424.89 77.4458ZM398.666 70.3673C403.386 70.3673 407.242 68.9662 410.237 66.1641C413.231 63.3621 414.725 59.4896 414.717 54.5467V53.3291H398.01C394.763 53.3291 392.144 54.0296 390.153 55.4306C388.163 56.8317 387.168 58.8605 387.168 61.5172C387.168 64.2472 388.2 66.4044 390.265 67.9888C392.33 69.5732 395.131 70.366 398.666 70.3673Z" fill="#3238C4"/>
-                    <path d="M433.132 77.4467V0H443.423V77.4467H433.132Z" fill="#3238C4"/>
-                    <path d="M472.951 78.4456C468.894 78.4456 465.243 77.5428 461.997 75.7371C458.754 73.9323 456.088 71.2468 454.307 67.9909C452.425 64.635 451.484 60.5963 451.484 55.8747V23.126H461.887V55.1027C461.887 60.0443 463.122 63.6949 465.593 66.0544C468.064 68.4139 471.478 69.5943 475.836 69.5956C480.703 69.5956 484.649 67.9726 487.674 64.7267C490.699 61.4808 492.209 56.7238 492.204 50.4558V23.126H502.604V77.4499H492.426V68.9317H490.766C489.658 71.2938 487.74 73.4693 485.011 75.4583C482.282 77.4473 478.262 78.4431 472.951 78.4456Z" fill="#3238C4"/>
-                    <path d="M537.242 78.9964C532.802 79.0308 528.432 77.8861 524.579 75.6791C520.705 73.4662 517.626 70.2766 515.341 66.1101C513.056 61.9436 511.912 56.9091 511.91 51.0065V49.4569C511.91 43.6327 513.053 38.638 515.341 34.4729C517.629 30.3077 520.689 27.1174 524.524 24.902C528.359 22.6904 532.6 21.5847 537.248 21.5847C540.863 21.5847 543.924 22.0456 546.432 22.9674C548.94 23.8892 550.968 25.0506 552.517 26.4516C553.981 27.7475 555.216 29.2814 556.169 30.9886H557.828V0H568.119V77.4468H558.05V69.2606H556.39C554.989 71.768 552.814 74.0175 549.863 76.0091C546.913 78.0006 542.706 78.9964 537.242 78.9964ZM540.119 69.9244C545.283 69.9244 549.543 68.2464 552.9 64.8905C556.258 61.5346 557.936 56.832 557.935 50.7827V49.787C557.935 43.7402 556.275 39.0383 552.955 35.6811C549.636 32.3239 545.357 30.6459 540.119 30.6472C534.955 30.6472 530.695 32.3251 527.34 35.6811C523.986 39.037 522.306 43.7389 522.302 49.787V50.7827C522.302 56.8333 523.981 61.5359 527.337 64.8905C530.693 68.2452 534.954 69.9231 540.119 69.9244Z" fill="#3238C4"/>
-                </svg>
+            <header class="flex justify-between items-center pb-10 border-b border-slate-100">
+                <img src="https://testopensalud.4ventures.es/logo_opensalud_blue.png" alt="OpenSalud" style="height: 35px; width: auto;">
                 <div class="text-right">
-                    <p class="text-xs uppercase tracking-widest text-brand-600 font-bold mb-1">Audit 360</p>
-                    <p class="text-gray-500 font-medium">Informe Confidencial</p>
-                    <p class="text-gray-400 text-sm mt-1">{{fecha_actual}}</p>
+                    <p class="text-[10px] uppercase tracking-[0.2em] text-brand-600 font-bold mb-1">Audit 360 &bull; Informe Confidencial</p>
+                    <p class="text-slate-400 text-[11px] font-medium">{{fecha_actual}}</p>
                 </div>
             </header>
 
-            <!-- Main Content -->
-            <main class="py-16">
-                <!-- Variable Placeholder for Name -->
-                <p class="text-xl text-gray-600 font-medium mb-4">Preparado exclusivamente para:</p>
-                <h1 class="text-4xl font-extrabold text-gray-900 mb-8">{{nombre_profesional}}</h1>
-                
-                <div class="h-1 w-24 bg-brand-500 mb-12"></div>
+            <main class="flex-grow pt-16">
+                <div class="mb-12">
+                    <p class="text-slate-500 font-medium mb-2">Preparado exclusivamente para:</p>
+                    <h1 class="text-4xl font-extrabold text-slate-900 tracking-tight">{{nombre_profesional}}</h1>
+                    <div class="h-1.5 w-16 bg-brand-500 mt-6 rounded-full"></div>
+                </div>
 
-                <h2 class="text-5xl font-black text-gray-900 leading-tight mb-8">
-                    Diagnóstico de Nivel de Madurez Emocional y Riesgos Psicosociales
+                <h2 class="text-[44px] font-black leading-[1.1] text-slate-900 mb-8 max-w-[90%]">
+                    Diagnóstico de <span class="brand-gradient">Madurez Emocional</span> y Riesgos Psicosociales
                 </h2>
                 
-                <p class="text-xl text-gray-600 leading-relaxed mb-12">
-                    A continuación, te presentamos el análisis derivado de tus respuestas sobre las prácticas de recursos humanos actuales de tu empresa. El objetivo es identificar vulnerabilidades ocultas y áreas de mejora que están afectando directamente a la retención de tu talento cualificado y a la cuenta de resultados.
+                <p class="text-lg text-slate-600 leading-relaxed mb-12 max-w-[85%]">
+                    Este documento presenta el análisis detallado derivado de tus respuestas. Nuestro objetivo es identificar las <strong>fugas de talento silenciosas</strong> y las vulnerabilidades que impactan directamente en tu cuenta de resultados.
                 </p>
 
-                <!-- Dynamic Data Section -->
-                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 shadow-sm print-break-inside-avoid">
-                    <h3 class="text-sm uppercase tracking-widest text-brand-600 font-bold mb-6">Tu escenario actual</h3>
-                    <div class="grid grid-cols-2 gap-8">
+                <!-- Current Scenario Card -->
+                <div class="card bg-slate-50/50 border-slate-200">
+                    <h3 class="text-xs uppercase tracking-widest text-brand-600 font-bold mb-8 flex items-center gap-2">
+                        <span class="w-2 h-2 bg-brand-500 rounded-full"></span>
+                        Resumen del Escenario Actual
+                    </h3>
+                    <div class="grid grid-cols-2 gap-y-10 gap-x-12">
                         <div>
-                            <p class="text-gray-500 text-sm font-medium mb-1">Volumen de Plantilla</p>
-                            <p class="text-lg font-bold text-gray-900">{{tamano_empresa}}</p>
+                            <p class="text-slate-400 text-[10px] uppercase tracking-wider font-bold mb-2">Plantilla</p>
+                            <p class="text-lg font-bold text-slate-900">{{tamano_empresa}}</p>
                         </div>
                         <div>
-                            <p class="text-gray-500 text-sm font-medium mb-1">Mayor Desafío RRHH</p>
-                            <p class="text-lg font-bold text-brand-700">{{mayor_desafio}}</p>
+                            <p class="text-slate-400 text-[10px] uppercase tracking-wider font-bold mb-2">Mayor Desafío</p>
+                            <p class="text-lg font-bold text-brand-700 leading-snug">{{mayor_desafio}}</p>
                         </div>
                         <div>
-                            <p class="text-gray-500 text-sm font-medium mb-1">Nivel de Rotación</p>
-                            <p class="text-lg font-bold text-gray-900">{{tasa_rotacion}}</p>
+                            <p class="text-slate-400 text-[10px] uppercase tracking-wider font-bold mb-2">Nivel de Rotación</p>
+                            <p class="text-lg font-bold text-slate-900">{{tasa_rotacion}}</p>
                         </div>
                         <div>
-                            <p class="text-gray-500 text-sm font-medium mb-1">Prevención / Plan de Acción</p>
-                            <p class="text-lg font-bold text-gray-900">{{estado_prevencion}}</p>
+                            <p class="text-slate-400 text-[10px] uppercase tracking-wider font-bold mb-2">Plan de Acción</p>
+                            <p class="text-lg font-bold text-slate-900">{{estado_prevencion}}</p>
                         </div>
                     </div>
                 </div>
             </main>
 
-            <!-- Footer -->
-            <div class="footer rounded-t-xl mx-8 relative bottom-[-20mm] h-12">
+            <div class="footer">
                 <p>OpenSalud &copy; 2026</p>
-                <p>Confidencial - Solo para uso interno</p>
+                <p class="font-bold tracking-widest uppercase text-[7pt]">Confidencial</p>
             </div>
         </div>
     </div>
@@ -125,60 +100,59 @@
     <!-- PÁGINA 2: ANÁLISIS DE RIESGOS -->
     <div class="page">
         <div class="content">
-            <h2 class="text-3xl font-extrabold text-gray-900 mb-8 border-b-2 border-brand-100 pb-4">
+            <h2 class="text-3xl font-extrabold text-slate-900 mb-10 border-b border-slate-100 pb-6 tracking-tight">
                 Análisis de Vulnerabilidades
             </h2>
 
-            <div class="space-y-8">
-                <!-- Diagnóstico Dinámico basado en Respuestas -->
-                <div class="bg-white rounded-xl p-8 shadow-sm border-l-4 border-red-500 print-break-inside-avoid">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">1. Riesgo de Fuga de Talento y Absentismo</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        Al indicar que vuestro mayor desafío es <strong>{{mayor_desafio}}</strong> y con una tasa de rotación del <strong>{{tasa_rotacion}}</strong>, la organización se encuentra expuesta a costes ocultos muy significativos. La falta de retención no solo implica costes de contratación, sino una pérdida irreparable de conocimiento corporativo.
+            <div class="space-y-6">
+                <!-- Risk Card 1 -->
+                <div class="card border-l-4 border-l-red-500">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">1. Riesgo de Fuga de Talento y Absentismo</h3>
+                    <p class="text-[15px] text-slate-600 leading-relaxed">
+                        Con un desafío de <strong>{{mayor_desafio}}</strong> y una rotación de <strong>{{tasa_rotacion}}</strong>, tu organización está expuesta a costes ocultos críticos. La pérdida de talento no es solo una métrica, es una erosión directa de tu ventaja competitiva.
                     </p>
                 </div>
 
-                <div class="bg-white rounded-xl p-8 shadow-sm border-l-4 border-yellow-400 print-break-inside-avoid">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">2. Cumplimiento Normativo vs Cultura Preventiva</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        En materia de prevención psicosocial, tu estado es: <strong>{{estado_prevencion}}</strong>. Cumplir estrictamente la Ley 31/95 es necesario, pero las organizaciones de Alto Rendimiento transforman esta obligación legal en un activo estratégico (usando herramientas predictivas en lugar de encuestas anuales reactivas).
+                <!-- Risk Card 2 -->
+                <div class="card border-l-4 border-l-amber-400">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">2. Cumplimiento vs Cultura Preventiva</h3>
+                    <p class="text-[15px] text-slate-600 leading-relaxed">
+                        Estado actual: <strong>{{estado_prevencion}}</strong>. Las empresas de alto rendimiento transforman la Ley 31/95 en un activo estratégico, utilizando analítica avanzada en lugar de simples encuestas reactivas.
                     </p>
                 </div>
 
-                <div class="bg-white rounded-xl p-8 shadow-sm border-l-4 border-brand-500 print-break-inside-avoid">
-                    <h3 class="text-xl font-bold text-gray-900 mb-3">3. El Punto Ciego en la Vigilancia de la Empresa</h3>
-                    <p class="text-gray-600 leading-relaxed">
-                        De acuerdo a tus respuestas (<strong>{{vigilancia_salud}}</strong> y <strong>{{medicion_clima}}</strong>), existe margen de mejora en la conexión entre los datos de salud mental de la plantilla y los KPIs organizacionales (absentismo). Un diagnóstico estructurado con herramientas como Mentallypro os permitiría anticipar bajas antes de que ocurran.
+                <!-- Risk Card 3 -->
+                <div class="card border-l-4 border-l-brand-500">
+                    <h3 class="text-lg font-bold text-slate-900 mb-2">3. Punto Ciego en Vigilancia</h3>
+                    <p class="text-[15px] text-slate-600 leading-relaxed">
+                        Tus indicadores de <strong>{{vigilancia_salud}}</strong> y <strong>{{medicion_clima}}</strong> sugieren un margen de mejora en la anticipación. Conectarlos con KPIs de negocio te permitiría reducir el absentismo hasta en un 30%.
                     </p>
                 </div>
             </div>
 
-            <!-- The Cost of Inaction Section -->
-            <div class="mt-16 bg-brand-50 rounded-2xl p-10 print-break-inside-avoid">
-                <h2 class="text-2xl font-black text-brand-900 mb-6 flex items-center gap-3">
-                    <svg class="w-8 h-8 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    El Coste de la Inacción (ROI)
-                </h2>
-                <div class="grid grid-cols-2 gap-8 mb-6">
-                    <div>
-                        <p class="text-sm text-brand-700 font-medium uppercase tracking-wider mb-2">Coste de sustitución</p>
-                        <p class="text-3xl font-bold text-gray-900">Hasta el 200%</p>
-                        <p class="text-sm text-gray-600 mt-2">Del salario anual por cada empleado cualificado que abandona la empresa.</p>
-                    </div>
-                    <div>
-                        <p class="text-sm text-brand-700 font-medium uppercase tracking-wider mb-2">Retorno de Inversión</p>
-                        <p class="text-3xl font-bold text-gray-900">1€ 👉 4,20€</p>
-                        <p class="text-sm text-gray-600 mt-2">Por cada euro invertido en programas estructurados de prevención psicosocial (Datos: OMS).</p>
+            <!-- ROI Section -->
+            <div class="mt-auto mb-16 bg-brand-950 rounded-2xl p-8 text-white relative overflow-hidden">
+                <div class="relative z-10">
+                    <h2 class="text-xl font-bold mb-6 flex items-center gap-2">
+                        <svg class="w-6 h-6 text-brand-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        El Impacto de la Inacción (ROI)
+                    </h2>
+                    <div class="grid grid-cols-2 gap-8 mb-4">
+                        <div>
+                            <p class="text-brand-300 text-[10px] uppercase tracking-widest font-bold mb-1">Coste Sustitución</p>
+                            <p class="text-2xl font-black">Hasta 200%</p>
+                        </div>
+                        <div>
+                            <p class="text-brand-300 text-[10px] uppercase tracking-widest font-bold mb-1">Retorno de Inversión</p>
+                            <p class="text-2xl font-black">1€ &rarr; 4,20€</p>
+                        </div>
                     </div>
                 </div>
-                <p class="text-sm text-gray-500 italic">
-                    *Para una empresa de {{tamano_empresa}}, reducir el absentismo en tan solo un 15% equivale a proteger decenas de miles de euros directamente en la cuenta de resultados anual.
-                </p>
             </div>
             
-            <div class="footer rounded-t-xl mx-8 relative bottom-[-20mm] h-12">
+            <div class="footer">
                 <p>OpenSalud &copy; 2026</p>
-                <p>Confidencial - Solo para uso interno</p>
+                <p class="font-bold tracking-widest uppercase text-[7pt]">Confidencial</p>
             </div>
         </div>
     </div>
@@ -186,42 +160,45 @@
     <!-- PÁGINA 3: PRÓXIMOS PASOS -->
     <div class="page">
         <div class="shape-br"></div>
-        <div class="content text-center flex flex-col items-center justify-center h-full">
+        <div class="content flex flex-col items-center justify-center text-center">
             
-            <div class="bg-white p-12 rounded-3xl shadow-xl max-w-2xl relative z-10 border border-gray-100">
-                <div class="w-20 h-20 bg-brand-100 text-brand-600 rounded-full flex items-center justify-center mx-auto mb-8">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+            <div class="max-w-xl pb-20">
+                <div class="w-16 h-16 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center mx-auto mb-8 rotate-12">
+                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 </div>
                 
-                <h2 class="text-4xl font-extrabold text-gray-900 mb-6">¿Preparado para transformar estos riesgos en beneficios?</h2>
-                <p class="text-xl text-gray-600 mb-10 leading-relaxed">
-                    Tus respuestas indican que tienes una gran oportunidad de optimización. Reserva una <strong>Llamada Estratégica de 15 minutos</strong> con uno de nuestros consultores para revisar tu plan actual y detectar vías de ahorro inmediatas.
+                <h2 class="text-4xl font-black text-slate-900 mb-6 tracking-tight">¿Convertimos estos riesgos en <span class="text-brand-600">oportunidades</span>?</h2>
+                <p class="text-lg text-slate-500 mb-10 leading-relaxed">
+                    Tus respuestas indican un potencial de ahorro inmediato. Reserva una sesión estratégica de 15 minutos para definir tu hoja de ruta.
                 </p>
                 
-                <div class="bg-gray-100 p-6 rounded-2xl text-left mb-10 inline-block w-full">
-                    <p class="font-bold text-gray-900 mb-4">En esta llamada sin compromiso veremos:</p>
+                <div class="bg-slate-50 border border-slate-200 p-6 rounded-2xl text-left mb-10">
+                    <p class="font-bold text-slate-900 mb-4 text-sm tracking-wide">Analizaremos:</p>
                     <ul class="space-y-3">
-                        <li class="flex items-center text-gray-700">
-                            <svg class="w-5 h-5 text-brand-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Cómo estructurar un mapa de prevención predictivo.
+                        <li class="flex items-center text-slate-600 text-sm">
+                            <svg class="w-4 h-4 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Estructura de prevención predictiva.
                         </li>
-                        <li class="flex items-center text-gray-700">
-                            <svg class="w-5 h-5 text-brand-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-                            Casos de éxito de nuestro framework 360 y clínicas in-house.
+                        <li class="flex items-center text-slate-600 text-sm">
+                            <svg class="w-4 h-4 text-emerald-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            Plan de ahorro en absentismo real.
                         </li>
                     </ul>
                 </div>
 
-                <a href="https://opensalud.es/agendar-llamada" class="inline-block bg-brand-600 text-white text-xl font-bold py-5 px-10 rounded-xl hover:bg-brand-700 transition-colors shadow-lg">
+                <a href="https://opensalud.es/agendar-llamada" class="inline-block bg-brand-600 text-white font-bold py-4 px-8 rounded-2xl hover:bg-brand-700 transition-all shadow-xl shadow-brand-200">
                     Agendar Llamada Estratégica
                 </a>
             </div>
 
-            <div class="mt-16 text-gray-400 font-medium">
-                <p>www.opensalud.es | bienestar@opensalud.es</p>
+            <div class="mt-auto pb-10">
+                <p class="text-slate-400 text-xs font-medium tracking-wide">www.opensalud.es &bull; bienestar@opensalud.es</p>
             </div>
         </div>
     </div>
+
+</body>
+</html>
 
 </body>
 </html>
