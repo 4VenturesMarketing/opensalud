@@ -23,26 +23,25 @@
         @page { size: A4 portrait; margin: 0; }
         body { margin: 0; padding: 0; background: #e5e7eb; display: flex; flex-direction: column; align-items: center; }
         .page { 
-            width: 210mm; /* A4 width */
-            min-height: 297mm; /* A4 height */
-            margin: 10mm auto; 
+            width: 210mm;
+            height: 297mm;
+            margin: 0;
             background: white; 
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
             position: relative;
             overflow: hidden;
             break-after: page;
         }
         @media print {
             body { background: transparent; }
-            .page { margin: 0; box-shadow: none; break-after: page; }
+            .page { margin: 0; box-shadow: none; break-after: page; border: none; }
             .print-break-inside-avoid { break-inside: avoid; }
         }
         
         /* Background decorative shapes */
-        .shape-tl { position: absolute; top: -50px; left: -50px; width: 400px; height: 400px; background: #eff0fe; border-radius: 50%; z-index: 0; }
-        .shape-br { position: absolute; bottom: -100px; right: -50px; width: 300px; height: 300px; background: #eff0fe; border-radius: 50%; z-index: 0; }
-        .content { position: relative; z-index: 10; padding: 20mm; display: flex; flex-direction: column; height: 100%; }
-        .footer { position: absolute; bottom: 0; left: 0; width: 100%; height: 20mm; background: #3238c4; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 0 20mm; color: white; font-size: 10pt; }
+        .shape-tl { position: absolute; top: -100px; left: -100px; width: 450px; height: 450px; background: #eff0fe; border-radius: 50%; z-index: 0; }
+        .shape-br { position: absolute; bottom: -150px; right: -100px; width: 400px; height: 400px; background: #eff0fe; border-radius: 50%; z-index: 0; }
+        .content { position: relative; z-index: 10; padding: 15mm 20mm; display: flex; flex-direction: column; height: 100%; box-sizing: border-box; }
+        .footer { position: absolute; bottom: 0; left: 0; width: 100%; height: 15mm; background: #3238c4; z-index: 10; display: flex; align-items: center; justify-content: space-between; padding: 0 20mm; color: white; font-size: 9pt; box-sizing: border-box; }
     </style>
 </head>
 <body>
