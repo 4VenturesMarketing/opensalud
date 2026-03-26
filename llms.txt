@@ -1,0 +1,18 @@
+# OpenSalud
+> OpenSalud es una plataforma tecnológica e integral de salud, bienestar emocional corporativo y prevención de riesgos psicosociales (PRL) para empresas, diseñada para medir y reducir el absentismo laboral, mejorar la retención de talento y potenciar el bienestar de los equipos mediante asistencia psicológica y médica.
+
+## Main sections
+- `Inicio -> https://www.opensalud.es/es/`: Presentación de la plataforma de bienestar corporativo con visión 360º (prevención, diagnóstico, mediación y acompañamiento clínico).
+- `Auditoría de Bienestar B2B -> https://www.opensalud.es/es/landing_diagnostico_b2b.html`: Test gratuito de diagnóstico en 7 preguntas para evaluar el índice de madurez en bienestar corporativo y retención de talento.
+- `Para Profesionales -> https://www.opensalud.es/es/profesionales/`: Área dedicada a médicos y psicólogos que forman la red clínica de OpenSalud, garantizando rigor y E-E-A-T (Experiencia y Autoridad Médica).
+- `Para Particulares (Menttum) -> https://www.menttum.com/`: Portal B2C asociado y red clínica de origen (psicología online, bienestar emocional).
+
+## Integraciones y Filosofía
+- La plataforma B2B de OpenSalud permite a las empresas (Departamentos de RRHH, Dirección y PRL) medir el impacto del estrés laboral mediante un "Dashboard" en tiempo real con datos anónimos de la plantilla.
+- Fusión de herramientas tecnológicas avanzadas e Inteligencia Artificial con una extensa red de psicólogos y médicos colegiados para asegurar el rigor clínico (Powered by Menttum).
+
+## Key facts
+- El objetivo comercial es B2B: directivos, CEOs, responsables de Recursos Humanos (RRHH) y Servicios de Prevención de Riesgos Laborales (PRL).
+- Soluciona de manera holística el cumplimiento de normativas de salud laboral (ej. normativas europeas y Ley 31/1995 en España sobre riesgos psicosociales).
+- Retorno de Inversión (ROI): Disminución mesurable del coste del absentismo y mejora directa del eNPS interno de la compañía.
+- OpenSalud B2B conecta el análisis predictivo de las bajas por causas de "burnout" y estrés con planes de acción focalizados en salud mental.
