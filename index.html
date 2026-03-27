@@ -102,9 +102,9 @@
 
                 <div class="bg-white rounded-2xl shadow-xl p-8 lg:p-10 border border-gray-100 relative overflow-hidden">
                     
-                    <!-- Progress Bar (9 Steps) -->
+                    <!-- Progress Bar (11 Steps) -->
                     <div class="absolute top-0 left-0 w-full h-2 bg-gray-100">
-                        <div class="h-full bg-brand-500 transition-all duration-300" :style="'width: ' + ((step / 9) * 100) + '%'"></div>
+                        <div class="h-full bg-brand-500 transition-all duration-300" :style="'width: ' + ((step / 11) * 100) + '%'"></div>
                     </div>
 
                     <form x-data="{
@@ -120,17 +120,17 @@
                                 }).catch(err => console.warn('Fetch background error:', err));
                                 
                                 console.log('Envío procesado');
-                                step = 9;
+                                step = 11;
                             } catch (error) {
                                 console.error('Error en el formulario:', error);
-                                step = 9;
+                                step = 11;
                             }
                         }
                     }" @submit.prevent="submitForm($event)">
                         
                         <!-- Step 1: Contexto Organizacional -->
                         <div x-show="step === 1" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
-                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 1 de 7</div>
+                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 1 de 9</div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-6">Tu empresa.</h3>
                             <label class="block text-gray-700 font-medium mb-3">¿Cuántos empleados tiene tu organización?</label>
                             <div class="space-y-3">
@@ -155,7 +155,7 @@
 
                         <!-- Step 2: Cumplimiento Normativo -->
                         <div x-show="step === 2" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
-                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 2 de 7</div>
+                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 2 de 9</div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-6">Cumplimiento Legal.</h3>
                             <label class="block text-gray-700 font-medium mb-3">¿Dispones de una evaluación de riesgos psicosociales actualizada conforme a la Ley 31/1995 de Prevención de Riesgos Laborales?</label>
                             <div class="space-y-3">
@@ -183,7 +183,7 @@
 
                         <!-- Step 3: Absentismo y Bajas -->
                         <div x-show="step === 3" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
-                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 3 de 7</div>
+                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 3 de 9</div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-6">Impacto Económico.</h3>
                             <label class="block text-gray-700 font-medium mb-3">¿Cuál es el principal motivo de baja laboral en tu empresa?</label>
                             <div class="space-y-3">
@@ -211,7 +211,7 @@
 
                         <!-- Step 4: Vigilancia de la Salud -->
                         <div x-show="step === 4" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
-                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 4 de 7</div>
+                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 4 de 9</div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-6">Salud Integral.</h3>
                             <label class="block text-gray-700 font-medium mb-3">¿Los reconocimientos médicos de tu empresa incluyen evaluación de salud mental (estrés, ansiedad, calidad del sueño)?</label>
                             <div class="space-y-3">
@@ -239,7 +239,7 @@
 
                         <!-- Step 5: Apoyo Emocional -->
                         <div x-show="step === 5" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
-                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 5 de 7</div>
+                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 5 de 9</div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-6">Bienestar Emocional.</h3>
                             <label class="block text-gray-700 font-medium mb-3">¿Tu empresa ofrece acceso a apoyo psicológico o programas de bienestar emocional para los empleados?</label>
                             <div class="space-y-3">
@@ -265,9 +265,65 @@
                             </div>
                         </div>
 
-                        <!-- Step 6: Medición y KPIs -->
+                        <!-- Step 6: Cultura de Escucha (NUEVA) -->
                         <div x-show="step === 6" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
-                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 6 de 7</div>
+                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 6 de 9</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Cultura de Escucha.</h3>
+                            <label class="block text-gray-700 font-medium mb-3">¿Disponéis de canales digitales anónimos y recurrentes para que los empleados reporten su nivel de bienestar en tiempo real?</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="canales_escucha" value="Sí, con herramientas de pulso emocional frecuentes" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">Sí, utilizamos herramientas de pulso emocional (anonimizadas) de forma recurrente</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="canales_escucha" value="Encuesta de clima anual tradicional" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">Solo realizamos la encuesta de clima anual tradicional</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="canales_escucha" value="No disponemos de canales formales de escucha" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">No disponemos de canales formales para medir el bienestar</span>
+                                </label>
+                            </div>
+                            <p x-show="showError" x-transition class="text-red-500 text-sm mt-3 font-medium">Selecciona una opción</p>
+                            <div class="flex gap-4 mt-8">
+                                <button @click.prevent="showError = false; step = 5" type="button" class="w-1/3 py-4 text-gray-500 font-medium hover:text-gray-900 transition-colors">Atrás</button>
+                                <button @click.prevent="() => { if(document.querySelector('input[name=canales_escucha]:checked')) { showError = false; step = 7 } else { showError = true } }" type="button" class="w-2/3 bg-brand-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-brand-700 transition-colors text-lg shadow-md">
+                                    Siguiente →
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 7: Liderazgo Saludable (NUEVA) -->
+                        <div x-show="step === 7" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 7 de 9</div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-6">Liderazgo Saludable.</h3>
+                            <label class="block text-gray-700 font-medium mb-3">¿Han recibido vuestros mandos intermedios formación específica para gestionar la salud emocional de sus equipos y detectar síntomas de burnout?</label>
+                            <div class="space-y-3">
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="formacion_lideres" value="Sí, formación recurrente en liderazgo saludable" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">Sí, formación recurrente en liderazgo saludable y gestión del estrés</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="formacion_lideres" value="Formación puntual o solo en PRL técnica" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">Solo formación puntual o centrada estrictamente en PRL técnica</span>
+                                </label>
+                                <label class="flex items-center p-4 border rounded-xl cursor-pointer hover:bg-brand-50 hover:border-brand-300 transition-colors">
+                                    <input type="radio" name="formacion_lideres" value="No han recibido formación específica" class="w-5 h-5 text-brand-600 border-gray-300 focus:ring-brand-500">
+                                    <span class="ml-3 text-gray-700">No han recibido formación específica sobre bienestar emocional</span>
+                                </label>
+                            </div>
+                            <p x-show="showError" x-transition class="text-red-500 text-sm mt-3 font-medium">Selecciona una opción</p>
+                            <div class="flex gap-4 mt-8">
+                                <button @click.prevent="showError = false; step = 6" type="button" class="w-1/3 py-4 text-gray-500 font-medium hover:text-gray-900 transition-colors">Atrás</button>
+                                <button @click.prevent="() => { if(document.querySelector('input[name=formacion_lideres]:checked')) { showError = false; step = 8 } else { showError = true } }" type="button" class="w-2/3 bg-brand-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-brand-700 transition-colors text-lg shadow-md">
+                                    Siguiente →
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Step 8: Medición y KPIs -->
+                        <div x-show="step === 8" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 8 de 9</div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-6">Medición de Resultados.</h3>
                             <label class="block text-gray-700 font-medium mb-3">¿Mides el ROI de tus iniciativas de bienestar con indicadores específicos (absentismo, rotación, retención de talento, eNPS)?</label>
                             <div class="space-y-3">
@@ -286,16 +342,16 @@
                             </div>
                             <p x-show="showError" x-transition class="text-red-500 text-sm mt-3 font-medium">Selecciona una opción</p>
                             <div class="flex gap-4 mt-8">
-                                <button @click.prevent="showError = false; step = 5" type="button" class="w-1/3 py-4 text-gray-500 font-medium hover:text-gray-900 transition-colors">Atrás</button>
-                                <button @click.prevent="() => { if(document.querySelector('input[name=medicion_roi]:checked')) { showError = false; step = 7 } else { showError = true } }" type="button" class="w-2/3 bg-brand-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-brand-700 transition-colors text-lg shadow-md">
+                                <button @click.prevent="showError = false; step = 7" type="button" class="w-1/3 py-4 text-gray-500 font-medium hover:text-gray-900 transition-colors">Atrás</button>
+                                <button @click.prevent="() => { if(document.querySelector('input[name=medicion_roi]:checked')) { showError = false; step = 9 } else { showError = true } }" type="button" class="w-2/3 bg-brand-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-brand-700 transition-colors text-lg shadow-md">
                                     Siguiente →
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Step 7: Cultura y Liderazgo -->
-                        <div x-show="step === 7" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
-                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 7 de 7</div>
+                        <!-- Step 9: Cultura y Liderazgo -->
+                        <div x-show="step === 9" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+                            <div class="text-sm text-brand-500 font-bold tracking-widest uppercase mb-2">Pregunta 9 de 9</div>
                             <h3 class="text-2xl font-bold text-gray-900 mb-6">Cultura Organizacional.</h3>
                             <label class="block text-gray-700 font-medium mb-3">¿La dirección de tu empresa considera el bienestar emocional y la retención de talento una prioridad estratégica (con presupuesto y objetivos)?</label>
                             <div class="space-y-3">
@@ -314,15 +370,15 @@
                             </div>
                             <p x-show="showError" x-transition class="text-red-500 text-sm mt-3 font-medium">Selecciona una opción</p>
                             <div class="flex gap-4 mt-8">
-                                <button @click.prevent="showError = false; step = 6" type="button" class="w-1/3 py-4 text-gray-500 font-medium hover:text-gray-900 transition-colors">Atrás</button>
-                                <button @click.prevent="() => { if(document.querySelector('input[name=cultura]:checked')) { showError = false; step = 8 } else { showError = true } }" type="button" class="w-2/3 bg-brand-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-brand-700 transition-colors text-lg shadow-md">
+                                <button @click.prevent="showError = false; step = 8" type="button" class="w-1/3 py-4 text-gray-500 font-medium hover:text-gray-900 transition-colors">Atrás</button>
+                                <button @click.prevent="() => { if(document.querySelector('input[name=cultura]:checked')) { showError = false; step = 10 } else { showError = true } }" type="button" class="w-2/3 bg-brand-600 text-white font-bold py-4 px-6 rounded-xl hover:bg-brand-700 transition-colors text-lg shadow-md">
                                     Finalizar Auditoría →
                                 </button>
                             </div>
                         </div>
 
-                        <!-- Step 8 (Lead Capture) -->
-                        <div x-show="step === 8" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
+                        <!-- Step 10 (Lead Capture) -->
+                        <div x-show="step === 10" style="display: none;" x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="opacity-0 translate-y-4" x-transition:enter-end="opacity-100 translate-y-0">
                             <div class="text-center mb-6">
                                 <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -368,8 +424,8 @@
                             </button>
                         </div>
 
-                        <!-- Step 9 (Thank You) -->
-                        <div x-show="step === 9" style="display: none;" class="text-center py-8">
+                        <!-- Step 11 (Thank You) -->
+                        <div x-show="step === 11" style="display: none;" class="text-center py-8">
                             <h3 class="text-3xl font-extrabold text-gray-900 mb-4">Analizando respuestas...</h3>
                             <p class="text-lg text-gray-600 mb-8">Te estamos enviando el informe completo a tu bandeja de entrada.</p>
                             
