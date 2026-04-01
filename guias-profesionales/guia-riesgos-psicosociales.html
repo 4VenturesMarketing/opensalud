@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riesgos psicosociales: la obligación legal que el 70 % de las empresas incumple | open❤salud</title>
+    <meta name="description" content="Guía técnica sobre evaluación y gestión de riesgos psicosociales conforme a la Ley 31/1995. Para departamentos de PRL, Salud Laboral y People & Culture.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-50: #eff0fe;
+            --brand-100: #e0e2fd;
+            --brand-200: #c7cbfa;
+            --brand-500: #645be9;
+            --brand-600: #523cdb;
+            --brand-700: #442dbd;
+            --brand-800: #382699;
+            --brand-900: #32227a;
+            --brand-950: #3238c4;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --red-600: #dc2626;
+            --amber-600: #d97706;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: var(--gray-800);
+            line-height: 1.8;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        @media print {
+            body { font-size: 12pt; }
+            .no-print { display: none !important; }
+            .page-break { page-break-before: always; }
+            .cover { min-height: 100vh; }
+        }
+
+        .cover {
+            min-height: 90vh;
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, var(--brand-950) 100%);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: 10%;
+            right: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(100,91,233,0.2) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cover-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 100px;
+            padding: 8px 24px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cover h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(30px, 4.5vw, 48px);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 24px;
+            max-width: 720px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover .subtitle {
+            font-size: clamp(16px, 2.5vw, 20px);
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 550px;
+            line-height: 1.6;
+            margin-bottom: 48px;
+        }
+
+        .cover-logo svg { width: 200px; height: auto; }
+
+        .cover-meta {
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .toc {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 48px;
+        }
+
+        .toc h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 22px;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+        }
+
+        .toc ol {
+            list-style: none;
+            counter-reset: toc;
+        }
+
+        .toc ol li {
+            counter-increment: toc;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-200);
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        .toc ol li:last-child { border-bottom: none; }
+
+        .toc ol li::before {
+            content: "0" counter(toc) ".";
+            color: var(--brand-600);
+            font-weight: 700;
+            margin-right: 12px;
+            font-size: 14px;
+        }
+
+        h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 28px;
+            color: var(--gray-900);
+            margin-top: 56px;
+            margin-bottom: 20px;
+            line-height: 1.35;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: var(--brand-700);
+            margin-top: 36px;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 18px;
+            color: var(--gray-700);
+        }
+
+        strong { color: var(--gray-900); }
+
+        figure {
+            margin: 36px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+
+        figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        figcaption {
+            padding: 12px 20px;
+            background: var(--gray-50);
+            font-size: 13px;
+            color: var(--gray-500);
+            font-style: italic;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .callout {
+            background: var(--brand-50);
+            border-left: 4px solid var(--brand-600);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 32px 0;
+        }
+
+        .callout.warning {
+            background: #fef2f2;
+            border-left-color: var(--red-600);
+        }
+
+        .callout.amber {
+            background: #fffbeb;
+            border-left-color: var(--amber-600);
+        }
+
+        .callout p { margin-bottom: 0; color: var(--gray-800); }
+        .callout strong { color: var(--brand-900); }
+        .callout.warning strong { color: #991b1b; }
+        .callout.amber strong { color: #92400e; }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        .stat-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--brand-600);
+            display: block;
+        }
+
+        .stat-card .label {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-top: 4px;
+            display: block;
+        }
+
+        ul, ol {
+            margin: 16px 0 24px 20px;
+            color: var(--gray-700);
+        }
+
+        li { margin-bottom: 8px; }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--gray-200);
+            margin: 48px 0;
+        }
+
+        .cta-block {
+            background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-950) 100%);
+            color: #fff;
+            border-radius: 16px;
+            padding: 48px 40px;
+            text-align: center;
+            margin: 48px 0;
+        }
+
+        .cta-block h3 {
+            color: #fff;
+            font-family: 'Merriweather', serif;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .cta-block p { color: rgba(255,255,255,0.9); margin-bottom: 24px; }
+
+        .cta-block a {
+            display: inline-block;
+            background: #fff;
+            color: var(--brand-700);
+            font-weight: 700;
+            padding: 14px 36px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-block a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .about {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 36px;
+            margin-top: 48px;
+        }
+
+        .about h3 {
+            color: var(--gray-900);
+            margin-top: 0;
+        }
+
+        .doc-footer {
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 13px;
+            color: var(--gray-500);
+            border-top: 1px solid var(--gray-200);
+            margin-top: 48px;
+        }
+
+        .references {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-top: 32px;
+        }
+
+        .references h3 { color: var(--gray-700); font-size: 16px; }
+        .references ol { color: var(--gray-500); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 14px;
+        }
+
+        thead th {
+            background: var(--brand-600);
+            color: #fff;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        thead th:first-child { border-radius: 8px 0 0 0; }
+        thead th:last-child { border-radius: 0 8px 0 0; }
+
+        tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        tbody tr:nth-child(even) { background: var(--gray-50); }
+
+        /* Sanction scale */
+        .sanction-scale {
+            display: flex;
+            gap: 12px;
+            margin: 24px 0;
+        }
+
+        .sanction-level {
+            flex: 1;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .sanction-level.low {
+            background: #fef9c3;
+            border: 1px solid #fde047;
+        }
+
+        .sanction-level.medium {
+            background: #ffedd5;
+            border: 1px solid #fdba74;
+        }
+
+        .sanction-level.high {
+            background: #fecaca;
+            border: 1px solid #f87171;
+        }
+
+        .sanction-level .amount {
+            display: block;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--gray-900);
+        }
+
+        .sanction-level .type {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .sanction-level.low .type { color: #a16207; }
+        .sanction-level.medium .type { color: #c2410c; }
+        .sanction-level.high .type { color: #b91c1c; }
+
+        @media (max-width: 640px) {
+            .cover { padding: 40px 24px; }
+            .content { padding: 40px 20px; }
+            h2 { font-size: 24px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .toc, .about, .cta-block { padding: 24px; }
+            .sanction-scale { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="cover">
+    <span class="cover-badge">Guía técnica · OpenSalud 2026</span>
+    <h1>Riesgos psicosociales: la obligación legal que el 70 % de las empresas incumple</h1>
+    <p class="subtitle">Marco normativo, metodologías de evaluación y plan de cumplimiento para departamentos de PRL, Salud Laboral y People &amp; Culture</p>
+    <div class="cover-logo">
+        <svg width="200" height="46" viewBox="0 0 574 133" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M281.83 73.0185C279.018 71.9936 275.758 70.315 272.5 68.151V27.0461C275.897 27.3143 279.201 28.7766 281.83 31.5942C284.455 28.7782 287.755 27.3162 291.148 27.0461V68.1585C287.892 70.32 284.636 71.996 281.83 73.0185Z" fill="#CE1126"/>
+            <path d="M303.169 31.3003C316.15 44.4053 303.65 59.8599 291.148 68.1585V27.0461C295.389 26.7087 299.774 28.2322 303.169 31.3003Z" fill="#CE1126"/>
+            <path d="M260.49 31.3003C263.884 28.234 268.264 26.7117 272.5 27.0461V68.151C259.997 59.8469 247.517 44.3949 260.49 31.3003Z" fill="#CE1126"/>
+            <path d="M27.9935 78.9967C22.5344 78.9967 17.6848 77.8719 13.4448 75.6224C9.2667 73.4385 5.82282 70.0746 3.5414 65.9491C1.17794 61.7384 -0.00252506 56.757 4.05523e-06 51.0049V49.4553C4.05523e-06 43.7765 1.18047 38.8349 3.5414 34.6305C5.82336 30.5055 9.2671 27.1418 13.4448 24.9573C17.6836 22.7078 22.5332 21.583 27.9935 21.583C33.4539 21.583 38.3041 22.7078 42.5441 24.9573C46.7207 27.1433 50.164 30.5066 52.4475 34.6305C54.8072 38.8337 55.9876 43.7752 55.9889 49.4553V51.0049C55.9889 56.757 54.8084 61.7359 52.4475 65.9416C50.165 70.0662 46.7214 73.4298 42.5441 75.6148C38.3015 77.8694 33.4513 78.9967 27.9935 78.9967Z" fill="#fff"/>
+            <path d="M65.2798 99.5767V23.1219H75.3482V31.3101H77.0098C78.4097 28.8026 80.6037 26.5531 83.5918 24.5615C86.58 22.57 90.7663 21.5742 96.1508 21.5742C100.798 21.5742 105.039 22.68 108.875 24.8916C112.71 27.1032 115.772 30.2934 118.059 34.4624C120.346 38.6352 121.489 43.6299 121.489 49.4465V50.9961C121.489 56.8962 120.346 61.9307 118.059 66.0997C115.773 70.2686 112.711 73.4615 108.875 75.6781C105.039 77.8909 100.798 78.9973 96.1508 78.9973Z" fill="#fff"/>
+            <path d="M155.683 78.9954C150.151 78.9954 145.319 77.8339 141.187 75.5111C137.094 73.2282 133.75 69.8075 131.561 65.6633C129.276 61.4223 128.133 56.4984 128.133 50.8917V49.564C128.133 43.9598 129.276 39.0543 131.563 34.8474C133.746 30.7506 137.045 27.356 141.077 25.0565C145.135 22.7337 149.82 21.5723 155.131 21.5723Z" fill="#fff"/>
+            <path d="M190.203 77.4476V23.1237H200.272V31.6438H201.931Z" fill="#fff"/>
+            <path d="M348.37 78.5008C341.583 78.5008 335.885 76.9512 331.276 73.8519Z" fill="#fff"/>
+            <path d="M424.89 77.4458H416.149V69.5915H414.488Z" fill="#fff"/>
+            <path d="M433.132 77.4467V0H443.423V77.4467H433.132Z" fill="#fff"/>
+            <path d="M472.951 78.4456C468.894 78.4456 465.243 77.5428 461.997 75.7371Z" fill="#fff"/>
+            <path d="M537.242 78.9964C532.802 79.0308 528.432 77.8861 524.579 75.6791Z" fill="#fff"/>
+        </svg>
+    </div>
+    <div class="cover-meta">Abril 2026 · Versión 1.0 · opensalud.com</div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="content">
+
+    <div class="toc">
+        <h2>Índice de contenidos</h2>
+        <ol>
+            <li>Introducción: un incumplimiento masivo con consecuencias graves</li>
+            <li>¿Qué son exactamente los riesgos psicosociales?</li>
+            <li>Marco normativo completo: de la Ley 31/1995 al CT 104/2021</li>
+            <li>Régimen sancionador: cuánto puede costarle a tu empresa</li>
+            <li>Metodologías de evaluación homologadas en España</li>
+            <li>El proceso de evaluación paso a paso</li>
+            <li>Del diagnóstico al plan de acción: cómo traducir resultados en medidas</li>
+            <li>Conclusión y siguientes pasos</li>
+        </ol>
+    </div>
+
+    <!-- 01 -->
+    <h2>01. Introducción: un incumplimiento masivo con consecuencias graves</h2>
+
+    <p>Los riesgos psicosociales constituyen, junto con los riesgos ergonómicos, la principal fuente de daño a la salud en el entorno laboral europeo del siglo XXI. Sin embargo, a pesar de que la legislación española obliga a su evaluación y gestión desde hace más de tres décadas, <strong>la realidad revela un déficit de cumplimiento preocupante</strong>.</p>
+
+    <p>Según datos del Observatorio Estatal de Condiciones de Trabajo (INSST), aproximadamente el <strong>70 % de las empresas españolas carecen de una evaluación de riesgos psicosociales actualizada o no disponen de un plan de acción derivado de la misma</strong>. Esta cifra resulta especialmente alarmante si se considera que la Inspección de Trabajo y Seguridad Social ha intensificado significativamente su actividad fiscalizadora en esta materia desde la publicación del Criterio Técnico 104/2021.</p>
+
+    <p>Para los profesionales de Prevención de Riesgos Laborales, Salud Laboral y People &amp; Culture, la evaluación de riesgos psicosociales no es un ejercicio opcional ni un complemento deseable, sino una <strong>obligación legal inexcusable</strong> cuyo incumplimiento puede generar responsabilidades administrativas, civiles e incluso penales.</p>
+
+    <figure>
+        <img src="img/burnout-oficina.png" alt="El desgaste profesional como manifestación visible de los riesgos psicosociales no gestionados en la empresa" loading="lazy">
+        <figcaption>Fig. 1. El desgaste emocional crónico es una de las consecuencias más frecuentes de la exposición continuada a factores de riesgo psicosocial no evaluados ni controlados.</figcaption>
+    </figure>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span class="number">70 %</span>
+            <span class="label">Empresas sin evaluación psicosocial actualizada</span>
+        </div>
+        <div class="stat-card">
+            <span class="number">52 %</span>
+            <span class="label">Aumento de bajas por salud mental (última década)</span>
+        </div>
+        <div class="stat-card">
+            <span class="number">983.736 €</span>
+            <span class="label">Sanción máxima por infracción muy grave</span>
+        </div>
+    </div>
+
+    <!-- 02 -->
+    <h2>02. ¿Qué son exactamente los riesgos psicosociales?</h2>
+
+    <p>Los riesgos psicosociales se definen como aquellas <strong>condiciones de la organización del trabajo que tienen la capacidad de afectar tanto a la salud física y mental de los trabajadores como al desempeño de su actividad profesional</strong>. A diferencia de los riesgos físicos, químicos o biológicos, los factores psicosociales se derivan de la interacción entre las condiciones organizacionales y las características individuales del trabajador.</p>
+
+    <p>La literatura científica y los organismos internacionales de referencia (OIT, OMS, EU-OSHA) han sistematizado los principales factores de riesgo psicosocial en las siguientes categorías:</p>
+
+    <h3>Factores relativos al contenido del trabajo</h3>
+    <ul>
+        <li><strong>Carga de trabajo y ritmo:</strong> volumen excesivo de tareas, plazos irrealistas, presión temporal constante, imposibilidad de planificar el propio trabajo.</li>
+        <li><strong>Horario de trabajo:</strong> turnos rotativos, nocturnidad, jornadas prolongadas, disponibilidad permanente, vulneración del derecho a la desconexión digital.</li>
+        <li><strong>Monotonía y repetitividad:</strong> tareas que no permiten variedad, aprendizaje ni desarrollo de competencias.</li>
+    </ul>
+
+    <h3>Factores relativos al contexto del trabajo</h3>
+    <ul>
+        <li><strong>Ambigüedad y conflicto de rol:</strong> falta de claridad en las funciones, responsabilidades contradictorias, expectativas no comunicadas.</li>
+        <li><strong>Relaciones interpersonales:</strong> conflictos no resueltos, acoso laboral, falta de apoyo social de compañeros y superiores.</li>
+        <li><strong>Participación y control:</strong> ausencia de autonomía en la toma de decisiones, falta de participación en las cuestiones que afectan al propio trabajo.</li>
+        <li><strong>Cultura organizacional:</strong> estilos de liderazgo autoritarios, comunicación deficiente, clima de desconfianza, inequidad percibida en el trato y las oportunidades.</li>
+    </ul>
+
+    <h3>Factores relativos al empleo</h3>
+    <ul>
+        <li><strong>Inseguridad contractual:</strong> temporalidad excesiva, amenazas de despido, reestructuraciones constantes.</li>
+        <li><strong>Desarrollo profesional:</strong> ausencia de posibilidades de promoción, estancamiento, infrarremuneración percibida.</li>
+        <li><strong>Conciliación trabajo-vida personal:</strong> demandas laborales que invaden la vida personal de forma sistemática.</li>
+    </ul>
+
+    <div class="callout">
+        <p><strong>Diferencia clave:</strong> No deben confundirse los <em>factores psicosociales</em> (condiciones organizativas) con los <em>riesgos psicosociales</em> (probabilidad de que dichas condiciones causen daño). La evaluación debe medir la exposición a los factores y estimar la probabilidad y la severidad del daño.</p>
+    </div>
+
+    <!-- 03 -->
+    <h2>03. Marco normativo completo: de la Ley 31/1995 al CT 104/2021</h2>
+
+    <p>El marco legal que sustenta la obligación de evaluar y gestionar los riesgos psicosociales en España es amplio y cohesionado. Su incumplimiento no admite la excusa de desconocimiento, dado que las obligaciones son explícitas y reiteradas en múltiples normas:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Norma</th>
+                <th>Artículos clave</th>
+                <th>Obligación</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Ley 31/1995 (LPRL)</strong></td>
+                <td>Art. 14, 15, 16</td>
+                <td>Deber de protección eficaz, incluidos los riesgos psicosociales. Obligación de evaluar todos los riesgos y planificar la acción preventiva.</td>
+            </tr>
+            <tr>
+                <td><strong>RD 39/1997 (RSP)</strong></td>
+                <td>Art. 3, 4, 5</td>
+                <td>La evaluación de riesgos debe incluir los factores psicosociales. Obligación de revisar cuando cambien las condiciones de trabajo.</td>
+            </tr>
+            <tr>
+                <td><strong>Directiva 89/391/CEE</strong></td>
+                <td>Art. 5, 6</td>
+                <td>Adaptación del trabajo al trabajador. Principio de acción preventiva integrada.</td>
+            </tr>
+            <tr>
+                <td><strong>LO 3/2018 (LOPDGDD)</strong></td>
+                <td>Art. 88</td>
+                <td>Derecho a la desconexión digital en el ámbito laboral.</td>
+            </tr>
+            <tr>
+                <td><strong>CT 104/2021 (ITSS)</strong></td>
+                <td>Documento completo</td>
+                <td>Criterio de actuación de la Inspección de Trabajo para verificar el cumplimiento en materia de riesgos psicosociales.</td>
+            </tr>
+            <tr>
+                <td><strong>RDL 5/2000 (LISOS)</strong></td>
+                <td>Art. 11, 12, 13</td>
+                <td>Tipificación de infracciones y sanciones (leves, graves y muy graves).</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout warning">
+        <p><strong>Atención al CT 104/2021:</strong> Este criterio técnico de la Inspección de Trabajo ha supuesto un punto de inflexión. Establece de forma explícita que la <strong>ausencia de evaluación de riesgos psicosociales constituye un incumplimiento del artículo 16 de la LPRL</strong>, y detalla los pasos que deben seguir los inspectores para verificar su cumplimiento.</p>
+    </div>
+
+    <!-- 04 -->
+    <h2>04. Régimen sancionador: cuánto puede costarle a tu empresa</h2>
+
+    <p>El Real Decreto Legislativo 5/2000 (LISOS) establece un régimen sancionador graduado que puede aplicarse por incumplimientos en materia de prevención de riesgos psicosociales. Las cuantías se actualizan periódicamente y, en su redacción vigente, se estructuran de la siguiente forma:</p>
+
+    <div class="sanction-scale">
+        <div class="sanction-level low">
+            <span class="type">Leve</span>
+            <span class="amount">751 – 7.501 €</span>
+        </div>
+        <div class="sanction-level medium">
+            <span class="type">Grave</span>
+            <span class="amount">7.502 – 49.180 €</span>
+        </div>
+        <div class="sanction-level high">
+            <span class="type">Muy grave</span>
+            <span class="amount">49.181 – 983.736 €</span>
+        </div>
+    </div>
+
+    <h3>Supuestos más frecuentes de sanción</h3>
+
+    <ul>
+        <li><strong>Ausencia total de evaluación de riesgos psicosociales:</strong> infracción grave (art. 12.1.b LISOS) — sanción de 7.502 a 49.180 €.</li>
+        <li><strong>Evaluación realizada pero sin plan de acción:</strong> infracción grave (art. 12.6 LISOS) — sanción de 7.502 a 49.180 €.</li>
+        <li><strong>No poner a disposición las medidas preventivas tras detectar riesgo grave e inminente:</strong> infracción muy grave (art. 13.9 LISOS) — sanción de 49.181 a 983.736 €.</li>
+        <li><strong>Incumplimiento reiterado tras requerimiento del inspector:</strong> elevación automática del grado de la sanción.</li>
+    </ul>
+
+    <p>Además del régimen administrativo, el incumplimiento puede generar <strong>responsabilidad civil por daños y perjuicios</strong> si un trabajador sufre un daño a su salud mental derivado de riesgos psicosociales no evaluados. En los últimos años, los tribunales del orden social han dictado sentencias con indemnizaciones significativas, superando en numerosos casos los 100.000 euros cuando se acredita negligencia empresarial en la gestión de estos riesgos.</p>
+
+    <figure>
+        <img src="img/dashboard-rotacion.png" alt="Cuadro de mando de indicadores de recursos humanos vinculados a la evaluación de riesgos psicosociales" loading="lazy">
+        <figcaption>Fig. 2. La monitorización continua de indicadores de RRHH permite detectar patrones vinculados a factores de riesgo psicosocial antes de que se materialice el daño.</figcaption>
+    </figure>
+
+    <div class="page-break"></div>
+
+    <!-- 05 -->
+    <h2>05. Metodologías de evaluación homologadas en España</h2>
+
+    <p>La selección de la metodología de evaluación es una decisión técnica que debe fundamentarse en criterios de validez científica, adecuación al contexto organizacional y reconocimiento por parte de la Inspección de Trabajo. Las dos metodologías de referencia en España son:</p>
+
+    <h3>FPSICO 4.1 (INSST)</h3>
+
+    <p>Desarrollada por el Instituto Nacional de Seguridad y Salud en el Trabajo, la herramienta FPSICO es la <strong>metodología de referencia de la administración pública española</strong>. Evalúa nueve factores psicosociales mediante un cuestionario estandarizado de 89 ítems:</p>
+
+    <ol>
+        <li>Tiempo de trabajo (TT)</li>
+        <li>Autonomía (AU)</li>
+        <li>Carga de trabajo (CT)</li>
+        <li>Demandas psicológicas (DP)</li>
+        <li>Variedad y contenido del trabajo (VC)</li>
+        <li>Participación y supervisión (PS)</li>
+        <li>Interés por el trabajador y compensación (ITC)</li>
+        <li>Desempeño de rol (DR)</li>
+        <li>Relaciones y apoyo social (RAS)</li>
+    </ol>
+
+    <p><strong>Ventajas:</strong> gratuita, reconocida por la ITSS, amplia base de datos normativa para comparación. <strong>Limitaciones:</strong> requiere formación técnica para su aplicación e interpretación; los ítems pueden resultar genéricos en contextos organizacionales muy específicos.</p>
+
+    <h3>CoPsoQ-ISTAS21 (versión 3)</h3>
+
+    <p>Adaptación española del Copenhagen Psychosocial Questionnaire, avalada por organismos internacionales. Existe en tres versiones según el tamaño de la empresa:</p>
+
+    <ul>
+        <li><strong>Versión corta:</strong> para empresas de menos de 25 trabajadores.</li>
+        <li><strong>Versión media:</strong> para empresas de 25 a 250 trabajadores.</li>
+        <li><strong>Versión larga:</strong> para investigación y organizaciones complejas.</li>
+    </ul>
+
+    <p><strong>Ventajas:</strong> enfoque participativo (comité tripartito empresa-trabajadores-técnicos), proceso de intervención incorporado. <strong>Limitaciones:</strong> requiere la constitución de un grupo de trabajo tripartito, lo que puede dificultar su implementación en empresas sin representación sindical.</p>
+
+    <div class="callout amber">
+        <p><strong>Criterio de la Inspección:</strong> El CT 104/2021 establece que la metodología utilizada debe ser <strong>«científicamente contrastada y reconocida»</strong>. Tanto FPSICO como CoPsoQ-ISTAS21 cumplen este criterio. El uso de cuestionarios no validados o de elaboración propia puede ser considerado insuficiente por la Inspección de Trabajo.</p>
+    </div>
+
+    <!-- 06 -->
+    <h2>06. El proceso de evaluación paso a paso</h2>
+
+    <p>La evaluación de riesgos psicosociales debe seguir un proceso sistemático que garantice su validez técnica y su aceptación por las partes implicadas. A continuación se detallan las fases fundamentales:</p>
+
+    <h3>Fase 1: Preparación y comunicación</h3>
+    <ul>
+        <li>Informar al Comité de Seguridad y Salud (o a los delegados de prevención) del inicio del proceso.</li>
+        <li>Constituir el grupo de trabajo responsable de pilotar la evaluación.</li>
+        <li>Definir las unidades de análisis (departamentos, centros, turnos) y la muestra de trabajadores.</li>
+        <li>Comunicar a toda la plantilla el objetivo, la metodología y las garantías de anonimato.</li>
+    </ul>
+
+    <h3>Fase 2: Recogida de datos</h3>
+    <ul>
+        <li>Administrar el cuestionario seleccionado (FPSICO o CoPsoQ-ISTAS21) garantizando las condiciones de aplicación: anonimato, voluntariedad informada, tiempo suficiente.</li>
+        <li>Complementar el cuestionario con técnicas cualitativas cuando sea necesario: entrevistas semiestructuradas, grupos focales, observación del puesto.</li>
+        <li>Asegurar una tasa de respuesta mínima del 60 % para garantizar la representatividad de los resultados.</li>
+    </ul>
+
+    <h3>Fase 3: Análisis e interpretación</h3>
+    <ul>
+        <li>Procesar los datos con el software oficial de la herramienta seleccionada.</li>
+        <li>Identificar los factores en situación de exposición desfavorable (riesgo elevado o muy elevado).</li>
+        <li>Analizar las diferencias por unidades de análisis para localizar focos específicos de riesgo.</li>
+        <li>Elaborar el informe técnico de evaluación con los resultados, la valoración del riesgo y las medidas propuestas.</li>
+    </ul>
+
+    <h3>Fase 4: Plan de acción preventiva</h3>
+    <ul>
+        <li>Definir medidas correctoras y preventivas para cada factor en situación de riesgo.</li>
+        <li>Priorizar las actuaciones en función de la severidad del riesgo y su viabilidad.</li>
+        <li>Asignar responsables, plazos y recursos a cada medida.</li>
+        <li>Integrar el plan de acción en la planificación preventiva general de la empresa.</li>
+    </ul>
+
+    <h3>Fase 5: Seguimiento y revisión</h3>
+    <ul>
+        <li>Verificar la implementación efectiva de las medidas planificadas.</li>
+        <li>Evaluar la eficacia de las intervenciones mediante indicadores de seguimiento.</li>
+        <li>Reevaluar los riesgos psicosociales con la periodicidad establecida (recomendado: cada 2-3 años o cuando se produzcan cambios organizacionales significativos).</li>
+    </ul>
+
+    <figure>
+        <img src="img/sesion-bienestar.png" alt="Sesión de trabajo participativa para la identificación de factores de riesgo psicosocial por parte del grupo de trabajo" loading="lazy">
+        <figcaption>Fig. 3. El enfoque participativo en la evaluación de riesgos psicosociales mejora la calidad del diagnóstico y el compromiso con las medidas correctoras.</figcaption>
+    </figure>
+
+    <!-- 07 -->
+    <h2>07. Del diagnóstico al plan de acción: cómo traducir resultados en medidas</h2>
+
+    <p>El valor de la evaluación de riesgos psicosociales no reside en el informe en sí, sino en las <strong>medidas correctoras y preventivas que se derivan de sus conclusiones</strong>. La Inspección de Trabajo verifica específicamente la existencia y calidad del plan de acción. A continuación se presentan ejemplos de medidas organizativas vinculadas a los factores de riesgo más frecuentes:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Factor de riesgo</th>
+                <th>Medida preventiva</th>
+                <th>Indicador de seguimiento</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Carga de trabajo excesiva</td>
+                <td>Análisis de distribución de tareas, redimensionamiento de plantilla, establecimiento de límites de carga</td>
+                <td>Horas extra realizadas, encuesta de carga percibida</td>
+            </tr>
+            <tr>
+                <td>Ambigüedad de rol</td>
+                <td>Descripción de puestos actualizada, manual de funciones, reuniones de clarificación de objetivos</td>
+                <td>Resultado del factor «Desempeño de rol» en reevaluación</td>
+            </tr>
+            <tr>
+                <td>Falta de autonomía</td>
+                <td>Delegación efectiva, participación en decisiones del puesto, flexibilidad horaria</td>
+                <td>Resultado del factor «Autonomía», encuestas de satisfacción</td>
+            </tr>
+            <tr>
+                <td>Conflicto interpersonal</td>
+                <td>Protocolo de gestión de conflictos, mediación profesional, formación en comunicación</td>
+                <td>N.º de conflictos reportados, clima percibido</td>
+            </tr>
+            <tr>
+                <td>Falta de reconocimiento</td>
+                <td>Sistema de feedback constructivo, política de reconocimiento formal, desarrollo profesional</td>
+                <td>eNPS, rotación voluntaria, factor «ITC» en reevaluación</td>
+            </tr>
+            <tr>
+                <td>Inseguridad contractual</td>
+                <td>Políticas de estabilización del empleo, comunicación transparente sobre planes de empresa</td>
+                <td>% de contratos indefinidos, encuesta de percepción</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout">
+        <p><strong>Requisito legal:</strong> El plan de acción debe incluir, como mínimo: la descripción de cada medida, el responsable de su implementación, el plazo de ejecución y el indicador de seguimiento. La ausencia de alguno de estos elementos puede ser considerada una deficiencia por la Inspección de Trabajo.</p>
+    </div>
+
+    <figure>
+        <img src="img/reunion-onetoone.png" alt="Profesionales de PRL en sesión de trabajo para el diseño del plan de acción preventiva frente a riesgos psicosociales" loading="lazy">
+        <figcaption>Fig. 4. El diseño del plan de acción debe involucrar a los responsables operacionales para garantizar la viabilidad y el compromiso con su implementación.</figcaption>
+    </figure>
+
+    <hr>
+
+    <!-- 08 -->
+    <h2>08. Conclusión y siguientes pasos</h2>
+
+    <p>La evaluación de riesgos psicosociales no es un trámite burocrático, sino una herramienta de gestión organizacional con un doble retorno: jurídico (protección frente a sanciones y responsabilidades) y estratégico (mejora del rendimiento, el clima y la retención del talento). Las organizaciones que abordan esta obligación con rigor metodológico y compromiso directivo transforman un requisito legal en una ventaja competitiva.</p>
+
+    <p>Si tu empresa aún no dispone de una evaluación de riesgos psicosociales actualizada, o si la evaluación existente carece de un plan de acción formal, el momento de actuar es ahora. El endurecimiento de la actividad inspectora y la creciente conciencia social sobre la salud mental en el trabajo hacen que el coste de la inacción sea cada vez más elevado.</p>
+
+    <div class="cta-block no-print">
+        <h3>¿Tu empresa cumple con la evaluación de riesgos psicosociales?</h3>
+        <p>Descúbrelo con nuestra auditoría gratuita de bienestar corporativo. Evalúa el nivel de madurez de tu organización en 3 minutos y recibe un informe personalizado con recomendaciones.</p>
+        <a href="../landing_diagnostico_b2b.html">Realizar Auditoría de Cumplimiento →</a>
+    </div>
+
+    <div class="about">
+        <h3>Sobre OpenSalud</h3>
+        <p>OpenSalud es una plataforma especializada en bienestar corporativo integral que ayuda a las organizaciones a evaluar, implementar y medir programas de salud mental basados en evidencia científica. Nuestro enfoque combina tecnología de evaluación continua con intervenciones profesionales, proporcionando a los departamentos de PRL y People &amp; Culture las herramientas necesarias para cumplir con la normativa y proteger la salud emocional de sus equipos.</p>
+        <p style="margin-bottom: 0;"><strong>Contacto:</strong> opensalud.com · info@opensalud.com</p>
+    </div>
+
+    <div class="references">
+        <h3>Referencias normativas y bibliográficas</h3>
+        <ol>
+            <li>Ley 31/1995, de 8 de noviembre, de Prevención de Riesgos Laborales. BOE núm. 269.</li>
+            <li>Real Decreto 39/1997, de 17 de enero, Reglamento de los Servicios de Prevención. BOE núm. 27.</li>
+            <li>Real Decreto Legislativo 5/2000, por el que se aprueba el texto refundido de la LISOS.</li>
+            <li>Criterio Técnico 104/2021 de la Inspección de Trabajo y Seguridad Social. Actuaciones de la ITSS en riesgos psicosociales.</li>
+            <li>Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD).</li>
+            <li>Directiva 89/391/CEE del Consejo, de 12 de junio, relativa a la aplicación de medidas para la seguridad y salud de los trabajadores.</li>
+            <li>Instituto Nacional de Seguridad y Salud en el Trabajo (INSST). <em>FPSICO 4.1: Manual de aplicación</em>.</li>
+            <li>ISTAS-CCOO (2021). <em>CoPsoQ-ISTAS21 versión 3: guía de uso</em>.</li>
+            <li>Observatorio Estatal de Condiciones de Trabajo. <em>Encuesta Nacional de Condiciones de Trabajo 2025</em>.</li>
+            <li>EU-OSHA (2024). <em>Psychosocial risks in Europe: prevalence and prevention strategies</em>.</li>
+        </ol>
+    </div>
+</div>
+
+<div class="doc-footer">
+    <p>&copy; 2026 OpenSalud. Todos los derechos reservados. Este documento es propiedad intelectual de OpenSalud y se distribuye con fines informativos y educativos.</p>
+    <p>opensalud.com</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursos gratuitos sobre salud mental corporativa | open❤salud</title>
+    <meta name="description" content="Descarga gratis nuestras guías profesionales sobre burnout corporativo, riesgos psicosociales y ROI del bienestar emocional. Para departamentos de PRL, Salud Laboral y People & Culture.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-50: #eff0fe;
+            --brand-100: #e0e2fd;
+            --brand-200: #c7cbfa;
+            --brand-500: #645be9;
+            --brand-600: #523cdb;
+            --brand-700: #442dbd;
+            --brand-800: #382699;
+            --brand-900: #32227a;
+            --brand-950: #3238c4;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: #1f2937;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--brand-900) 0%, var(--brand-600) 50%, var(--brand-950) 100%);
+            color: #fff;
+            padding: 80px 24px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-logo { margin-bottom: 32px; }
+        .hero-logo svg { width: 180px; height: auto; }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 100px;
+            padding: 6px 20px;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(28px, 4vw, 44px);
+            font-weight: 800;
+            max-width: 700px;
+            margin: 0 auto 16px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            max-width: 560px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Cards */
+        .cards-section {
+            max-width: 1100px;
+            margin: -40px auto 60px;
+            padding: 0 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: #fff;
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+        }
+
+        .card-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-tag.burnout { background: #fef2f2; color: #991b1b; }
+        .card-tag.legal { background: #eff0fe; color: var(--brand-800); }
+        .card-tag.roi { background: #ecfdf5; color: #065f46; }
+
+        .card-header {
+            padding: 28px 28px 0;
+        }
+
+        .card-body {
+            padding: 20px 28px 28px;
+        }
+
+        .card h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #111827;
+            margin-top: 12px;
+            line-height: 1.35;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #6b7280;
+            line-height: 1.7;
+            margin-top: 12px;
+        }
+
+        .card-features {
+            list-style: none;
+            margin: 16px 0 0;
+            padding: 0;
+        }
+
+        .card-features li {
+            font-size: 13px;
+            color: #374151;
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .card-features li::before {
+            content: '✓';
+            color: var(--brand-600);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .card-cta {
+            display: block;
+            text-align: center;
+            background: var(--brand-600);
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px;
+            padding: 14px;
+            text-decoration: none;
+            border-radius: 10px;
+            margin: 20px 28px 28px;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .card-cta:hover {
+            background: var(--brand-700);
+            transform: translateY(-1px);
+        }
+
+        /* Form Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: #fff;
+            border-radius: 20px;
+            max-width: 480px;
+            width: 90%;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+            animation: modalIn 0.3s ease;
+        }
+
+        @keyframes modalIn {
+            from { opacity: 0; transform: scale(0.95) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #f3f4f6;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6b7280;
+            transition: background 0.2s;
+        }
+
+        .modal-close:hover { background: #e5e7eb; }
+
+        .modal h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .modal .modal-subtitle {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #d1d5db;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: var(--brand-500);
+            box-shadow: 0 0 0 3px rgba(100,91,233,0.15);
+        }
+
+        .phone-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .phone-group select {
+            width: 110px;
+            flex-shrink: 0;
+        }
+
+        .form-checkbox {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .form-checkbox input {
+            margin-top: 3px;
+            width: 16px;
+            height: 16px;
+            accent-color: var(--brand-600);
+        }
+
+        .form-checkbox span {
+            font-size: 12px;
+            color: #6b7280;
+            line-height: 1.5;
+        }
+
+        .form-submit {
+            width: 100%;
+            background: #111827;
+            color: #fff;
+            font-weight: 700;
+            font-size: 16px;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        .form-submit:hover {
+            background: #000;
+            transform: translateY(-1px);
+        }
+
+        /* Thank you */
+        .thank-you {
+            display: none;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .thank-you.active { display: block; }
+
+        .thank-you .icon {
+            width: 64px;
+            height: 64px;
+            background: #ecfdf5;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 16px;
+            font-size: 28px;
+        }
+
+        .thank-you h3 {
+            font-size: 22px;
+            font-weight: 800;
+            color: #111827;
+            margin-bottom: 8px;
+        }
+
+        .thank-you p {
+            font-size: 14px;
+            color: #6b7280;
+            margin-bottom: 20px;
+        }
+
+        .thank-you a {
+            display: inline-block;
+            background: var(--brand-600);
+            color: #fff;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .thank-you a:hover { background: var(--brand-700); }
+
+        /* Trust */
+        .trust {
+            text-align: center;
+            padding: 48px 24px;
+            background: #f9fafb;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        .trust p {
+            font-size: 13px;
+            color: #9ca3af;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .trust-features {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .trust-feature {
+            font-size: 14px;
+            color: #6b7280;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .trust-feature svg { width: 18px; height: 18px; color: var(--brand-600); }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 24px;
+            font-size: 13px;
+            color: #9ca3af;
+            border-top: 1px solid #e5e7eb;
+        }
+
+        footer a {
+            color: var(--brand-600);
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .cards-grid { grid-template-columns: 1fr; }
+            .hero { padding: 60px 20px 40px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="hero">
+    <div class="hero-logo">
+        <svg width="180" height="42" viewBox="0 0 574 133" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M281.83 73.0185C279.018 71.9936 275.758 70.315 272.5 68.151V27.0461C275.897 27.3143 279.201 28.7766 281.83 31.5942C284.455 28.7782 287.755 27.3162 291.148 27.0461V68.1585C287.892 70.32 284.636 71.996 281.83 73.0185Z" fill="#CE1126"/>
+            <path d="M303.169 31.3003C316.15 44.4053 303.65 59.8599 291.148 68.1585V27.0461C295.389 26.7087 299.774 28.2322 303.169 31.3003Z" fill="#CE1126"/>
+            <path d="M260.49 31.3003C263.884 28.234 268.264 26.7117 272.5 27.0461V68.151C259.997 59.8469 247.517 44.3949 260.49 31.3003Z" fill="#CE1126"/>
+            <path d="M27.9935 78.9967C22.5344 78.9967 17.6848 77.8719 13.4448 75.6224C9.2667 73.4385 5.82282 70.0746 3.5414 65.9491C1.17794 61.7384 -0.00252506 56.757 4.05523e-06 51.0049V49.4553C4.05523e-06 43.7765 1.18047 38.8349 3.5414 34.6305C5.82336 30.5055 9.2671 27.1418 13.4448 24.9573C17.6836 22.7078 22.5332 21.583 27.9935 21.583C33.4539 21.583 38.3041 22.7078 42.5441 24.9573C46.7207 27.1433 50.164 30.5066 52.4475 34.6305C54.8072 38.8337 55.9876 43.7752 55.9889 49.4553V51.0049C55.9889 56.757 54.8084 61.7359 52.4475 65.9416C50.165 70.0662 46.7214 73.4298 42.5441 75.6148C38.3015 77.8694 33.4513 78.9967 27.9935 78.9967Z" fill="#fff"/>
+            <path d="M65.2798 99.5767V23.1219H75.3482V31.3101H77.0098C78.4097 28.8026 80.6037 26.5531 83.5918 24.5615C86.58 22.57 90.7663 21.5742 96.1508 21.5742C100.798 21.5742 105.039 22.68 108.875 24.8916C112.71 27.1032 115.772 30.2934 118.059 34.4624C120.346 38.6352 121.489 43.6299 121.489 49.4465V50.9961C121.489 56.8962 120.346 61.9307 118.059 66.0997C115.773 70.2686 112.711 73.4615 108.875 75.6781C105.039 77.8909 100.798 78.9973 96.1508 78.9973Z" fill="#fff"/>
+            <path d="M155.683 78.9954C150.151 78.9954 145.319 77.8339 141.187 75.5111C137.094 73.2282 133.75 69.8075 131.561 65.6633C129.276 61.4223 128.133 56.4984 128.133 50.8917V49.564Z" fill="#fff"/>
+            <path d="M190.203 77.4476V23.1237H200.272V31.6438H201.931Z" fill="#fff"/>
+            <path d="M348.37 78.5008C341.583 78.5008 335.885 76.9512 331.276 73.8519Z" fill="#fff"/>
+            <path d="M424.89 77.4458H416.149V69.5915H414.488Z" fill="#fff"/>
+            <path d="M433.132 77.4467V0H443.423V77.4467H433.132Z" fill="#fff"/>
+            <path d="M472.951 78.4456C468.894 78.4456 465.243 77.5428 461.997 75.7371Z" fill="#fff"/>
+            <path d="M537.242 78.9964C532.802 79.0308 528.432 77.8861 524.579 75.6791Z" fill="#fff"/>
+        </svg>
+    </div>
+    <span class="hero-badge">Recursos gratuitos para profesionales</span>
+    <h1>Guías profesionales sobre salud mental en la empresa</h1>
+    <p>Contenido de alto valor para departamentos de Prevención de Riesgos Laborales, Salud Laboral y People &amp; Culture. Descárgalas gratis.</p>
+</div>
+
+<!-- Cards -->
+<div class="cards-section">
+    <div class="cards-grid">
+
+        <!-- Card 1: Burnout -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-tag burnout">Burnout</span>
+                <h2>Burnout corporativo: guía para prevenir la fuga de talento</h2>
+            </div>
+            <div class="card-body">
+                <p>Estrategias basadas en evidencia científica para detectar, prevenir y gestionar el síndrome de desgaste profesional. Plan de acción en 4 fases.</p>
+                <ul class="card-features">
+                    <li>Definición clínica OMS (CIE-11) y marco legal</li>
+                    <li>Impacto económico cuantificado</li>
+                    <li>3 niveles de intervención con evidencia</li>
+                    <li>Plan de acción para PRL y People &amp; Culture</li>
+                </ul>
+            </div>
+            <a href="#" class="card-cta" onclick="openModal('burnout')">Descargar guía gratuita →</a>
+        </div>
+
+        <!-- Card 2: Riesgos -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-tag legal">Cumplimiento legal</span>
+                <h2>Riesgos psicosociales: la obligación legal que el 70 % incumple</h2>
+            </div>
+            <div class="card-body">
+                <p>Marco normativo completo, régimen sancionador y metodologías homologadas para la evaluación de riesgos psicosociales en España.</p>
+                <ul class="card-features">
+                    <li>Ley 31/1995 y CT 104/2021 detallados</li>
+                    <li>Sanciones de hasta 983.736 €</li>
+                    <li>FPSICO vs CoPsoQ-ISTAS21 comparados</li>
+                    <li>Proceso de evaluación paso a paso</li>
+                </ul>
+            </div>
+            <a href="#" class="card-cta" onclick="openModal('riesgos')">Descargar guía gratuita →</a>
+        </div>
+
+        <!-- Card 3: ROI -->
+        <div class="card">
+            <div class="card-header">
+                <span class="card-tag roi">Estrategia</span>
+                <h2>Cómo medir el ROI del bienestar emocional: KPIs para dirección</h2>
+            </div>
+            <div class="card-body">
+                <p>Métricas, fórmulas y modelos de cálculo para construir un business case sólido que obtenga la aprobación presupuestaria del comité de dirección.</p>
+                <ul class="card-features">
+                    <li>8 KPIs esenciales con benchmarks</li>
+                    <li>Modelo de cálculo del ROI con fórmulas</li>
+                    <li>Simulación para empresa de 200 empleados</li>
+                    <li>Estructura del business case</li>
+                </ul>
+            </div>
+            <a href="#" class="card-cta" onclick="openModal('roi')">Descargar guía gratuita →</a>
+        </div>
+
+    </div>
+</div>
+
+<!-- Trust -->
+<div class="trust">
+    <p>Más de 500 profesionales ya han descargado nuestras guías</p>
+    <div class="trust-features">
+        <span class="trust-feature">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            100 % gratuito
+        </span>
+        <span class="trust-feature">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+            Datos protegidos (RGPD)
+        </span>
+        <span class="trust-feature">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+            Contenido profesional verificado
+        </span>
+        <span class="trust-feature">
+            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            Sin spam, jamás
+        </span>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal-overlay" id="downloadModal">
+    <div class="modal">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+
+        <!-- Form -->
+        <div id="modalForm">
+            <h3 id="modalTitle">Descarga tu guía gratuita</h3>
+            <p class="modal-subtitle" id="modalSubtitle">Completa tus datos profesionales y te la enviaremos al instante.</p>
+
+            <form id="leadForm" onsubmit="submitLeadForm(event)">
+                <input type="hidden" name="guia_solicitada" id="guiaSolicitada" value="">
+                <input type="hidden" name="source" value="landing-recursos-linkedin">
+
+                <div class="form-group">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre_profesional" required placeholder="Tu nombre">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email corporativo</label>
+                    <input type="email" id="email" name="email" required placeholder="tu@empresa.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="empresa">Empresa</label>
+                    <input type="text" id="empresa" name="empresa" required placeholder="Nombre de tu empresa">
+                </div>
+
+                <div class="form-group">
+                    <label for="cargo">Cargo / departamento</label>
+                    <input type="text" id="cargo" name="cargo" required placeholder="Ej: Responsable de PRL">
+                </div>
+
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <div class="phone-group">
+                        <select name="country_code">
+                            <option value="+34">🇪🇸 +34</option>
+                            <option value="+52">🇲🇽 +52</option>
+                            <option value="+54">🇦🇷 +54</option>
+                            <option value="+56">🇨🇱 +56</option>
+                            <option value="+57">🇨🇴 +57</option>
+                            <option value="+1">🇺🇸 +1</option>
+                        </select>
+                        <input type="tel" name="phone" required placeholder="600 000 000">
+                    </div>
+                </div>
+
+                <div class="form-checkbox">
+                    <input type="checkbox" required id="privacidad">
+                    <span>Acepto la <a href="#" style="color:var(--brand-600)">Política de Privacidad</a> de OpenSalud. Respetamos tus datos y jamás enviaremos spam.</span>
+                </div>
+
+                <button type="submit" class="form-submit">Enviar y descargar guía →</button>
+            </form>
+        </div>
+
+        <!-- Thank you -->
+        <div class="thank-you" id="thankYou">
+            <div class="icon">✅</div>
+            <h3>¡Guía en camino!</h3>
+            <p>Te hemos enviado la guía a tu email corporativo. Revisa tu bandeja de entrada (y la carpeta de spam, por si acaso).</p>
+            <a href="landing_diagnostico_b2b.html">Realizar Auditoría Gratuita 360 →</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2026 OpenSalud. Todos los derechos reservados. <a href="#">Política de Privacidad</a></p>
+</footer>
+
+<script>
+    const guiaNames = {
+        burnout: 'Burnout corporativo: guía para prevenir la fuga de talento',
+        riesgos: 'Riesgos psicosociales: la obligación legal que el 70% incumple',
+        roi: 'Cómo medir el ROI del bienestar emocional'
+    };
+
+    function openModal(guia) {
+        document.getElementById('guiaSolicitada').value = guiaNames[guia] || guia;
+        document.getElementById('modalTitle').textContent = 'Descarga: ' + (guiaNames[guia] || 'Guía gratuita');
+        document.getElementById('downloadModal').classList.add('active');
+        document.getElementById('modalForm').style.display = 'block';
+        document.getElementById('thankYou').classList.remove('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        document.getElementById('downloadModal').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    document.getElementById('downloadModal').addEventListener('click', function(e) {
+        if (e.target === this) closeModal();
+    });
+
+    function submitLeadForm(e) {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+
+        // Send to n8n webhook
+        fetch('https://n8n.4ventures.es/webhook/opensalud-leadmagnet', {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+        }).catch(err => console.warn('Fetch error:', err));
+
+        // Show thank you
+        document.getElementById('modalForm').style.display = 'none';
+        document.getElementById('thankYou').classList.add('active');
+    }
+</script>
+
+</body>
+</html>

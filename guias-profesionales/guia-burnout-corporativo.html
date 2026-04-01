@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burnout corporativo: guía para prevenir la fuga de talento | open❤salud</title>
+    <meta name="description" content="Guía profesional sobre el síndrome de burnout en el entorno laboral. Estrategias basadas en evidencia para departamentos de PRL, Salud Laboral y People & Culture.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-50: #eff0fe;
+            --brand-100: #e0e2fd;
+            --brand-200: #c7cbfa;
+            --brand-500: #645be9;
+            --brand-600: #523cdb;
+            --brand-700: #442dbd;
+            --brand-800: #382699;
+            --brand-900: #32227a;
+            --brand-950: #3238c4;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --red-600: #dc2626;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: var(--gray-800);
+            line-height: 1.8;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        @media print {
+            body { font-size: 12pt; }
+            .no-print { display: none !important; }
+            .page-break { page-break-before: always; }
+            .cover { min-height: 100vh; }
+        }
+
+        /* Cover */
+        .cover {
+            min-height: 90vh;
+            background: linear-gradient(135deg, var(--brand-900) 0%, var(--brand-600) 50%, var(--brand-950) 100%);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cover::after {
+            content: '';
+            position: absolute;
+            bottom: -40%;
+            left: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cover-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 100px;
+            padding: 8px 24px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cover h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(32px, 5vw, 52px);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 24px;
+            max-width: 700px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover .subtitle {
+            font-size: clamp(16px, 2.5vw, 20px);
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 550px;
+            line-height: 1.6;
+            margin-bottom: 48px;
+        }
+
+        .cover-logo svg { width: 200px; height: auto; }
+
+        .cover-meta {
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        /* Content */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        /* TOC */
+        .toc {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 48px;
+        }
+
+        .toc h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 22px;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+        }
+
+        .toc ol {
+            list-style: none;
+            counter-reset: toc;
+        }
+
+        .toc ol li {
+            counter-increment: toc;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-200);
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        .toc ol li:last-child { border-bottom: none; }
+
+        .toc ol li::before {
+            content: "0" counter(toc) ".";
+            color: var(--brand-600);
+            font-weight: 700;
+            margin-right: 12px;
+            font-size: 14px;
+        }
+
+        /* Headings */
+        h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 28px;
+            color: var(--gray-900);
+            margin-top: 56px;
+            margin-bottom: 20px;
+            line-height: 1.35;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: var(--brand-700);
+            margin-top: 36px;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+
+        p {
+            margin-bottom: 18px;
+            color: var(--gray-700);
+        }
+
+        strong { color: var(--gray-900); }
+
+        /* Figures */
+        figure {
+            margin: 36px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+
+        figure img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        figcaption {
+            padding: 12px 20px;
+            background: var(--gray-50);
+            font-size: 13px;
+            color: var(--gray-500);
+            font-style: italic;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        /* Callouts */
+        .callout {
+            background: var(--brand-50);
+            border-left: 4px solid var(--brand-600);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 32px 0;
+        }
+
+        .callout.warning {
+            background: #fef2f2;
+            border-left-color: var(--red-600);
+        }
+
+        .callout p { margin-bottom: 0; color: var(--gray-800); }
+
+        .callout strong { color: var(--brand-900); }
+
+        .callout.warning strong { color: #991b1b; }
+
+        /* Stats grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        .stat-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--brand-600);
+            display: block;
+        }
+
+        .stat-card .label {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-top: 4px;
+            display: block;
+        }
+
+        /* Lists */
+        ul, ol {
+            margin: 16px 0 24px 20px;
+            color: var(--gray-700);
+        }
+
+        li { margin-bottom: 8px; }
+
+        /* Separator */
+        hr {
+            border: none;
+            border-top: 1px solid var(--gray-200);
+            margin: 48px 0;
+        }
+
+        /* CTA Block */
+        .cta-block {
+            background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-950) 100%);
+            color: #fff;
+            border-radius: 16px;
+            padding: 48px 40px;
+            text-align: center;
+            margin: 48px 0;
+        }
+
+        .cta-block h3 {
+            color: #fff;
+            font-family: 'Merriweather', serif;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .cta-block p {
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 24px;
+        }
+
+        .cta-block a {
+            display: inline-block;
+            background: #fff;
+            color: var(--brand-700);
+            font-weight: 700;
+            padding: 14px 36px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-block a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* About */
+        .about {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 36px;
+            margin-top: 48px;
+        }
+
+        .about h3 {
+            color: var(--gray-900);
+            margin-top: 0;
+        }
+
+        /* Footer */
+        .doc-footer {
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 13px;
+            color: var(--gray-500);
+            border-top: 1px solid var(--gray-200);
+            margin-top: 48px;
+        }
+
+        /* References */
+        .references {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-top: 32px;
+        }
+
+        .references h3 {
+            color: var(--gray-700);
+            font-size: 16px;
+        }
+
+        .references ol { color: var(--gray-500); }
+
+        /* Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 14px;
+        }
+
+        thead th {
+            background: var(--brand-600);
+            color: #fff;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        thead th:first-child { border-radius: 8px 0 0 0; }
+        thead th:last-child { border-radius: 0 8px 0 0; }
+
+        tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        tbody tr:nth-child(even) { background: var(--gray-50); }
+
+        @media (max-width: 640px) {
+            .cover { padding: 40px 24px; }
+            .content { padding: 40px 20px; }
+            h2 { font-size: 24px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .toc, .about, .cta-block { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="cover">
+    <span class="cover-badge">Guía profesional · OpenSalud 2026</span>
+    <h1>Burnout corporativo: guía para prevenir la fuga de talento</h1>
+    <p class="subtitle">Estrategias basadas en evidencia científica para departamentos de Prevención de Riesgos Laborales, Salud Laboral y People &amp; Culture</p>
+    <div class="cover-logo">
+        <svg width="200" height="46" viewBox="0 0 574 133" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M281.83 73.0185C279.018 71.9936 275.758 70.315 272.5 68.151V27.0461C275.897 27.3143 279.201 28.7766 281.83 31.5942C284.455 28.7782 287.755 27.3162 291.148 27.0461V68.1585C287.892 70.32 284.636 71.996 281.83 73.0185Z" fill="#CE1126"/>
+            <path d="M303.169 31.3003C316.15 44.4053 303.65 59.8599 291.148 68.1585V27.0461C295.389 26.7087 299.774 28.2322 303.169 31.3003Z" fill="#CE1126"/>
+            <path d="M260.49 31.3003C263.884 28.234 268.264 26.7117 272.5 27.0461V68.151C259.997 59.8469 247.517 44.3949 260.49 31.3003Z" fill="#CE1126"/>
+            <path d="M27.9935 78.9967C22.5344 78.9967 17.6848 77.8719 13.4448 75.6224C9.2667 73.4385 5.82282 70.0746 3.5414 65.9491C1.17794 61.7384 -0.00252506 56.757 4.05523e-06 51.0049V49.4553C4.05523e-06 43.7765 1.18047 38.8349 3.5414 34.6305C5.82336 30.5055 9.2671 27.1418 13.4448 24.9573C17.6836 22.7078 22.5332 21.583 27.9935 21.583C33.4539 21.583 38.3041 22.7078 42.5441 24.9573C46.7207 27.1433 50.164 30.5066 52.4475 34.6305C54.8072 38.8337 55.9876 43.7752 55.9889 49.4553V51.0049C55.9889 56.757 54.8084 61.7359 52.4475 65.9416C50.165 70.0662 46.7214 73.4298 42.5441 75.6148C38.3015 77.8694 33.4513 78.9967 27.9935 78.9967Z" fill="#fff"/>
+            <path d="M65.2798 99.5767V23.1219H75.3482V31.3101H77.0098C78.4097 28.8026 80.6037 26.5531 83.5918 24.5615C86.58 22.57 90.7663 21.5742 96.1508 21.5742C100.798 21.5742 105.039 22.68 108.875 24.8916C112.71 27.1032 115.772 30.2934 118.059 34.4624C120.346 38.6352 121.489 43.6299 121.489 49.4465V50.9961C121.489 56.8962 120.346 61.9307 118.059 66.0997C115.773 70.2686 112.711 73.4615 108.875 75.6781C105.039 77.8909 100.798 78.9973 96.1508 78.9973Z" fill="#fff"/>
+            <path d="M155.683 78.9954C150.151 78.9954 145.319 77.8339 141.187 75.5111C137.094 73.2282 133.75 69.8075 131.561 65.6633C129.276 61.4223 128.133 56.4984 128.133 50.8917V49.564C128.133 43.9598 129.276 39.0543 131.563 34.8474C133.746 30.7506 137.045 27.356 141.077 25.0565C145.135 22.7337 149.82 21.5723 155.131 21.5723Z" fill="#fff"/>
+            <path d="M190.203 77.4476V23.1237H200.272V31.6438H201.931C203.038 29.2842 204.956 27.1081 207.686 25.1153C210.416 23.1224 214.473 22.1267 219.856 22.1279C223.912 22.1279 227.563 23.0314 230.811 24.8383C234.045 26.6363 236.695 29.3249 238.445 32.5845C240.289 35.9417 241.211 39.9798 241.211 44.6989V77.4476H230.921V45.4727Z" fill="#fff"/>
+            <path d="M348.37 78.5008C341.583 78.5008 335.885 76.9512 331.276 73.8519C326.666 70.7527 323.884 65.9957 322.93 59.581L332.666 57.2557C333.182 60.5041 334.194 63.0489 335.701 64.8899Z" fill="#fff"/>
+            <path d="M424.89 77.4458H416.149V69.5915H414.488C413.898 70.7725 412.958 72.1186 411.667 73.6296C410.376 75.1407 408.569 76.4127 406.246 77.4458Z" fill="#fff"/>
+            <path d="M433.132 77.4467V0H443.423V77.4467H433.132Z" fill="#fff"/>
+            <path d="M472.951 78.4456C468.894 78.4456 465.243 77.5428 461.997 75.7371C458.754 73.9323 456.088 71.2468 454.307 67.9909Z" fill="#fff"/>
+            <path d="M537.242 78.9964C532.802 79.0308 528.432 77.8861 524.579 75.6791C520.705 73.4662 517.626 70.2766 515.341 66.1101Z" fill="#fff"/>
+        </svg>
+    </div>
+    <div class="cover-meta">Abril 2026 · Versión 1.0 · opensalud.com</div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="content">
+
+    <!-- Índice -->
+    <div class="toc">
+        <h2>Índice de contenidos</h2>
+        <ol>
+            <li>Introducción: el coste invisible del desgaste profesional</li>
+            <li>El burnout como riesgo psicosocial: definición clínica y marco legal</li>
+            <li>Impacto económico y organizacional del burnout</li>
+            <li>Señales de alerta: cómo detectar el burnout antes de que sea tarde</li>
+            <li>Estrategias de intervención basadas en evidencia</li>
+            <li>El papel del liderazgo en la prevención</li>
+            <li>Plan de acción para departamentos de PRL y People &amp; Culture</li>
+            <li>Conclusión y siguientes pasos</li>
+        </ol>
+    </div>
+
+    <!-- 01 -->
+    <h2>01. Introducción: el coste invisible del desgaste profesional</h2>
+
+    <p>En el contexto empresarial contemporáneo, el <strong>síndrome de desgaste profesional</strong> —conocido internacionalmente como <em>burnout</em>— se ha consolidado como uno de los desafíos más acuciantes para la gestión del capital humano. La Organización Mundial de la Salud (OMS) lo incluyó oficialmente en la Clasificación Internacional de Enfermedades (CIE-11) en 2019, definiéndolo como un «síndrome resultante del estrés laboral crónico que no ha sido gestionado con éxito».</p>
+
+    <p>Las cifras son contundentes. Según el informe <em>State of the Global Workplace 2025</em> de Gallup, el 44 % de los trabajadores a nivel mundial declaran experimentar estrés significativo en su jornada laboral. En España, los datos del Instituto Nacional de Seguridad y Salud en el Trabajo (INSST) revelan que <strong>las bajas laborales por trastornos mentales han aumentado un 52 % en la última década</strong>, situándose como la segunda causa de incapacidad temporal tras las patologías musculoesqueléticas.</p>
+
+    <p>Para los departamentos de Prevención de Riesgos Laborales, Salud Laboral y People &amp; Culture, comprender, detectar y prevenir el burnout no es únicamente una responsabilidad ética, sino una obligación legal conforme a la Ley 31/1995 de Prevención de Riesgos Laborales y una necesidad estratégica para la sostenibilidad de la organización.</p>
+
+    <figure>
+        <img src="img/burnout-oficina.png" alt="Profesional experimentando síntomas de agotamiento laboral en entorno corporativo" loading="lazy">
+        <figcaption>Fig. 1. El agotamiento profesional crónico afecta a la capacidad cognitiva, la toma de decisiones y la calidad del trabajo.</figcaption>
+    </figure>
+
+    <div class="callout warning">
+        <p><strong>Dato clave:</strong> Según la Agencia Europea para la Seguridad y la Salud en el Trabajo (EU-OSHA), el estrés laboral es responsable del 50-60 % del total de jornadas laborales perdidas en la Unión Europea, con un coste estimado de 240.000 millones de euros anuales.</p>
+    </div>
+
+    <!-- 02 -->
+    <h2>02. El burnout como riesgo psicosocial: definición clínica y marco legal</h2>
+
+    <h3>Definición clínica según la OMS (CIE-11)</h3>
+
+    <p>El burnout se caracteriza por tres dimensiones interrelacionadas que deben evaluarse de forma conjunta para establecer un diagnóstico preciso:</p>
+
+    <ul>
+        <li><strong>Agotamiento emocional:</strong> sensación de estar sobrepasado y vaciado emocionalmente. El profesional siente que no posee recursos emocionales suficientes para afrontar las demandas de su puesto.</li>
+        <li><strong>Despersonalización (cinismo):</strong> desarrollo de actitudes negativas, distantes y deshumanizadas hacia los compañeros, clientes o la propia actividad profesional.</li>
+        <li><strong>Reducción de la realización personal:</strong> percepción de ineficacia y falta de logro que conduce a una caída sostenida de la productividad y la motivación intrínseca.</li>
+    </ul>
+
+    <p>Es fundamental distinguir el burnout del estrés laboral puntual. Mientras que el estrés puede actuar como un activador temporal del rendimiento (estrés positivo o <em>eustrés</em>), el burnout constituye el resultado de una exposición crónica y sostenida a factores estresantes que no han sido gestionados adecuadamente por la organización.</p>
+
+    <h3>Marco legal en España: obligaciones del empleador</h3>
+
+    <p>La legislación española establece obligaciones claras respecto a la protección de la salud mental de los trabajadores:</p>
+
+    <ul>
+        <li><strong>Ley 31/1995 de Prevención de Riesgos Laborales (LPRL):</strong> el artículo 14 establece el deber del empresario de garantizar la protección eficaz de la seguridad y salud de los trabajadores, incluyendo los riesgos psicosociales.</li>
+        <li><strong>Real Decreto 39/1997 (Reglamento de los Servicios de Prevención):</strong> exige la inclusión de la evaluación de riesgos psicosociales como parte de la evaluación general de riesgos laborales.</li>
+        <li><strong>Directiva 89/391/CEE del Consejo:</strong> establece la obligación de adaptar el trabajo al trabajador, atendiendo a factores como el diseño de los puestos, la organización del trabajo y las relaciones sociales.</li>
+        <li><strong>Criterio Técnico 104/2021 de la Inspección de Trabajo y Seguridad Social:</strong> intensifica la vigilancia del cumplimiento en materia de riesgos psicosociales, con especial atención al estrés laboral crónico.</li>
+    </ul>
+
+    <div class="callout">
+        <p><strong>Implicaciones legales:</strong> El incumplimiento de las obligaciones en materia de evaluación y prevención de riesgos psicosociales puede conllevar sanciones de hasta 983.736 euros en su grado máximo (infracción muy grave), conforme al Real Decreto Legislativo 5/2000 (LISOS).</p>
+    </div>
+
+    <!-- 03 -->
+    <h2>03. Impacto económico y organizacional del burnout</h2>
+
+    <p>El burnout genera un efecto cascada que repercute en múltiples niveles de la organización. Los costes, tanto directos como indirectos, representan una amenaza significativa para la competitividad empresarial.</p>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span class="number">6.275 €</span>
+            <span class="label">Coste medio por baja de salud mental (SS, 2025)</span>
+        </div>
+        <div class="stat-card">
+            <span class="number">3,7×</span>
+            <span class="label">Mayor probabilidad de buscar empleo</span>
+        </div>
+        <div class="stat-card">
+            <span class="number">63 %</span>
+            <span class="label">Más días de ausencia no justificada</span>
+        </div>
+        <div class="stat-card">
+            <span class="number">–23 %</span>
+            <span class="label">Reducción de la productividad</span>
+        </div>
+    </div>
+
+    <h3>Costes directos cuantificables</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Concepto</th>
+                <th>Coste estimado</th>
+                <th>Frecuencia</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Baja por IT (salud mental, duración media 120 días)</td>
+                <td>6.275 € por caso</td>
+                <td>Creciente (+15% anual)</td>
+            </tr>
+            <tr>
+                <td>Coste de rotación (selección + onboarding)</td>
+                <td>6-9 meses de salario</td>
+                <td>Vinculado a burnout en 34%</td>
+            </tr>
+            <tr>
+                <td>Presentismo (estar presente sin rendimiento)</td>
+                <td>2.600 € por empleado/año</td>
+                <td>Constante</td>
+            </tr>
+            <tr>
+                <td>Conflictos laborales y clima tóxico</td>
+                <td>Difícil cuantificación</td>
+                <td>Efecto multiplicador</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Un análisis realizado por Deloitte en 2024 concluyó que <strong>por cada euro invertido en programas de bienestar mental basados en evidencia, las organizaciones obtienen un retorno de entre 4 y 6 euros</strong> en forma de reducción de absentismo, mejora de la productividad y retención de talento.</p>
+
+    <figure>
+        <img src="img/dashboard-rotacion.png" alt="Dashboard de recursos humanos mostrando métricas de rotación, retención y absentismo" loading="lazy">
+        <figcaption>Fig. 2. Los cuadros de mando de People Analytics permiten monitorizar indicadores predictivos del burnout en tiempo real.</figcaption>
+    </figure>
+
+    <div class="page-break"></div>
+
+    <!-- 04 -->
+    <h2>04. Señales de alerta: cómo detectar el burnout antes de que sea tarde</h2>
+
+    <p>La detección precoz del burnout constituye la línea de defensa más eficaz y con mayor retorno de inversión. Los departamentos de PRL y People &amp; Culture deben implementar sistemas de vigilancia activa que permitan identificar las señales de alerta antes de que el síndrome se cronifique.</p>
+
+    <h3>Indicadores individuales</h3>
+
+    <ul>
+        <li><strong>Cambios en el rendimiento:</strong> disminución sostenida de la calidad o cantidad del trabajo sin causa aparente. Aumento de errores en tareas que anteriormente se ejecutaban con competencia.</li>
+        <li><strong>Aislamiento progresivo:</strong> reducción de la participación en reuniones, actividades de equipo o espacios informales. El profesional tiende a minimizar la interacción social.</li>
+        <li><strong>Cinismo y negatividad:</strong> expresiones recurrentes de frustración, sarcasmo o desapego hacia los objetivos de la organización.</li>
+        <li><strong>Somatización:</strong> quejas frecuentes de cefaleas, trastornos digestivos, insomnio o fatiga crónica que no responden a tratamiento médico convencional.</li>
+        <li><strong>Absentismo intermitente:</strong> patrón de ausencias cortas y frecuentes, especialmente los lunes o los viernes, sin una causa médica definida.</li>
+    </ul>
+
+    <h3>Indicadores organizacionales</h3>
+
+    <ul>
+        <li><strong>Aumento de la rotación voluntaria</strong> en determinados departamentos o bajo el liderazgo de ciertos mandos intermedios.</li>
+        <li><strong>Deterioro de las métricas de satisfacción</strong> en encuestas de clima laboral, especialmente en dimensiones de carga de trabajo y reconocimiento.</li>
+        <li><strong>Incremento de las solicitudes de cambio de departamento</strong> o de reducción de jornada sin motivación familiar aparente.</li>
+        <li><strong>Caída del eNPS (Employee Net Promoter Score)</strong> por debajo de 10 puntos de forma sostenida.</li>
+    </ul>
+
+    <div class="callout">
+        <p><strong>Recomendación práctica:</strong> Implementar encuestas de <em>pulso emocional</em> anónimas con frecuencia quincenal o mensual, utilizando escalas validadas como el Maslach Burnout Inventory (MBI) adaptado en versión reducida, permite detectar tendencias antes de que se manifiesten en forma de baja médica.</p>
+    </div>
+
+    <!-- 05 -->
+    <h2>05. Estrategias de intervención basadas en evidencia</h2>
+
+    <p>La literatura científica distingue tres niveles de intervención en la prevención del burnout, cada uno con un grado diferente de profundidad y alcance organizacional:</p>
+
+    <h3>Nivel 1: Prevención primaria (eliminar la causa)</h3>
+
+    <p>Las intervenciones de nivel primario actúan sobre los factores organizacionales que originan el estrés crónico. Son las más eficaces a largo plazo, aunque también las que requieren mayor compromiso directivo:</p>
+
+    <ul>
+        <li><strong>Rediseño de cargas de trabajo:</strong> análisis objetivo de la distribución de tareas, eliminación de solapamientos y establecimiento de umbrales máximos de carga cognitiva.</li>
+        <li><strong>Clarificación de roles:</strong> definición precisa de responsabilidades, objetivos y expectativas de rendimiento para cada puesto.</li>
+        <li><strong>Autonomía y control:</strong> otorgar a los profesionales capacidad de decisión sobre el cómo y el cuándo de su trabajo, dentro de un marco acordado.</li>
+        <li><strong>Política de desconexión digital:</strong> regulación estricta de las comunicaciones fuera del horario laboral, conforme al artículo 88 de la Ley Orgánica 3/2018 (LOPDGDD).</li>
+    </ul>
+
+    <h3>Nivel 2: Prevención secundaria (detección y protección)</h3>
+
+    <ul>
+        <li><strong>Formación en gestión del estrés</strong> con metodologías de demostrada eficacia: Mindfulness-Based Stress Reduction (MBSR), técnicas cognitivo-conductuales aplicadas al entorno laboral.</li>
+        <li><strong>Programas de mentoring y acompañamiento</strong> para perfiles de alto rendimiento o en transiciones profesionales de alta exigencia.</li>
+        <li><strong>Vigilancia de la salud ampliada:</strong> inclusión de indicadores de salud mental (escala de estrés percibido, calidad del sueño, ansiedad generalizada) en los reconocimientos médicos anuales.</li>
+    </ul>
+
+    <h3>Nivel 3: Intervención terciaria (tratamiento y reintegración)</h3>
+
+    <ul>
+        <li><strong>Programas de Asistencia al Empleado (EAP):</strong> acceso confidencial a atención psicológica profesional, disponible 24/7 a través de plataformas digitales.</li>
+        <li><strong>Protocolos de reincorporación gradual</strong> tras una baja por salud mental, con adaptación progresiva de funciones y seguimiento continuado.</li>
+        <li><strong>Acompañamiento psicológico especializado</strong> para la recuperación funcional y la prevención de recaídas.</li>
+    </ul>
+
+    <figure>
+        <img src="img/sesion-bienestar.png" alt="Equipo corporativo participando en un taller de bienestar emocional y gestión del estrés" loading="lazy">
+        <figcaption>Fig. 3. Los talleres de bienestar facilitados por profesionales especializados constituyen una intervención de nivel secundario con alto impacto.</figcaption>
+    </figure>
+
+    <!-- 06 -->
+    <h2>06. El papel del liderazgo en la prevención</h2>
+
+    <p>La investigación organizacional ha demostrado de forma consistente que <strong>el estilo de liderazgo constituye el factor con mayor capacidad predictiva sobre los niveles de burnout de un equipo</strong> (Schaufeli &amp; Bakker, 2004; Demerouti et al., 2001). Un mando intermedio con competencias en liderazgo saludable actúa como factor protector; un líder tóxico o inadecuadamente formado puede multiplicar el riesgo de desgaste emocional en su equipo.</p>
+
+    <h3>Competencias del líder preventivo</h3>
+
+    <ul>
+        <li><strong>Escucha activa y empática:</strong> capacidad de mantener conversaciones profundas sobre el bienestar del equipo sin generar juicio ni represalia.</li>
+        <li><strong>Detección de señales tempranas:</strong> formación específica para identificar cambios comportamentales asociados al desgaste profesional.</li>
+        <li><strong>Gestión de la carga:</strong> habilidad para distribuir el trabajo de forma equitativa, priorizar y proteger al equipo de demandas excesivas de la alta dirección.</li>
+        <li><strong>Reconocimiento y feedback constructivo:</strong> práctica sistemática de la retroalimentación positiva y del reconocimiento del esfuerzo, no solo de los resultados.</li>
+        <li><strong>Modelado de conductas saludables:</strong> el líder como ejemplo visible de desconexión digital, gestión del tiempo y equilibrio vida-trabajo.</li>
+    </ul>
+
+    <figure>
+        <img src="img/reunion-onetoone.png" alt="Reunión individual entre líder y colaborador en un espacio que transmite confianza y seguridad psicológica" loading="lazy">
+        <figcaption>Fig. 4. Las reuniones individuales regulares (one-on-one) focalizadas en el bienestar constituyen una de las prácticas de liderazgo saludable con mayor evidencia de eficacia.</figcaption>
+    </figure>
+
+    <div class="callout">
+        <p><strong>Evidencia:</strong> Según un estudio de McKinsey &amp; Company (2024), los equipos cuyos líderes han recibido formación en salud emocional presentan un 40 % menos de rotación voluntaria y un 31 % más de rendimiento sostenido en el tiempo.</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- 07 -->
+    <h2>07. Plan de acción para departamentos de PRL y People &amp; Culture</h2>
+
+    <p>A continuación se presenta un plan de implementación estructurado en cuatro fases, diseñado para que los departamentos de Prevención de Riesgos Laborales, Salud Laboral y People &amp; Culture puedan abordar la prevención del burnout de forma sistemática y medible.</p>
+
+    <h3>Fase 1: Diagnóstico (Meses 1-2)</h3>
+    <ul>
+        <li>Realizar o actualizar la evaluación de riesgos psicosociales conforme a la metodología FPSICO (INSST) o CoPsoQ-ISTAS21.</li>
+        <li>Analizar los datos de absentismo, rotación voluntaria y encuestas de clima de los últimos 12-24 meses.</li>
+        <li>Identificar los departamentos, turnos o perfiles con mayor exposición a factores de riesgo.</li>
+        <li>Establecer una línea base de indicadores: tasa de absentismo por salud mental, eNPS, índice de rotación voluntaria.</li>
+    </ul>
+
+    <h3>Fase 2: Diseño de la intervención (Meses 2-3)</h3>
+    <ul>
+        <li>Definir un plan de acción con medidas preventivas primarias (organizacionales) y secundarias (individuales).</li>
+        <li>Seleccionar e implementar herramientas de medición continua: encuestas de pulso, check-ins emocionales.</li>
+        <li>Diseñar el programa formativo para mandos intermedios en liderazgo saludable.</li>
+        <li>Negociar la implantación de un Programa de Asistencia al Empleado (EAP) con cobertura psicológica.</li>
+    </ul>
+
+    <h3>Fase 3: Implementación (Meses 3-6)</h3>
+    <ul>
+        <li>Ejecutar la formación de mandos intermedios (mínimo 16 horas lectivas distribuidas en 4 sesiones).</li>
+        <li>Activar el EAP y comunicar su disponibilidad a toda la plantilla.</li>
+        <li>Iniciar las encuestas de pulso emocional con periodicidad quincenal.</li>
+        <li>Implementar las medidas organizacionales prioritarias identificadas en el diagnóstico.</li>
+    </ul>
+
+    <h3>Fase 4: Evaluación y mejora continua (Desde el mes 6)</h3>
+    <ul>
+        <li>Monitorizar la evolución de los indicadores respecto a la línea base.</li>
+        <li>Reportar los resultados al Comité de Seguridad y Salud con frecuencia trimestral.</li>
+        <li>Ajustar las intervenciones conforme a los datos recogidos (ciclo PDCA).</li>
+        <li>Calcular el ROI del programa a los 12 meses de implementación.</li>
+    </ul>
+
+    <hr>
+
+    <!-- 08 -->
+    <h2>08. Conclusión y siguientes pasos</h2>
+
+    <p>El burnout no es un problema individual, sino un síntoma de disfunciones organizacionales que es posible —y obligatorio— abordar de forma proactiva. Las organizaciones que integran la prevención del desgaste profesional en su estrategia de gestión de personas no solo cumplen con la legislación vigente, sino que obtienen una ventaja competitiva mensurable en atracción y retención de talento, productividad sostenible y reputación como employer branding.</p>
+
+    <p>Los departamentos de Prevención de Riesgos Laborales y People &amp; Culture tienen la responsabilidad y la oportunidad de liderar esta transformación. El primer paso consiste en realizar un diagnóstico objetivo del estado actual de la organización.</p>
+
+    <!-- CTA -->
+    <div class="cta-block no-print">
+        <h3>¿Quieres evaluar el nivel de riesgo de burnout en tu organización?</h3>
+        <p>Realiza nuestra auditoría gratuita de bienestar corporativo. En menos de 3 minutos obtendrás un informe personalizado con tu índice de madurez y un plan de acción recomendado.</p>
+        <a href="../landing_diagnostico_b2b.html">Iniciar Auditoría Gratuita →</a>
+    </div>
+
+    <!-- About -->
+    <div class="about">
+        <h3>Sobre OpenSalud</h3>
+        <p>OpenSalud es una plataforma especializada en bienestar corporativo integral que ayuda a las organizaciones a evaluar, implementar y medir programas de salud mental basados en evidencia científica. Nuestro enfoque combina tecnología de evaluación continua con intervenciones profesionales, proporcionando a los departamentos de PRL y People &amp; Culture las herramientas necesarias para proteger la salud emocional de sus equipos y demostrar el retorno de inversión ante la dirección.</p>
+        <p style="margin-bottom: 0;"><strong>Contacto:</strong> opensalud.com · info@opensalud.com</p>
+    </div>
+
+    <!-- Referencias -->
+    <div class="references">
+        <h3>Referencias bibliográficas</h3>
+        <ol>
+            <li>Organización Mundial de la Salud (2019). <em>CIE-11: Clasificación Internacional de Enfermedades</em>, 11.ª revisión.</li>
+            <li>Gallup (2025). <em>State of the Global Workplace 2025</em>.</li>
+            <li>Instituto Nacional de Seguridad y Salud en el Trabajo (2025). <em>Estadísticas de bajas laborales por contingencia común</em>.</li>
+            <li>Agencia Europea para la Seguridad y la Salud en el Trabajo (EU-OSHA). <em>Psychosocial risks in Europe: prevalence and prevention strategies</em>.</li>
+            <li>Ley 31/1995, de 8 de noviembre, de Prevención de Riesgos Laborales. BOE núm. 269.</li>
+            <li>Criterio Técnico 104/2021 de la Inspección de Trabajo y Seguridad Social.</li>
+            <li>Schaufeli, W. B. &amp; Bakker, A. B. (2004). Job demands, job resources, and their relationship with burnout and engagement. <em>Journal of Organizational Behavior</em>, 25(3), 293-315.</li>
+            <li>Deloitte (2024). <em>Mental health and employers: the case for investment</em>.</li>
+            <li>McKinsey &amp; Company (2024). <em>Addressing employee burnout: Are you solving the right problem?</em></li>
+            <li>Real Decreto Legislativo 5/2000, por el que se aprueba el texto refundido de la Ley sobre Infracciones y Sanciones en el Orden Social (LISOS).</li>
+        </ol>
+    </div>
+</div>
+
+<div class="doc-footer">
+    <p>&copy; 2026 OpenSalud. Todos los derechos reservados. Este documento es propiedad intelectual de OpenSalud y se distribuye con fines informativos y educativos.</p>
+    <p>opensalud.com</p>
+</div>
+
+</body>
+</html>

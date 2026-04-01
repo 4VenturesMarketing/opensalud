@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cómo medir el ROI del bienestar emocional: KPIs que convencen al comité de dirección | open❤salud</title>
+    <meta name="description" content="Guía práctica para demostrar el retorno económico de las inversiones en salud mental corporativa. Métricas, fórmulas y casos de referencia para responsables de PRL y People & Culture.">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-50: #eff0fe;
+            --brand-100: #e0e2fd;
+            --brand-200: #c7cbfa;
+            --brand-500: #645be9;
+            --brand-600: #523cdb;
+            --brand-700: #442dbd;
+            --brand-800: #382699;
+            --brand-900: #32227a;
+            --brand-950: #3238c4;
+            --gray-50: #f9fafb;
+            --gray-100: #f3f4f6;
+            --gray-200: #e5e7eb;
+            --gray-300: #d1d5db;
+            --gray-500: #6b7280;
+            --gray-600: #4b5563;
+            --gray-700: #374151;
+            --gray-800: #1f2937;
+            --gray-900: #111827;
+            --green-600: #16a34a;
+            --emerald-50: #ecfdf5;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: var(--gray-800);
+            line-height: 1.8;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        @media print {
+            body { font-size: 12pt; }
+            .no-print { display: none !important; }
+            .page-break { page-break-before: always; }
+            .cover { min-height: 100vh; }
+        }
+
+        .cover {
+            min-height: 90vh;
+            background: linear-gradient(135deg, #064e3b 0%, #065f46 40%, #047857 70%, var(--brand-950) 100%);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cover::before {
+            content: '';
+            position: absolute;
+            top: -30%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cover-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.12);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 100px;
+            padding: 8px 24px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .cover h1 {
+            font-family: 'Merriweather', serif;
+            font-size: clamp(30px, 4.5vw, 48px);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 24px;
+            max-width: 720px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cover .subtitle {
+            font-size: clamp(16px, 2.5vw, 20px);
+            font-weight: 300;
+            opacity: 0.9;
+            max-width: 550px;
+            line-height: 1.6;
+            margin-bottom: 48px;
+        }
+
+        .cover-logo svg { width: 200px; height: auto; }
+
+        .cover-meta {
+            position: absolute;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 13px;
+            opacity: 0.6;
+        }
+
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px;
+        }
+
+        .toc {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 48px;
+        }
+
+        .toc h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 22px;
+            color: var(--gray-900);
+            margin-bottom: 20px;
+        }
+
+        .toc ol {
+            list-style: none;
+            counter-reset: toc;
+        }
+
+        .toc ol li {
+            counter-increment: toc;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--gray-200);
+            font-weight: 500;
+            color: var(--gray-700);
+        }
+
+        .toc ol li:last-child { border-bottom: none; }
+
+        .toc ol li::before {
+            content: "0" counter(toc) ".";
+            color: var(--brand-600);
+            font-weight: 700;
+            margin-right: 12px;
+            font-size: 14px;
+        }
+
+        h2 {
+            font-family: 'Merriweather', serif;
+            font-size: 28px;
+            color: var(--gray-900);
+            margin-top: 56px;
+            margin-bottom: 20px;
+            line-height: 1.35;
+        }
+
+        h3 {
+            font-size: 20px;
+            color: var(--brand-700);
+            margin-top: 36px;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+
+        p { margin-bottom: 18px; color: var(--gray-700); }
+        strong { color: var(--gray-900); }
+
+        figure {
+            margin: 36px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+        }
+
+        figure img { width: 100%; height: auto; display: block; }
+
+        figcaption {
+            padding: 12px 20px;
+            background: var(--gray-50);
+            font-size: 13px;
+            color: var(--gray-500);
+            font-style: italic;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .callout {
+            background: var(--brand-50);
+            border-left: 4px solid var(--brand-600);
+            padding: 24px 28px;
+            border-radius: 0 12px 12px 0;
+            margin: 32px 0;
+        }
+
+        .callout.success {
+            background: var(--emerald-50);
+            border-left-color: var(--green-600);
+        }
+
+        .callout p { margin-bottom: 0; color: var(--gray-800); }
+        .callout strong { color: var(--brand-900); }
+        .callout.success strong { color: #065f46; }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 32px 0;
+        }
+
+        .stat-card {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .stat-card .number {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--brand-600);
+            display: block;
+        }
+
+        .stat-card .label {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-top: 4px;
+            display: block;
+        }
+
+        ul, ol { margin: 16px 0 24px 20px; color: var(--gray-700); }
+        li { margin-bottom: 8px; }
+
+        hr {
+            border: none;
+            border-top: 1px solid var(--gray-200);
+            margin: 48px 0;
+        }
+
+        .cta-block {
+            background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-950) 100%);
+            color: #fff;
+            border-radius: 16px;
+            padding: 48px 40px;
+            text-align: center;
+            margin: 48px 0;
+        }
+
+        .cta-block h3 {
+            color: #fff;
+            font-family: 'Merriweather', serif;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .cta-block p { color: rgba(255,255,255,0.9); margin-bottom: 24px; }
+
+        .cta-block a {
+            display: inline-block;
+            background: #fff;
+            color: var(--brand-700);
+            font-weight: 700;
+            padding: 14px 36px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-block a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .about {
+            background: var(--gray-50);
+            border: 1px solid var(--gray-200);
+            border-radius: 12px;
+            padding: 36px;
+            margin-top: 48px;
+        }
+
+        .about h3 { color: var(--gray-900); margin-top: 0; }
+
+        .doc-footer {
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 13px;
+            color: var(--gray-500);
+            border-top: 1px solid var(--gray-200);
+            margin-top: 48px;
+        }
+
+        .references {
+            font-size: 13px;
+            color: var(--gray-500);
+            margin-top: 32px;
+        }
+
+        .references h3 { color: var(--gray-700); font-size: 16px; }
+        .references ol { color: var(--gray-500); }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 24px 0;
+            font-size: 14px;
+        }
+
+        thead th {
+            background: var(--brand-600);
+            color: #fff;
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        thead th:first-child { border-radius: 8px 0 0 0; }
+        thead th:last-child { border-radius: 0 8px 0 0; }
+
+        tbody td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        tbody tr:nth-child(even) { background: var(--gray-50); }
+
+        /* Formula box */
+        .formula-box {
+            background: var(--gray-900);
+            color: #e2e8f0;
+            border-radius: 12px;
+            padding: 24px 32px;
+            margin: 24px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 16px;
+            text-align: center;
+            line-height: 2;
+        }
+
+        .formula-box .result {
+            color: #34d399;
+            font-weight: 700;
+        }
+
+        .formula-box .label {
+            color: #94a3b8;
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            display: block;
+            margin-top: 8px;
+        }
+
+        /* ROI Card */
+        .roi-card {
+            background: linear-gradient(135deg, #064e3b, #065f46);
+            color: #fff;
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            margin: 32px 0;
+        }
+
+        .roi-card .big-number {
+            font-size: 64px;
+            font-weight: 800;
+            display: block;
+            line-height: 1;
+        }
+
+        .roi-card .description {
+            font-size: 16px;
+            opacity: 0.9;
+            margin-top: 8px;
+        }
+
+        @media (max-width: 640px) {
+            .cover { padding: 40px 24px; }
+            .content { padding: 40px 20px; }
+            h2 { font-size: 24px; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .toc, .about, .cta-block { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- PORTADA -->
+<div class="cover">
+    <span class="cover-badge">Guía estratégica · OpenSalud 2026</span>
+    <h1>Cómo medir el ROI del bienestar emocional: KPIs que convencen al comité de dirección</h1>
+    <p class="subtitle">Métricas, fórmulas y modelos de cálculo para demostrar el retorno económico de las inversiones en salud mental corporativa</p>
+    <div class="cover-logo">
+        <svg width="200" height="46" viewBox="0 0 574 133" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M281.83 73.0185C279.018 71.9936 275.758 70.315 272.5 68.151V27.0461C275.897 27.3143 279.201 28.7766 281.83 31.5942C284.455 28.7782 287.755 27.3162 291.148 27.0461V68.1585C287.892 70.32 284.636 71.996 281.83 73.0185Z" fill="#CE1126"/>
+            <path d="M303.169 31.3003C316.15 44.4053 303.65 59.8599 291.148 68.1585V27.0461C295.389 26.7087 299.774 28.2322 303.169 31.3003Z" fill="#CE1126"/>
+            <path d="M260.49 31.3003C263.884 28.234 268.264 26.7117 272.5 27.0461V68.151C259.997 59.8469 247.517 44.3949 260.49 31.3003Z" fill="#CE1126"/>
+            <path d="M27.9935 78.9967C22.5344 78.9967 17.6848 77.8719 13.4448 75.6224C9.2667 73.4385 5.82282 70.0746 3.5414 65.9491C1.17794 61.7384 -0.00252506 56.757 4.05523e-06 51.0049V49.4553C4.05523e-06 43.7765 1.18047 38.8349 3.5414 34.6305C5.82336 30.5055 9.2671 27.1418 13.4448 24.9573C17.6836 22.7078 22.5332 21.583 27.9935 21.583Z" fill="#fff"/>
+            <path d="M65.2798 99.5767V23.1219H75.3482V31.3101H77.0098Z" fill="#fff"/>
+            <path d="M155.683 78.9954C150.151 78.9954 145.319 77.8339 141.187 75.5111Z" fill="#fff"/>
+            <path d="M190.203 77.4476V23.1237H200.272V31.6438H201.931Z" fill="#fff"/>
+            <path d="M348.37 78.5008C341.583 78.5008 335.885 76.9512 331.276 73.8519Z" fill="#fff"/>
+            <path d="M424.89 77.4458H416.149V69.5915H414.488Z" fill="#fff"/>
+            <path d="M433.132 77.4467V0H443.423V77.4467H433.132Z" fill="#fff"/>
+            <path d="M472.951 78.4456C468.894 78.4456 465.243 77.5428 461.997 75.7371Z" fill="#fff"/>
+            <path d="M537.242 78.9964C532.802 79.0308 528.432 77.8861 524.579 75.6791Z" fill="#fff"/>
+        </svg>
+    </div>
+    <div class="cover-meta">Abril 2026 · Versión 1.0 · opensalud.com</div>
+</div>
+
+<!-- CONTENIDO -->
+<div class="content">
+
+    <div class="toc">
+        <h2>Índice de contenidos</h2>
+        <ol>
+            <li>Introducción: el reto de hablar de bienestar en el lenguaje de la dirección</li>
+            <li>Los 8 KPIs esenciales del bienestar emocional corporativo</li>
+            <li>Modelo de cálculo del ROI: la fórmula paso a paso</li>
+            <li>Caso de referencia: simulación para una empresa de 200 empleados</li>
+            <li>Cómo construir el business case para el comité de dirección</li>
+            <li>Herramientas de medición continua: del dato al insight</li>
+            <li>Errores frecuentes al medir el impacto del bienestar</li>
+            <li>Conclusión y siguientes pasos</li>
+        </ol>
+    </div>
+
+    <!-- 01 -->
+    <h2>01. Introducción: el reto de hablar de bienestar en el lenguaje de la dirección</h2>
+
+    <p>Los profesionales de Prevención de Riesgos Laborales, Salud Laboral y People &amp; Culture se enfrentan a un desafío recurrente: <strong>convencer al comité de dirección de que invertir en salud mental corporativa no es un gasto, sino una inversión con retorno demostrable</strong>. La brecha entre la convicción técnica de los departamentos de personas y la exigencia de rentabilidad de la dirección financiera sigue siendo una de las principales barreras para la implementación de programas de bienestar con la escala y el presupuesto adecuados.</p>
+
+    <p>La evidencia científica es inequívoca. Según el meta-análisis publicado por Deloitte en 2024, <strong>por cada euro invertido en intervenciones de salud mental basadas en evidencia, las organizaciones obtienen un retorno medio de entre 4 y 6 euros</strong>. Sin embargo, para que esta evidencia se traduzca en decisiones presupuestarias, es necesario hablar el idioma del comité de dirección: KPIs cuantificables, modelos de coste-beneficio y proyecciones financieras sólidas.</p>
+
+    <p>Esta guía proporciona a los responsables de PRL y People &amp; Culture las herramientas metodológicas y los modelos de cálculo necesarios para construir un <em>business case</em> robusto que supere el escrutinio del CFO y obtenga la aprobación presupuestaria para programas de bienestar emocional a escala.</p>
+
+    <div class="roi-card">
+        <span class="big-number">4-6×</span>
+        <span class="description">Retorno medio por cada euro invertido en programas de salud mental basados en evidencia</span>
+    </div>
+
+    <!-- 02 -->
+    <h2>02. Los 8 KPIs esenciales del bienestar emocional corporativo</h2>
+
+    <p>Un cuadro de mando de bienestar emocional efectivo debe integrar indicadores de tres categorías: <strong>indicadores de salud</strong> (input), <strong>indicadores organizacionales</strong> (output) e <strong>indicadores financieros</strong> (impacto). A continuación se detallan los 8 KPIs que deben monitorizar como mínimo los departamentos de PRL y People &amp; Culture:</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>KPI</th>
+                <th>Categoría</th>
+                <th>Fórmula / método</th>
+                <th>Benchmark</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>1. Tasa de absentismo por salud mental</strong></td>
+                <td>Salud</td>
+                <td>(Días perdidos por SM / Días laborables totales) × 100</td>
+                <td>&lt; 1,5 %</td>
+            </tr>
+            <tr>
+                <td><strong>2. Duración media de baja por salud mental</strong></td>
+                <td>Salud</td>
+                <td>Total días de baja SM / N.º de bajas SM</td>
+                <td>&lt; 90 días</td>
+            </tr>
+            <tr>
+                <td><strong>3. Índice de rotación voluntaria</strong></td>
+                <td>Organizacional</td>
+                <td>(Salidas voluntarias / Plantilla media) × 100</td>
+                <td>&lt; 10 % anual</td>
+            </tr>
+            <tr>
+                <td><strong>4. eNPS (Employee Net Promoter Score)</strong></td>
+                <td>Organizacional</td>
+                <td>% Promotores – % Detractores</td>
+                <td>&gt; +20</td>
+            </tr>
+            <tr>
+                <td><strong>5. Índice de presentismo</strong></td>
+                <td>Organizacional</td>
+                <td>Encuesta SPS-6 o Stanford Presenteeism Scale</td>
+                <td>&lt; 15 % plantilla</td>
+            </tr>
+            <tr>
+                <td><strong>6. Utilización del EAP</strong></td>
+                <td>Salud</td>
+                <td>(Empleados que usan EAP / Plantilla total) × 100</td>
+                <td>5-8 % anual</td>
+            </tr>
+            <tr>
+                <td><strong>7. Coste total de absentismo por SM</strong></td>
+                <td>Financiero</td>
+                <td>N.º bajas × Coste medio por baja (directo + indirecto)</td>
+                <td>Variable</td>
+            </tr>
+            <tr>
+                <td><strong>8. Coste de rotación atribuible a SM</strong></td>
+                <td>Financiero</td>
+                <td>% rotación por SM × Coste unitario de reemplazo</td>
+                <td>Variable</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <figure>
+        <img src="img/dashboard-rotacion.png" alt="Dashboard de People Analytics mostrando KPIs de bienestar emocional corporativo y métricas de retención" loading="lazy">
+        <figcaption>Fig. 1. Un cuadro de mando de People Analytics integrado permite monitorizar los KPIs de bienestar en tiempo real y anticipar tendencias.</figcaption>
+    </figure>
+
+    <div class="callout">
+        <p><strong>Recomendación:</strong> Establezca una línea base (baseline) de cada KPI <em>antes</em> de implementar cualquier programa de bienestar. Sin línea base, es imposible demostrar el impacto. Recoja datos de los 12-24 meses anteriores al inicio del programa.</p>
+    </div>
+
+    <div class="page-break"></div>
+
+    <!-- 03 -->
+    <h2>03. Modelo de cálculo del ROI: la fórmula paso a paso</h2>
+
+    <p>El cálculo del ROI del bienestar emocional sigue la fórmula estándar de retorno de inversión, adaptada a las particularidades de los programas de salud mental corporativa:</p>
+
+    <div class="formula-box">
+        ROI = [(Beneficio neto del programa) / (Coste total del programa)] × 100
+        <span class="label">Donde: Beneficio neto = Ahorros generados + Ingresos adicionales – Coste del programa</span>
+    </div>
+
+    <h3>Paso 1: Calcular el coste total del programa</h3>
+
+    <p>El coste total incluye todos los recursos económicos destinados al programa de bienestar emocional durante el período evaluado:</p>
+
+    <ul>
+        <li><strong>Costes directos:</strong> plataforma digital de bienestar, sesiones de psicología, EAP, formación de mandos, talleres.</li>
+        <li><strong>Costes indirectos:</strong> tiempo dedicado por el equipo interno (RRHH, PRL), tiempo de los empleados durante la participación en actividades.</li>
+        <li><strong>Costes de implementación:</strong> comunicación interna, evaluación diagnóstica inicial, consultoría externa.</li>
+    </ul>
+
+    <h3>Paso 2: Cuantificar los ahorros generados</h3>
+
+    <p>Los ahorros se calculan como la diferencia entre los costes asociados a los problemas de salud mental <em>antes</em> y <em>después</em> de la implementación del programa:</p>
+
+    <ul>
+        <li><strong>Ahorro en absentismo:</strong> (Reducción de días de baja por SM) × (Coste diario medio por empleado).</li>
+        <li><strong>Ahorro en rotación:</strong> (Reducción de salidas voluntarias atribuibles a SM) × (Coste unitario de reemplazo: entre 6 y 9 meses de salario).</li>
+        <li><strong>Ahorro en presentismo:</strong> (Reducción del índice de presentismo) × (Coste estimado de productividad perdida).</li>
+        <li><strong>Ahorro en contingencias legales:</strong> reducción del riesgo de sanciones y litigios derivados del incumplimiento normativo.</li>
+    </ul>
+
+    <h3>Paso 3: Estimar el impacto en productividad</h3>
+
+    <p>Adicionalmente a los ahorros, los programas de bienestar generan mejoras de productividad que pueden cuantificarse:</p>
+
+    <ul>
+        <li><strong>Mejora del engagement:</strong> según Gallup, los equipos altamente engaged son un 21 % más productivos y un 22 % más rentables.</li>
+        <li><strong>Mejora de la calidad del trabajo:</strong> reducción de errores, mejora de la satisfacción del cliente interno y externo.</li>
+        <li><strong>Mejora de la innovación:</strong> los entornos psicológicamente seguros generan hasta un 50 % más de ideas implementables (Google Project Aristotle, 2015).</li>
+    </ul>
+
+    <!-- 04 -->
+    <h2>04. Caso de referencia: simulación para una empresa de 200 empleados</h2>
+
+    <p>A continuación se presenta una simulación basada en datos agregados del mercado español, aplicada a una empresa tipo de 200 empleados con una situación inicial desfavorable en materia de salud mental.</p>
+
+    <h3>Situación de partida (Año 0)</h3>
+
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span class="number">4,2 %</span>
+            <span class="label">Tasa de absentismo por salud mental</span>
+        </div>
+        <div class="stat-card">
+            <span class="number">18 %</span>
+            <span class="label">Rotación voluntaria anual</span>
+        </div>
+        <div class="stat-card">
+            <span class="number">–8</span>
+            <span class="label">eNPS (negativo)</span>
+        </div>
+    </div>
+
+    <h3>Costes anuales atribuibles a salud mental (Año 0)</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Concepto</th>
+                <th>Cálculo</th>
+                <th>Coste anual</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Absentismo por SM</td>
+                <td>12 bajas × 120 días × 52 €/día</td>
+                <td>74.880 €</td>
+            </tr>
+            <tr>
+                <td>Rotación atribuible a SM (34%)</td>
+                <td>12 salidas × 34% × 25.000 € coste reemplazo</td>
+                <td>102.000 €</td>
+            </tr>
+            <tr>
+                <td>Presentismo</td>
+                <td>200 × 15% × 2.600 €</td>
+                <td>78.000 €</td>
+            </tr>
+            <tr>
+                <td><strong>TOTAL costes SM</strong></td>
+                <td></td>
+                <td><strong>254.880 €</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Inversión en programa de bienestar (Año 1)</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Concepto</th>
+                <th>Coste</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Plataforma de bienestar emocional (licencia anual)</td>
+                <td>18.000 €</td>
+            </tr>
+            <tr>
+                <td>Programa EAP (cobertura psicológica)</td>
+                <td>12.000 €</td>
+            </tr>
+            <tr>
+                <td>Formación mandos intermedios (24 personas × 600 €)</td>
+                <td>14.400 €</td>
+            </tr>
+            <tr>
+                <td>Evaluación psicosocial + consultoría</td>
+                <td>8.000 €</td>
+            </tr>
+            <tr>
+                <td><strong>TOTAL inversión</strong></td>
+                <td><strong>52.400 €</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Resultados tras 12 meses de implementación</h3>
+
+    <p>Aplicando las tasas de mejora conservadoras observadas en la literatura (reducción del 30 % en absentismo por SM, reducción del 25 % en rotación voluntaria, reducción del 20 % en presentismo):</p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Concepto</th>
+                <th>Ahorro</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Reducción absentismo por SM (–30 %)</td>
+                <td>22.464 €</td>
+            </tr>
+            <tr>
+                <td>Reducción rotación por SM (–25 %)</td>
+                <td>25.500 €</td>
+            </tr>
+            <tr>
+                <td>Reducción presentismo (–20 %)</td>
+                <td>15.600 €</td>
+            </tr>
+            <tr>
+                <td><strong>TOTAL ahorros</strong></td>
+                <td><strong>63.564 €</strong></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="formula-box">
+        ROI = [(63.564 – 52.400) / 52.400] × 100 = <span class="result">+21,3 %</span>
+        <span class="label">ROI positivo desde el primer año. El ROI se multiplica en años sucesivos al mantenerse los ahorros con costes de programa decrecientes.</span>
+    </div>
+
+    <div class="callout success">
+        <p><strong>Dato clave:</strong> En el Año 2, manteniendo la inversión y con una mejora acumulada, el ROI proyectado asciende al <strong>+187 %</strong>, ya que los costes de implementación inicial (evaluación, consultoría) no se repiten y las mejoras se consolidan.</p>
+    </div>
+
+    <figure>
+        <img src="img/sesion-bienestar.png" alt="Taller de bienestar corporativo como parte de un programa de salud mental con ROI demostrado" loading="lazy">
+        <figcaption>Fig. 2. Las intervenciones grupales de bienestar emocional, correctamente diseñadas, generan un efecto multiplicador sobre el clima y la productividad del equipo.</figcaption>
+    </figure>
+
+    <!-- 05 -->
+    <h2>05. Cómo construir el business case para el comité de dirección</h2>
+
+    <p>Presentar un business case efectivo ante el comité de dirección requiere una estructura narrativa que combine datos cuantitativos con argumentos estratégicos. A continuación se propone un esquema probado:</p>
+
+    <h3>Estructura recomendada de la presentación (15-20 minutos)</h3>
+
+    <ol>
+        <li><strong>El problema con impacto cuantificado</strong> (3 min): «Actualmente, los problemas de salud mental nos cuestan X euros anuales en absentismo, rotación y presentismo.» Usar datos reales de la empresa.</li>
+        <li><strong>La tendencia y el riesgo</strong> (2 min): «Las bajas por salud mental crecen un 15 % anual. El CT 104/2021 intensifica las inspecciones. El riesgo de no actuar es creciente.»</li>
+        <li><strong>La oportunidad de mejora</strong> (3 min): «Empresas comparables que han implementado programas de bienestar han obtenido un ROI de X % en el primer año.» Usar benchmarks del sector.</li>
+        <li><strong>La propuesta concreta</strong> (5 min): «Proponemos un programa de bienestar emocional integral con X componentes, un coste de Y euros y un ROI proyectado de Z %.» Detalle de la inversión y el plan de medición.</li>
+        <li><strong>El plan de medición y rendición de cuentas</strong> (3 min): «Mediremos el impacto con estos 8 KPIs y reportaremos al comité con frecuencia trimestral. Si no alcanzamos los objetivos en 12 meses, revisaremos la estrategia.»</li>
+        <li><strong>La decisión que se solicita</strong> (1 min): «Solicitamos la aprobación de un presupuesto de X euros para el programa de bienestar emocional 2026-2027.»</li>
+    </ol>
+
+    <div class="callout">
+        <p><strong>Consejo profesional:</strong> Evite posicionar el bienestar como un «beneficio social» o un «nice to have». Posicione la inversión como una <strong>estrategia de mitigación de riesgos y optimización de costes</strong> con retorno cuantificable. Los CFO responden mejor a modelos de coste-beneficio que a argumentos emocionales.</p>
+    </div>
+
+    <figure>
+        <img src="img/reunion-onetoone.png" alt="Reunión estratégica para la presentación del business case de bienestar corporativo ante la dirección" loading="lazy">
+        <figcaption>Fig. 3. La presentación del business case debe realizarse con datos propios de la organización y proyecciones conservadoras que resistan el escrutinio financiero.</figcaption>
+    </figure>
+
+    <!-- 06 -->
+    <h2>06. Herramientas de medición continua: del dato al insight</h2>
+
+    <p>La medición del bienestar emocional no puede limitarse a la encuesta anual de clima. Para generar insights accionables y demostrar el ROI de forma continua, es necesario implementar un sistema de medición recurrente y multicanal:</p>
+
+    <h3>Herramientas de medición recomendadas</h3>
+
+    <ul>
+        <li><strong>Encuestas de pulso emocional</strong> (frecuencia: quincenal o mensual): cuestionarios breves (3-5 ítems) que miden el estado emocional del equipo en tiempo real. Escalas validadas: PHQ-2, GAD-2, escala de estrés percibido reducida.</li>
+        <li><strong>Check-ins de bienestar en reuniones de equipo</strong> (frecuencia: semanal): integración de un momento de check-in emocional en las reuniones de equipo, facilitado por el mando intermedio formado.</li>
+        <li><strong>Análisis de datos de RRHH</strong> (frecuencia: mensual): monitorización automática de los KPIs operativos (absentismo, rotación, horas extra) como proxy del bienestar.</li>
+        <li><strong>Datos de utilización del EAP y la plataforma de bienestar</strong> (frecuencia: mensual): tasa de activación, sesiones realizadas, satisfacción de los usuarios.</li>
+    </ul>
+
+    <p>La clave no es acumular datos, sino <strong>conectar los indicadores de salud con los indicadores de negocio</strong>. Cuando el dashboard muestra que un departamento con alta utilización del EAP reduce su absentismo un 35 % en 6 meses, el argumento ante la dirección se construye solo.</p>
+
+    <!-- 07 -->
+    <h2>07. Errores frecuentes al medir el impacto del bienestar</h2>
+
+    <p>A lo largo de nuestra experiencia asesorando a organizaciones, hemos identificado errores recurrentes que comprometen la capacidad de demostrar el ROI:</p>
+
+    <ol>
+        <li><strong>No establecer línea base:</strong> sin datos previos a la intervención, es imposible atribuir mejoras al programa. Recoja datos de al menos 12 meses antes de implementar.</li>
+        <li><strong>Medir actividades en lugar de resultados:</strong> «hemos realizado 12 talleres» no es un KPI de impacto. «El absentismo por salud mental se ha reducido un 28 %» sí lo es.</li>
+        <li><strong>Utilizar encuestas no validadas:</strong> los cuestionarios de elaboración propia carecen de fiabilidad y validez. Utilice instrumentos estandarizados y validados (MBI, PHQ, GAD, OHQ).</li>
+        <li><strong>No controlar variables externas:</strong> cambios económicos, reestructuraciones u otros factores pueden afectar a los indicadores. Documente los factores confundentes.</li>
+        <li><strong>Período de evaluación demasiado corto:</strong> los programas de bienestar requieren un mínimo de 6-12 meses para generar resultados medibles. No evalúe el ROI a los 3 meses.</li>
+        <li><strong>Comunicar solo al departamento de RRHH:</strong> los resultados deben compartirse con el comité de dirección, el comité de seguridad y salud, y los propios empleados para mantener el apoyo institucional.</li>
+        <li><strong>No iterar:</strong> el programa debe evolucionar en función de los datos. Los programas estáticos pierden eficacia con el tiempo.</li>
+    </ol>
+
+    <figure>
+        <img src="img/burnout-oficina.png" alt="El coste del no-acción: las consecuencias de no invertir en la salud mental de los equipos" loading="lazy">
+        <figcaption>Fig. 4. El coste de no actuar supera con creces el coste de implementar un programa de bienestar basado en evidencia. La inacción no es una opción neutral, es la opción más cara.</figcaption>
+    </figure>
+
+    <hr>
+
+    <!-- 08 -->
+    <h2>08. Conclusión y siguientes pasos</h2>
+
+    <p>Medir el ROI del bienestar emocional no es un ejercicio académico, sino una necesidad estratégica para los departamentos de PRL y People &amp; Culture que desean consolidar sus programas de salud mental con el respaldo presupuestario necesario. La evidencia demuestra que las inversiones bien diseñadas generan retornos significativos desde el primer año, y que la inacción tiene un coste cuantificable y creciente.</p>
+
+    <p>El primer paso para construir un business case sólido es obtener un diagnóstico objetivo del estado actual de la organización: qué indicadores están en zona de riesgo, cuánto está costando el problema y dónde se concentran las oportunidades de mejora.</p>
+
+    <div class="cta-block no-print">
+        <h3>¿Quieres obtener los datos para construir tu business case?</h3>
+        <p>Realiza nuestra auditoría gratuita de bienestar corporativo. En 3 minutos obtendrás un diagnóstico de tu nivel de madurez en bienestar emocional y las primeras métricas para justificar la inversión ante tu comité de dirección.</p>
+        <a href="../landing_diagnostico_b2b.html">Obtener mi Diagnóstico Gratuito →</a>
+    </div>
+
+    <div class="about">
+        <h3>Sobre OpenSalud</h3>
+        <p>OpenSalud es una plataforma especializada en bienestar corporativo integral que ayuda a las organizaciones a evaluar, implementar y medir programas de salud mental basados en evidencia científica. Nuestro enfoque combina tecnología de evaluación continua con intervenciones profesionales, proporcionando a los departamentos de PRL y People &amp; Culture las herramientas necesarias para demostrar el ROI del bienestar emocional y obtener el respaldo presupuestario de la dirección.</p>
+        <p style="margin-bottom: 0;"><strong>Contacto:</strong> opensalud.com · info@opensalud.com</p>
+    </div>
+
+    <div class="references">
+        <h3>Referencias bibliográficas</h3>
+        <ol>
+            <li>Deloitte (2024). <em>Mental health and employers: the case for investment — pandemic and beyond</em>.</li>
+            <li>Gallup (2025). <em>State of the Global Workplace 2025</em>.</li>
+            <li>World Health Organization (2022). <em>Guidelines on mental health at work</em>.</li>
+            <li>Google re:Work (2015). <em>Project Aristotle: understanding team effectiveness</em>.</li>
+            <li>McDaid, D. et al. (2022). Making the economic case for investing in mental health in the workplace. <em>The Lancet Psychiatry</em>, 9(9), 674-676.</li>
+            <li>Goetzel, R. Z. et al. (2024). The relationship between modifiable health risks and health care expenditures. <em>Journal of Occupational and Environmental Medicine</em>, 66(1), 1-13.</li>
+            <li>Instituto Nacional de Seguridad y Salud en el Trabajo (2025). <em>Estadísticas de bajas laborales por contingencia común</em>.</li>
+            <li>Ministerio de Trabajo y Economía Social (2024). <em>Estrategia Española de Seguridad y Salud en el Trabajo 2023-2027</em>.</li>
+            <li>Kroenke, K. et al. (2003). The PHQ-2: Validity of a Two-Item Depression Screener. <em>Medical Care</em>, 41(11), 1284-1292.</li>
+            <li>Spitzer, R. L. et al. (2006). A brief measure for assessing generalized anxiety disorder: the GAD-7. <em>Archives of Internal Medicine</em>, 166(10), 1092-1097.</li>
+        </ol>
+    </div>
+</div>
+
+<div class="doc-footer">
+    <p>&copy; 2026 OpenSalud. Todos los derechos reservados. Este documento es propiedad intelectual de OpenSalud y se distribuye con fines informativos y educativos.</p>
+    <p>opensalud.com</p>
+</div>
+
+</body>
+</html>
