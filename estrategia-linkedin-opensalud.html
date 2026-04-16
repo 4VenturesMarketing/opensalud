@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="noindex, nofollow" name="robots"/>
+<link href="/favicon.png" rel="icon" type="image/png"/>
+<title>Estrategia LinkedIn — opensalud | openhealth por opensalud</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--blue:#2E3192;--blue-hover:#1A23F1;--electric:#9CE9FA;--dark:#1D1D1E;--white:#FFFFFF;--grey1:#FAFAFA;--grey2:#F5F5F5;--grey6:#8A8A8A;--radius:30px;--shadow:-10px -10px 35px 0px rgba(13,39,80,0.02),10px 10px 35px 0px rgba(13,39,80,0.19)}
+body{font-family:'Space Grotesk',sans-serif;color:var(--dark);background:var(--white);font-size:19px;line-height:1.6}
+a{color:var(--blue);text-decoration:none}
+/* NAV */
+nav{position:fixed;top:0;width:100%;background:var(--blue);backdrop-filter:blur(12px);z-index:100;padding:.75rem 2rem;display:flex;align-items:center;justify-content:space-between;border-bottom:none}
+.logo{display:flex;align-items:center}
+.logo img{height:36px;width:auto;filter:brightness(0) invert(1)}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{color:rgba(255,255,255,.85);font-size:.95rem;font-weight:500;transition:.2s}
+.nav-links a:hover{color:var(--white)}
+.nav-btn{background:var(--white);color:var(--blue)!important;padding:.5rem 1.5rem;border-radius:300px;font-weight:700;font-size:.85rem;letter-spacing:.5px;transition:.2s}
+.nav-btn:hover{background:var(--electric)}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:8px}
+.hamburger span{width:24px;height:2px;background:var(--white);transition:.3s}
+/* HERO */
+.hero{padding:8rem 2rem 4rem;text-align:center;background:var(--blue);color:var(--white)}
+.hero h1{font-size:2.8rem;font-weight:700;max-width:800px;margin:0 auto 1.5rem}
+.hero h1 em{color:var(--electric);font-style:normal}
+.hero p{font-size:1.2rem;max-width:600px;margin:0 auto;opacity:.8}
+/* SECTIONS */
+section{padding:5rem 2rem}
+.container{max-width:1100px;margin:0 auto}
+h2{font-size:2.2rem;font-weight:700;margin-bottom:1rem}
+h3{font-size:1.4rem;font-weight:600;margin-bottom:.75rem}
+.subtitle{color:var(--grey6);font-size:1.1rem;margin-bottom:2.5rem}
+.section-dark{background:var(--blue);color:var(--white)}
+.section-grey{background:var(--grey1)}
+/* CARDS */
+.card{background:var(--white);border-radius:var(--radius);padding:2rem;box-shadow:var(--shadow);margin-bottom:1.5rem}
+.section-dark .card{background:rgba(255,255,255,0.06);box-shadow:none;border:1px solid rgba(255,255,255,0.1)}
+/* GRID */
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+/* PILLAR CARDS */
+.pillar{text-align:center;padding:2rem}
+.pillar .icon{font-size:2.5rem;margin-bottom:1rem}
+.pillar .pct{font-size:2rem;font-weight:700;color:var(--blue)}
+.section-dark .pillar .pct{color:var(--electric)}
+/* TABLE */
+table{width:100%;border-collapse:separate;border-spacing:0;border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+th{background:var(--blue);color:var(--white);padding:1rem;text-align:left;font-weight:600;font-size:.95rem}
+td{padding:1rem;border-bottom:1px solid var(--grey2);font-size:.95rem}
+tr:last-child td{border-bottom:none}
+tr:nth-child(even){background:var(--grey1)}
+/* TAGS */
+.tag{display:inline-block;padding:.25rem .75rem;border-radius:300px;font-size:.75rem;font-weight:600;margin-right:.5rem;margin-bottom:.5rem}
+.tag-blue{background:rgba(50,56,196,0.1);color:var(--blue)}
+.tag-green{background:rgba(0,180,100,0.1);color:#00b464}
+.tag-red{background:rgba(220,50,50,0.1);color:#dc3232}
+.tag-orange{background:rgba(255,150,0,0.1);color:#d47a00}
+.tag-purple{background:rgba(130,50,200,0.1);color:#8232c8}
+/* POST CARD */
+.post-card{background:var(--white);border-radius:var(--radius);padding:0;box-shadow:var(--shadow);overflow:hidden;margin-bottom:2rem}
+.post-header{padding:1.5rem 2rem;border-bottom:1px solid var(--grey2);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem}
+.post-header h3{margin:0}
+.post-meta{display:flex;gap:.5rem;flex-wrap:wrap}
+.post-strategy{padding:1.5rem 2rem;background:var(--grey1);border-bottom:1px solid var(--grey2)}
+.post-strategy h4{font-size:.9rem;text-transform:uppercase;letter-spacing:1px;color:var(--blue);margin-bottom:.5rem}
+.post-strategy p{font-size:.95rem;color:var(--grey6)}
+.post-body{padding:2rem;font-size:1rem;line-height:1.7;white-space:pre-line}
+.post-body .hashtags{color:var(--blue);font-weight:500;margin-top:1rem}
+/* FOOTER */
+footer{background:var(--dark);color:rgba(255,255,255,.6);text-align:center;padding:3rem 2rem;font-size:.9rem}
+footer strong{color:var(--white)}
+/* RESPONSIVE */
+@media(max-width:768px){
+  .grid-2,.grid-3{grid-template-columns:1fr}
+  .hero h1{font-size:2rem}
+  h2{font-size:1.7rem}
+  .nav-links{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:var(--blue);flex-direction:column;justify-content:center;align-items:center;gap:2rem}
+  .nav-links.open{display:flex}
+  .nav-links.open a{color:var(--white);font-size:1.3rem}
+  .hamburger{display:flex}
+  .post-header{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<nav>
+<div class="logo"><img alt="openhealth by opensalud" src="https://www.opensalud.es/wp-content/uploads/sites/3/2025/10/logo-opensalud-openhealth-grey.svg"/></div>
+<div class="nav-links" id="navLinks">
+<a href="#estrategia">Estrategia</a>
+<a href="#contenidos">Contenidos</a>
+<a href="#articulos">Artículos</a>
+<a href="#pilares">Pilares</a>
+<a href="#protocolo">Protocolo</a>
+<a href="#calendario">Calendario</a>
+<a href="#posts">Posts</a>
+</div>
+<button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')">
+<span></span><span></span><span></span>
+</button>
+</nav>
+<div class="hero">
+<h1>Estrategia blog y linkedin opensalud</h1>
+</div>
+<!-- ESTRATEGIA -->
+<section id="estrategia">
+<div class="container">
+<h2>Visión estratégica</h2>
+<div class="card" style="margin-top:2rem">
+<h3>Posicionamiento</h3>
+<p>Manuel Villalon no es una marca que vende desde un escenario. Es un CEO que comparte conversaciones reales con responsables de Salud, Seguridad Laboral y de RRHH, datos que ve en primera persona y opiniones que otros no se atreven a decir. Cada post construye autoridad, confianza y genera conversación que se convierte en leads para opensalud.</p>
+</div>
+</div>
+</section>
+<!-- PLAN DE CONTENIDOS -->
+<section class="section-grey" id="contenidos">
+<div class="container">
+<h2>4. Plan de contenidos b2b (10 blogposts estratégicos)</h2>
+<div class="card">
+<p style="margin-bottom:1.5rem">Basado en volúmenes de búsqueda de España/Latam para <em>Buyer Personas</em> de rrhh y directivos, esta batería capturará demanda en todas las fases del embudo.</p>
+<table style="font-size:0.9rem;">
+<tr><th>Título orientado a seo (h1)</th><th>Keyword target (alta intención)</th></tr>
+<tr><td><a href="#art1">1. Cómo realizar la evaluación de riesgos psicosociales (ley 31/1995)</a></td><td>riesgos psicosociales empresa</td></tr>
+<tr><td><a href="#art2">2. El coste real del absentismo laboral por estrés en españa</a></td><td>coste absentismo laboral</td></tr>
+<tr><td><a href="#art3">3. Estrategias de retención de talento en 2026: el rol de la salud mental</a></td><td>retencion de talento</td></tr>
+<tr><td><a href="#art4">4. Diferencia entre vigilancia médica física y vigilancia de salud mental</a></td><td>vigilancia salud mental laboral</td></tr>
+<tr><td><a href="#art5">5. Guía para medir el clima laboral y el enps en recursos humanos</a></td><td>medir clima laboral</td></tr>
+<tr><td><a href="#art6">6. Burnout en equipos de alto rendimiento: señales y protocolos</a></td><td>prevencion burnout empresas</td></tr>
+<tr><td><a href="#art7">7. Programas de bienestar corporativo: 5 ejemplos y cómo medir su roi</a></td><td>roi bienestar corporativo</td></tr>
+<tr><td><a href="#art8">8. Plataformas de psicología b2b: ¿qué exigir a tu proveedor?</a></td><td>plataforma psicologia empresas</td></tr>
+<tr><td><a href="#art9">9. Liderazgo empático: claves para reducir la rotación de personal</a></td><td>reducir rotacion de personal</td></tr>
+<tr><td><a href="#art10">10. Síndrome del impostor y productividad: cómo afecta a la rentabilidad</a></td><td>sindrome impostor empresas</td></tr>
+</table>
+</div>
+</div>
+</section>
+<!-- CONTENIDO BLOG -->
+<section id="articulos">
+<div class="container">
+<h2>10. Contenido de los 10 blogposts b2b</h2>
+<p class="subtitle">Cada bloque contiene el contenido completo optimizado para SEO, con interlinking interno entre artículos y CTA de conversión.</p>
+<!-- Artículo 1 -->
+<div class="card" id="art1">
+<h3>1. Cómo realizar la evaluación de riesgos psicosociales (ley 31/1995)</h3>
+<p><strong>Meta-description:</strong> Guía práctica para responsables de salud, seguridad laboral y de rrhh sobre la evaluación de riesgos psicosociales obligatoria por ley. Aprende a implementarla sin fricción.</p>
+<div style="background:var(--grey1); padding:1.5rem; border-radius:15px; margin:1rem 0; font-size:0.95rem">
+<p><strong>Cuerpo del post (Resumen SEO):</strong> La salud mental ya no es una opción "bienqueda". Con la Ley de Prevención de Riesgos Laborales en la mano, la evaluación psicosocial es un imperativo legal. Este artículo desglosa el método F-PSICO 4.0 y cómo utilizar los resultados para crear un plan de acción real que reduzca el <a href="#art2">coste del absentismo</a>.</p>
+<p><strong>CTAs sugeridos:</strong> "Descarga nuestra checklist de cumplimiento legal" o "Reserva una consultoría de diagnóstico inicial".</p>
+</div>
+</div>
+<!-- Artículo 2 -->
+<div class="card" id="art2">
+<h3>2. El coste real del absentismo laboral por estrés en españa</h3>
+<p><strong>Meta-description:</strong> ¿Sabes cuánto le cuesta a tu empresa cada baja por estrés? Calculamos el impacto financiero del burnout y cómo el bienestar corporativo mejora el p&amp;l.</p>
+<div style="background:var(--grey1); padding:1.5rem; border-radius:15px; margin:1rem 0; font-size:0.95rem">
+<p><strong>Cuerpo del post (Resumen SEO):</strong> Una baja por salud mental en España dura, de media, 90 días. El coste no es solo el salario; es la pérdida de productividad y el impacto en el clima del equipo. Analizamos por qué invertir en <a href="#art8">plataformas de psicología para empresas</a> es más rentable que cubrir vacantes constantes.</p>
+<p><strong>CTAs sugeridos:</strong> "Calcula el ROI del bienestar en tu empresa" o "Lee el caso de éxito: reduciendo el absentismo un 20%".</p>
+</div>
+</div>
+<!-- Artículo 3 -->
+<div class="card" id="art3">
+<h3>3. Estrategias de retención de talento en 2026: el rol de la salud mental</h3>
+<p><strong>Meta-description:</strong> Los salarios ya no retienen al mejor talento. Descubre cómo una cultura de bienestar y salud mental se ha convertido en el principal factor de fidelización.</p>
+<div style="background:var(--grey1); padding:1.5rem; border-radius:15px; margin:1rem 0; font-size:0.95rem">
+<p><strong>Cuerpo del post (Resumen SEO):</strong> En la era del "Great Resignation" y el "Quiet Quitting", la fidelidad se gana cuidando el cerebro del empleado. Explicamos cómo el <a href="#art9">liderazgo empático</a> influye directamente en la retención y por qué los beneficios sociales tradicionales han quedado obsoletos frente a la salud integral.</p>
+<p><strong>CTAs sugeridos:</strong> "Consulta nuestra guía de beneficios para 2026" o "Habla con un experto en cultura corporativa".</p>
+</div>
+</div>
+<!-- Artículo 4 -->
+<div class="card" id="art4">
+<h3>4. Diferencia entre vigilancia médica física y vigilancia de salud mental</h3>
+<p><strong>Meta-description:</strong> El reconocimiento médico anual ya no es suficiente. Por qué tu empresa necesita integrar la vigilancia de la salud mental en su protocolo preventivo.</p>
+<div style="background:var(--grey1); padding:1.5rem; border-radius:15px; margin:1rem 0; font-size:0.95rem">
+<p><strong>Cuerpo del post (Resumen SEO):</strong> Muchos departamentos de PRL se limitan a la analítica de sangre y la vista. Pero, ¿quién mide el nivel de cortisol crónico o la ansiedad? Comparamos ambos modelos y mostramos cómo la detección temprana mediante <a href="#art5">medición de clima laboral</a> ahorra miles de euros en bajas imprevistas.</p>
+<p><strong>CTAs sugeridos:</strong> "Moderniza tu protocolo de vigilancia" o "Video: Cómo detectar señales de burnout en remoto".</p>
+</div>
+</div>
+<!-- Artículo 5 -->
+<div class="card" id="art5">
+<h3>5. Guía para medir el clima laboral y el enps en recursos humanos</h3>
+<p><strong>Meta-description:</strong> Aprende a usar el employee net promoter score (enps) para medir la satisfacción y salud de tu equipo de forma científica y recurrente.</p>
+<div style="background:var(--grey1); padding:1.5rem; border-radius:15px; margin:1rem 0; font-size:0.95rem">
+<p><strong>Cuerpo del post (Resumen SEO):</strong> Lo que no se mide, no se puede mejorar. El eNPS es la brújula de Recursos Humanos. Este post enseña a segmentar los resultados por departamentos para aplicar soluciones de <a href="#art7">bienestar corporativo</a> allí donde realmente se necesitan, evitando el café para todos.</p>
+<p><strong>CTAs sugeridos:</strong> "Prueba nuestro test de diagnóstico de clima" o "Demo gratuita del dashboard de métricas".</p>
+</div>
+</div>
+<!-- Artículo 6 -->
+<div class="card" id="art6">
+<h3>6. Burnout en equipos de alto rendimiento: señales y protocolos</h3>
+<p><strong>Meta-description:</strong> El burnout no solo afecta a los "débiles"; destruye a tus mejores estrellas. Aprende a crear protocolos de prevención de burnout de alto impacto.</p>
+<div style="background:var(--grey1); padding:1.5rem; border-radius:15px; margin:1rem 0; font-size:0.95rem">
+<p><strong>Cuerpo del post (Resumen SEO):</strong> Los equipos de IT, Ventas y Directivos son los más expuestos al agotamiento crónico. Analizamos el síndrome del trabajador quemado desde una perspectiva de <a href="#art10">productividad y rentabilidad</a>, ofreciendo pasos claros para blindar a tus perfiles clave antes de que sea tarde.</p>
+<p><strong>CTAs sugeridos:</strong> "Protocolo de intervención en crisis" o "Webinar: Salud mental para líderes de equipos".</p>
+</div>
+</div>
+<!-- Artículo 7 -->
+<div class="card" id="art7">
+<h3>7. Programas de bienestar corporativo: 5 ejemplos y cómo medir su roi</h3>
+<p><strong>Meta-description:</strong> No todos los programas de bienestar son iguales. Comparamos 5 modelos reales y te enseñamos la fórmula para calcular el retorno de inversión (roi).</p>
+<div style="background:var(--grey1); padding:1.5rem; border-radius:15px; margin:1rem 0; font-size:0.95rem">
+<p><strong>Cuerpo del post (Resumen SEO):</strong> Desde el gimnasio corporativo hasta el acceso a terapia online. Desmitificamos las acciones de marketing interno y nos centramos en programas que impactan en la cuenta de resultados, vinculando la salud mental con la <a href="#art3">retención de talento</a> y la eficiencia operativa.</p>
+<p><strong>CTAs sugeridos:</strong> "Descarga la calculadora de ROI" o "Ver casos de éxito por sector".</p>
+</div>
+</div>
+<!-- Artículo 8 -->
+<div class="card" id="art8">
+<h3>8. Plataformas de psicología b2b: ¿qué exigir a tu proveedor?</h3>
+<p><strong>Meta-description:</strong> No todas las apps de meditación son salud mental. Guía para elegir una plataforma de psicología b2b con rigor clínico y analítica de datos.</p>
+<div style="background:var(--grey1); padding:1.5rem; border-radius:15px; margin:1rem 0; font-size:0.95rem">
+<p><strong>Cuerpo del post (Resumen SEO):</strong> El mercado está saturado de soluciones superficiales. Para un responsable de Salud, Seguridad Laboral y de RRHH, la prioridad debe ser la confidencialidad, la calidad de los profesionales y la capacidad de integrarse con el <a href="#art4">protocolo de vigilancia de la salud</a> de la empresa.</p>
+<p><strong>CTAs sugeridos:</strong> "Comparativa de proveedores 2026" o "Solicita una prueba de concepto".</p>
+</div>
+</div>
+<!-- Artículo 9 -->
+<div class="card" id="art9">
+<h3>9. Liderazgo empático: claves para reducir la rotación de personal</h3>
+<p><strong>Meta-description:</strong> El 75% de las personas no deja su trabajo; deja a su jefe. Descubre cómo formar líderes en inteligencia emocional para salvar a tu equipo.</p>
+<div style="background:var(--grey1); padding:1.5rem; border-radius:15px; margin:1rem 0; font-size:0.95rem">
+<p><strong>Cuerpo del post (Resumen SEO):</strong> Los mandos intermedios son los "primeros respondedores" ante el estrés de la plantilla. Un líder que sabe detectar el <a href="#art6">burnout</a> a tiempo es el activo más valioso de una empresa en 2026. Claves prácticas para transformar jefes en mentores de salud.</p>
+<p><strong>CTAs sugeridos:</strong> "Taller de liderazgo saludable" o "Guía de comunicación interna para managers".</p>
+</div>
+</div>
+<!-- Artículo 10 -->
+<div class="card" id="art10">
+<h3>10. Síndrome del impostor y productividad: cómo afecta a la rentabilidad</h3>
+<p><strong>Meta-description:</strong> El miedo a no estar a la altura frena la innovación y la toma de decisiones. Gestiona el síndrome del impostor para liberar el potencial de tu empresa.</p>
+<div style="background:var(--grey1); padding:1.5rem; border-radius:15px; margin:1rem 0; font-size:0.95rem">
+<p><strong>Cuerpo del post (Resumen SEO):</strong> Afecta especialmente a mujeres directivas y perfiles técnicos de alto nivel. Explicamos cómo este fenómeno psicológico genera parálisis y cómo el apoyo de una <a href="#art8">plataforma de psicología</a> puede desbloquear el rendimiento individual y colectivo en tiempo récord.</p>
+<p><strong>CTAs sugeridos:</strong> "Diagnóstico de síndrome del impostor" o "Habla con un psicólogo especializado en alto rendimiento".</p>
+</div>
+</div>
+</div>
+</section>
+<!-- PILARES -->
+<section class="section-dark" id="pilares">
+<div class="container">
+<h2>5. Pilares de contenido</h2>
+<p class="subtitle" style="color:rgba(255,255,255,.6)">Cada pilar tiene un rol específico en el funnel de conversión</p>
+<div class="grid-3">
+<div class="card pillar"><div class="icon"></div><div class="pct">30%</div><h3>Thought leadership</h3><p style="opacity:.7;font-size:.9rem">Tendencias, predicciones, datos del mercado. Posiciona como experto. Psicología: Authority bias.</p></div>
+<div class="card pillar"><div class="icon"></div><div class="pct">25%</div><h3>Educación + error</h3><p style="opacity:.7;font-size:.9rem">Errores comunes, marcos de decisión. Crea conciencia del problema. Psicología: Loss aversion + framing.</p></div>
+<div class="card pillar"><div class="icon"></div><div class="pct">20%</div><h3>Social proof</h3><p style="opacity:.7;font-size:.9rem">Casos reales, testimonios, resultados. Genera confianza. Psicología: Availability heuristic.</p></div>
+<div class="card pillar"><div class="icon"></div><div class="pct">15%</div><h3>Opinión</h3><p style="opacity:.7;font-size:.9rem">Provocaciones, debates, posiciones fuertes. Maximiza alcance. Psicología: Engagement + contraste.</p></div>
+<div class="card pillar"><div class="icon"></div><div class="pct">10%</div><h3>Historia personal</h3><p style="opacity:.7;font-size:.9rem">Founder story, behind the scenes, vulnerabilidad. Humaniza. Psicología: Liking + unity.</p></div>
+</div>
+</div>
+</section>
+<!-- REGLAS -->
+<section class="section-grey">
+<div class="container">
+<h2>Reglas de formato</h2>
+<p class="subtitle">Optimizadas para el algoritmo de LinkedIn en 2026</p>
+<div class="grid-2">
+<div class="card"><strong>Hook</strong><br/>2-3 líneas máximo. Debe detener el scroll en 3 segundos.</div>
+<div class="card"><strong>Longitud</strong><br/>800-1.300 caracteres. Sweet spot de LinkedIn.</div>
+<div class="card"><strong>Links</strong><br/>NUNCA en el cuerpo del post. Siempre "link en bio" o primer comentario.</div>
+<div class="card"><strong>CTA</strong><br/>Uno solo. Bajo compromiso. Específico: "15 min", "link en mi perfil".</div>
+<div class="card"><strong>Emojis</strong><br/>Máximo 3-4 por post. Funcionales, no decorativos.</div>
+<div class="card"><strong>Hashtags</strong><br/>3-5 al final. #BienestarCorporativo #RRHH #SaludMental #openhealth</div>
+</div>
+</div>
+</section>
+<!-- PROTOCOLO -->
+<section id="protocolo">
+<div class="container">
+<h2>Protocolo de publicación</h2>
+<p class="subtitle">La Golden Hour determina el 80% del alcance de cada post</p>
+<div class="grid-2">
+<div class="card">
+<h3>Golden hour (0-60 min)</h3>
+<p>Manuel responde <strong>TODOS</strong> los comentarios con respuestas de 2-3 líneas mínimo. LinkedIn premia las conversaciones largas. Compartir en Stories con comentario adicional.</p>
+</div>
+<div class="card">
+<h3>Después (1-24h)</h3>
+<p>DM personalizado a quienes comenten con interés genuino. No spam — conversación real. Ofrecer "15 min para ver tu caso" si hay encaje.</p>
+</div>
+<div class="card">
+<h3>Equipo de apoyo</h3>
+<p>3-5 personas del equipo interactúan en los primeros 30 min: likes, comentarios largos y compartidos. Esto dispara el alcance orgánico.</p>
+</div>
+<div class="card">
+<h3> Métricas semanales</h3>
+<p><strong>Targets:</strong> &gt;5.000 impresiones/post, &gt;3% engagement, &gt;15 comentarios/post, 2-4 DMs/post, 5-10 conexiones nuevas decisores/semana.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CALENDARIO -->
+<section id="calendario">
+<div class="container">
+<h2>Calendario de contenidos — 10 semanas</h2>
+<p class="subtitle">Publicación: Martes 10:00 y Jueves 09:00 — máxima actividad de decisores en LinkedIn España</p>
+<table>
+<tr><th>Semana</th><th>Martes 10:00</th><th>Jueves 09:00</th></tr>
+<tr><td><strong>S1</strong></td><td><a href="#post-1">Post 1 — pregunta coste</a></td><td><a href="#post-2">Post 2 — error más caro</a></td></tr>
+<tr><td><strong>S2</strong></td><td><a href="#post-3">Post 3 — tendencias responsables de salud, seguridad laboral y de rrhh</a></td><td><a href="#post-4">Post 4 — caso b2b</a></td></tr>
+<tr><td><strong>S3</strong></td><td><a href="#post-5">Post 5 — hot take teatro</a></td><td><a href="#post-6">Post 6 — founder story</a></td></tr>
+<tr><td><strong>S4</strong></td><td><a href="#post-7">Post 7 — predicción futuro</a></td><td><a href="#post-8">Post 8 — testimonio responsables de salud, seguridad laboral y de rrhh</a></td></tr>
+<tr><td><strong>S5</strong></td><td><a href="#post-9">Post 9 — carrusel errores</a></td><td><a href="#post-10">Post 10 — kpis de bienestar</a></td></tr>
+<tr><td><strong>S6</strong></td><td><a href="#post-11">Post 11 — salud mental entrevista</a></td><td><a href="#post-12">Post 12 — behind the scenes</a></td></tr>
+<tr><td><strong>S7</strong></td><td><a href="#post-13">Post 13 — las 3 preguntas del ceo</a></td><td><a href="#post-14">Post 14 — caso retail</a></td></tr>
+<tr><td><strong>S8</strong></td><td><a href="#post-15">Post 15 — generación z</a></td><td><a href="#post-16">Post 16 — burn rate humano</a></td></tr>
+<tr><td><strong>S9</strong></td><td><a href="#post-17">Post 17 — checklist responsables de salud, seguridad laboral y de rrhh</a></td><td><a href="#post-18">Post 18 — lección fracaso</a></td></tr>
+<tr><td><strong>S10</strong></td><td><a href="#post-19">Post 19 — datos españa</a></td><td><a href="#post-20">Post 20 — manifiesto final</a></td></tr>
+</table>
+</div>
+</section>
+<!-- POSTS -->
+<section class="section-grey" id="posts">
+<div class="container">
+<h2>Posts de las próximas 10 semanas</h2>
+<p class="subtitle">Cada post incluye: ángulo estratégico, psicología aplicada y copy listo para publicar</p>
+<!-- POST 1 -->
+<div class="post-card" id="post-1">
+<div class="post-header"><h3>Post 1 — pregunta coste</h3><div class="post-meta"><span class="tag tag-blue"> Engagement</span><span class="tag tag-orange">Loss Aversion</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Abre la serie con una pregunta incómoda que obliga al lector a calcular mentalmente. Usa datos de coste para activar Loss Aversion — la gente reacciona más a lo que pierde que a lo que gana. Post sin venta directa para maximizar engagement algorítmico.</p></div>
+<div class="post-body">Pregunta honesta para responsables de Salud, Seguridad Laboral y de RRHH y CEOs:
+
+¿Sabes cuánto le cuesta la mala salud a tu empresa al año?
+
+Te doy una pista:
+→ Un empleado con burnout cuesta entre 2.500€ y 4.000€/mes en productividad perdida
+→ El coste medio de reemplazar a alguien es 6-9 meses de su salario
+→ Las bajas por estrés han crecido un 30% en los últimos 3 años en España
+
+Y aún así, el 70% de las empresas sigue tratando el bienestar como un "nice to have".
+
+Mi pregunta:
+¿Crees que una empresa que NO cuida activamente la salud de su equipo podrá competir por talento en 2027?
+
+Me interesa tu opinión real.
+
+Y si quieres saber cómo lo estamos resolviendo → link en bio.
+
+<span class="hashtags">#SaludMental #RRHH #BienestarLaboral</span></div>
+</div>
+<!-- POST 2 -->
+<div class="post-card" id="post-2">
+<div class="post-header"><h3>Post 2 — el error más caro</h3><div class="post-meta"><span class="tag tag-green"> Educación</span><span class="tag tag-orange">Framing Effect</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Reencuadra la conversación de "gastar en bienestar" a "invertir en bienestar" (Framing Effect). El hook de 3 líneas cortas con patrón problema-problema-giro detiene el scroll. El contraste antes/después hace tangible la diferencia entre el modelo viejo y el nuevo.</p></div>
+<div class="post-body">Tu empresa gasta dinero en bienestar.
+Tu gente sigue quemada.
+El problema no es el presupuesto. Es el modelo.
+
+La mayoría de empresas invierten en bienestar como se invertía en marketing hace 15 años: acciones sueltas, sin medición, sin estrategia.
+
+Un taller de meditación en marzo.
+Una charla de nutrición en septiembre.
+Una app que nadie abre después de la segunda semana.
+
+¿Resultado?
+→ El absentismo sigue igual.
+→ La rotación sigue igual.
+→ Y responsables de Salud, Seguridad Laboral y de RRHH sigue sin poder demostrar impacto al CEO.
+
+El bienestar corporativo que funciona tiene 3 ingredientes:
+ Continuidad (no campañas puntuales)
+ Datos (métricas reales, no percepciones)
+ Integralidad (físico + mental + social)
+
+En openhealth por opensalud hemos construido exactamente eso. Y las empresas que lo implementan ven cambios en los primeros 90 días.
+
+¿Estás gastando en bienestar o invirtiendo en bienestar? La diferencia es de miles de euros al año.
+
+Si quieres ver cómo funciona nuestro modelo, tienes el link en mi perfil. También puedes escribirme por DM.
+
+<span class="hashtags">#BienestarCorporativo #SaludLaboral #RRHH</span></div>
+</div>
+<!-- POST 3 -->
+<div class="post-card" id="post-3">
+<div class="post-header"><h3>Post 3 — tendencias responsables de salud, seguridad laboral y de rrhh</h3><div class="post-meta"><span class="tag tag-blue"> Thought Leadership</span><span class="tag tag-purple">Authority Bias</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Posiciona a Manuel como insider con acceso privilegiado a conversaciones de decisores. Las "citas directas" de responsables de Salud, Seguridad Laboral y de RRHH activan Authority Bias y Availability Heuristic — hacen que el patrón parezca real e inmediato. El número "+40 conversaciones" da credibilidad cuantificable.</p></div>
+<div class="post-body">3 cosas que me dicen los responsables de Salud, Seguridad Laboral y de RRHH cuando cierro la puerta del despacho.
+
+En los últimos 6 meses he tenido +40 conversaciones con responsables de Salud, Seguridad Laboral y de RRHH en España. Y el patrón es claro: en 2026, el bienestar ya no se negocia. Es infraestructura.
+
+Lo que me repiten:
+
+1️⃣ "La salud mental ya no es tabú, es la prioridad nº1 en mi presupuesto."
+→ Las bajas por ansiedad y burnout se comen los Q1 enteros.
+
+2️⃣ "Mi CEO me pide ROI, no buenas intenciones."
+→ Ya no vale decir 'hacemos cosas de bienestar'. Quieren KPIs y dashboards.
+
+3️⃣ "Necesito una solución que escale, no 14 proveedores distintos."
+→ El modelo fragmentado ha muerto. Quieren plataforma, datos y continuidad.
+
+Las empresas que lo entiendan primero van a retener mejor, atraer mejor y rendir mejor. Las demás van a seguir perdiendo talento sin saber por qué.
+
+Si estás diseñando tu estrategia de bienestar para 2026, tenemos un modelo que ya funciona en +30 organizaciones. Te lo enseño en 15 min → DM o link en bio.
+
+<span class="hashtags">#BienestarCorporativo #RRHH #SaludMental #openhealth</span></div>
+</div>
+<!-- POST 4 -->
+<div class="post-card" id="post-4">
+<div class="post-header"><h3>Post 4 — caso práctico b2b</h3><div class="post-meta"><span class="tag tag-green"> Social Proof</span><span class="tag tag-orange">Availability Heuristic</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>El caso detallado con datos antes/después hace que el éxito parezca alcanzable (Availability Heuristic). La cita del CEO del cliente activa Authority Bias externo. "No voy a decir que fue magia" usa el Pratfall Effect — la honestidad genera más confianza que la perfección.</p></div>
+<div class="post-body">Hace 4 meses empezamos a trabajar con una empresa de ventas B2B de 280 personas.
+
+Su problema:
+→ 18% de rotación anual (sector media: 12%)
+→ Picos de estrés que disparaban las bajas los lunes
+→ 0 euros dedicados a salud mental de forma estructurada
+
+Lo que implementamos con openhealth por opensalud:
+• Acceso continuo a psicólogos (no una línea 900 que nadie usa)
+• Programa de bienestar con métricas semanales por equipo
+• Comunidad interna con retos de salud mensuales
+
+Resultados a los 90 días:
+ Absentismo técnico: -23%
+ NPS interno del programa: 72
+ 3 managers pidieron sesiones individuales por iniciativa propia
+
+No voy a decir que fue magia. Fue estrategia + medición + constancia.
+
+Pero lo que más me impactó fue el mail del CEO diciendo: "Por primera vez siento que el dinero que invertimos en personas se puede justificar."
+
+Si tu empresa tiene +100 empleados y el bienestar sigue siendo un PowerPoint bonito, hablemos. Te cuento en 15 min lo que haríamos en tu caso → DM o link en bio.
+
+<span class="hashtags">#CasoDeÉxito #BienestarCorporativo #SaludMental</span></div>
+</div>
+<!-- POST 5 -->
+<div class="post-card" id="post-5">
+<div class="post-header"><h3>Post 5 — hot take: el teatro del bienestar</h3><div class="post-meta"><span class="tag tag-red"> Hot Take</span><span class="tag tag-purple">Contrast Effect</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Polariza para generar debate y alcance masivo. La estructura  vs  usa el Contrast Effect para hacer obvia la diferencia. Posiciona a Manuel como alguien que dice lo que otros callan — diferenciándolo de los posts genéricos del sector. LinkedIn premia los posts con más comentarios.</p></div>
+<div class="post-body">El 90% de los programas de bienestar corporativo son puro teatro.
+
+Y los empleados lo saben.
+
+Sé que esto es incómodo de leer. Pero después de trabajar con decenas de empresas necesito decirlo: la mayoría de las iniciativas de "bienestar" existen para que responsables de Salud, Seguridad Laboral y de RRHH pueda decir que hace algo, no para que las personas estén mejor.
+
+Las señales de un programa que es teatro:
+ Se lanza con un mail que nadie lee
+ Se mide por asistencia, no por impacto
+ Dura un mes y desaparece
+ No tiene presupuesto real asignado
+ Lo decide alguien que nunca ha preguntado qué necesita el equipo
+
+Las señales de un programa que funciona:
+ Tiene métricas de salud vinculadas a negocio
+ Es continuo, no puntual
+ Los empleados lo usan porque les aporta valor real
+ El CEO lo defiende como inversión, no como coste
+
+Si vas a hacer bienestar, hazlo en serio. Si no, mejor no hacerlo y ahorrar el dinero.
+
+¿Estás de acuerdo o crees que soy demasiado duro?
+
+Si quieres ver cómo es un programa que SÍ funciona → link en mi perfil.
+
+<span class="hashtags">#BienestarCorporativo #OpiniónReal #RRHH</span></div>
+</div>
+<!-- POST 6 -->
+<div class="post-card" id="post-6">
+<div class="post-header"><h3>Post 6 — founder story</h3><div class="post-meta"><span class="tag tag-purple"> Personal</span><span class="tag tag-blue">Unity Principle</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Humaniza a Manuel con vulnerabilidad controlada. La historia de origen activa el Liking Bias (los lectores se identifican con la experiencia) y el Unity Principle (sentir que comparten la misma misión). No vende — conecta. Es el post que más conexiones y seguidores nuevos genera.</p></div>
+<div class="post-body">No creé openhealth por opensalud porque "el bienestar es tendencia".
+
+Lo hice porque viví en primera persona lo que pasa cuando una empresa ignora la salud de su gente.
+
+Hace unos años trabajaba en un entorno de altísima exigencia. Veía compañeros brillantes quemarse en silencio. Gente que pedía ayuda y recibía un "aquí somos así". Equipos que rendían por inercia, no por energía.
+
+Y la empresa no entendía por qué la rotación subía.
+
+Un día me hice la pregunta que cambió todo:
+¿Y si las empresas pudieran cuidar la salud de sus equipos de forma real, continua y medible? No con buenas intenciones, sino con tecnología y datos.
+
+Eso es openhealth por opensalud.
+
+No te voy a decir que ha sido fácil. Emprender nunca lo es. Pero cada vez que un responsables de Salud, Seguridad Laboral y de RRHH me dice "por fin puedo demostrar que esto funciona", sé que vamos por el camino correcto.
+
+Si compartes esta visión, me encantará conectar contigo. Esto se construye en comunidad.
+
+<span class="hashtags">#Emprendimiento #FounderStory #BienestarCorporativo</span></div>
+</div>
+<!-- POST 7 -->
+<div class="post-card" id="post-7">
+<div class="post-header"><h3>Post 7 — predicción futuro</h3><div class="post-meta"><span class="tag tag-blue"> Thought Leadership</span><span class="tag tag-red">FOMO + Loss Aversion</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>"Predicción impopular" genera curiosidad inmediata. Datos de fuentes externas (Gallup) dan autoridad sin parecer auto-promocional. La pregunta invertida "¿podemos permitirnos NO hacerlo?" es Loss Aversion pura — el lector siente que la inacción tiene un coste mayor que la acción.</p></div>
+<div class="post-body">Predicción impopular:
+
+En 3 años, las empresas que no tengan una estrategia de bienestar integral van a tener un problema de talento que no se arregla con dinero.
+
+No lo digo por intuición. Lo digo porque ya lo estoy viendo:
+
+→ Los mejores candidatos preguntan por salud mental en la entrevista
+→ Los equipos con apoyo psicológico continuo rinden un 21% más (Gallup)
+→ Las empresas con programas de bienestar reducen rotación hasta un 40%
+
+El bienestar dejó de ser "departamento de responsables de Salud, Seguridad Laboral y de RRHH hace cosas bonitas".
+Es ventaja competitiva. O desventaja competitiva.
+
+La pregunta ya no es "¿debemos invertir?"
+La pregunta es: "¿podemos permitirnos NO hacerlo?"
+
+Llevo 2 años construyendo openhealth por opensalud para responder exactamente a esto. Si quieres ver cómo lo resolvemos en la práctica, agenda 15 min conmigo → link en el primer comentario.
+
+<span class="hashtags">#FuturoDelTrabajo #BienestarCorporativo #RRHH</span></div>
+</div>
+<!-- POST 8 -->
+<div class="post-card" id="post-8">
+<div class="post-header"><h3>Post 8 — testimonio responsables de salud, seguridad laboral y de rrhh</h3><div class="post-meta"><span class="tag tag-green"> Social Proof</span><span class="tag tag-purple">Bandwagon Effect</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>La prueba social de un tercero es 4x más creíble que la auto-reportada. El testimonio emocional (un empleado agradeciendo) activa la empatía y hace tangible el impacto. "Se me puso la piel de gallina" es vulnerabilidad de ceo — algo raro en LinkedIn que genera conexión.</p></div>
+<div class="post-body">Ayer recibí este mensaje de una responsables de Salud, Seguridad Laboral y de rrhh con la que trabajamos desde hace 5 meses:
+
+"Manuel, te escribo porque necesito contarte algo. Hoy un empleado se acercó a agradecerme personalmente el acceso al programa de psicología. Me dijo que le había cambiado la relación con su equipo y con su familia. En 12 años de carrera en responsables de Salud, Seguridad Laboral y de rrhh, nadie me había dado las gracias por una iniciativa de bienestar."
+
+No voy a mentir: se me puso la piel de gallina.
+
+Porque esto es exactamente lo que me propuse cuando empecé openhealth por opensalud. Que el bienestar corporativo dejara de ser un pdf bonito y se convirtiera en algo que la gente siente, usa y agradece.
+
+No todos los días son así. Hay días duros, métricas que no suben, empresas que no arrancan.
+
+Pero mensajes como este me recuerdan por qué lo hacemos.
+
+Si trabajas en responsables de Salud, Seguridad Laboral y de rrhh y tienes la sensación de que tus iniciativas de bienestar no conectan con la gente, te entiendo. Y tenemos un modelo para cambiarlo. Escríbeme o visita el link en mi perfil.
+
+<span class="hashtags">#RRHH #SaludMental #Bienestar</span></div>
+</div>
+<!-- POST 9 -->
+<div class="post-card" id="post-9">
+<div class="post-header"><h3>Post 9 — carrusel: 5 errores</h3><div class="post-meta"><span class="tag tag-green"> Educación</span><span class="tag tag-blue">Mere exposure</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Los carruseles pdf tienen 2-3x más alcance que el texto en LinkedIn. Formato visual educativo que el lector guarda y comparte. "El nº4 es el más caro" genera curiosidad para deslizar. Cada slide refuerza la diferencia entre el modelo viejo y el de openhealth (contrast effect).</p></div>
+<div class="post-body">5 errores que hacen que tu programa de bienestar sea un agujero negro de dinero.
+
+(Y qué hacer en su lugar)
+
+ Desliza para verlos — el nº4 es el más común y el más caro.
+
+📄 Slides del carrusel:
+1 → Portada con título
+2 → Error 1: Acciones puntuales sin continuidad →  Programa continuo
+3 → Error 2: No medir impacto →  Dashboard con métricas reales
+4 → Error 3: Mismo programa para todos →  Personalización por equipo
+5 → Error 4: Solo bienestar físico →  Modelo 360
+6 → Error 5: Lo gestiona un becario →  Sponsor c-level
+7 → Cierre: Descubre cómo evitarlos → link en mi perfil
+
+<span class="hashtags">#BienestarCorporativo #RRHH #Infografía</span></div>
+</div>
+<!-- POST 10 -->
+<div class="post-card" id="post-10">
+<div class="post-header"><h3>Post 10 — kpis de bienestar</h3><div class="post-meta"><span class="tag tag-blue"> Thought leadership</span><span class="tag tag-green">Authority bias</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Resuelve el problema nº1 que tienen los responsables de salud, seguridad laboral y de rrhh: no saber qué medir. Dar un framework concreto y accionable activa reciprocity (dan valor gratis → generan confianza) y posiciona a Manuel como el experto que tiene las respuestas, no solo las preguntas.</p></div>
+<div class="post-body">Un responsables de salud, seguridad laboral y de rrhh me preguntó la semana pasada:
+
+"Manuel, ¿cómo le demuestro a mi ceo que el programa de bienestar funciona?"
+
+Mi respuesta: con estos 5 kpis.
+
+ Los 5 kpis que todo programa de bienestar debería medir:
+
+1️⃣ Tasa de absentismo por causa de salud mental
+→ Antes vs después del programa. El indicador más directo.
+
+2️⃣ NPS interno del programa
+→ ¿Los empleados lo recomendarían? Si el nps es menor de 30, algo falla.
+
+3️⃣ Tasa de uso activo
+→ ¿Qué porcentaje del equipo usa la plataforma al menos 1 vez al mes? Objetivo: &gt;40%.
+
+4️⃣ Índice de rotación voluntaria
+→ Especialmente en los primeros 12 meses de contrato.
+
+5️⃣ Coste por empleado vs ahorro estimado
+→ Si inviertes 30€/empleado/mes y reduces una baja de 3.000€, el roi habla solo.
+
+Si no mides, no mejoras. Y si no mejoras, tu ceo dejará de financiar el programa.
+
+En openhealth por opensalud esto viene integrado en la plataforma. Si quieres verlo → link en mi perfil.
+
+<span class="hashtags">#KPIs #BienestarCorporativo #RRHH #DataDriven</span></div>
+</div>
+<!-- POST 11 -->
+<div class="post-card" id="post-11">
+<div class="post-header"><h3>Post 11 — la salud mental en la entrevista</h3><div class="post-meta"><span class="tag tag-red"> Hot Take</span><span class="tag tag-orange">Scarcity</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Un dato sorprendente que cambia la perspectiva: el bienestar ya no es para retener, es para atraer. Activa Scarcity (el talento es escaso) y reencuadra el bienestar como ventaja competitiva en recruitment. Genera debate entre responsables de Salud, Seguridad Laboral y de rrhh y managers.</p></div>
+<div class="post-body">Algo está pasando en las entrevistas de trabajo que muchos aún no ven.
+
+Los mejores candidatos ya no preguntan solo por salario y vacaciones.
+
+Preguntan:
+→ "¿Tenéis programa de salud mental?"
+→ "¿Cómo gestionáis los picos de estrés?"
+→ "¿Hay apoyo psicológico para el equipo?"
+
+Y si la respuesta es vaga o un "estamos valorándolo", ese candidato se va a la empresa que sí lo tiene.
+
+El talento top ya no se compra solo con dinero. Se gana con entorno, cultura y cuidado real.
+
+Las empresas que lo entienden están fichando mejor. Las que no, están perdiendo talento sin entender por qué.
+
+¿Tu empresa está preparada para responder estas preguntas en una entrevista?
+
+Si la respuesta es "no del todo", te cuento cómo lo estamos resolviendo → link en mi perfil.
+
+<span class="hashtags">#Talento #Recruitment #SaludMental #RRHH</span></div>
+</div>
+<!-- POST 12 -->
+<div class="post-card" id="post-12">
+<div class="post-header"><h3>Post 12 — behind the scenes</h3><div class="post-meta"><span class="tag tag-purple"> Personal</span><span class="tag tag-blue">Pratfall Effect</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Muestra el lado humano de construir una startup. El Pratfall Effect dice que la vulnerabilidad en personas competentes genera más confianza que la perfección. Ver el "detrás de cámaras" crea conexión emocional con otros founders y decisores que valoran la autenticidad.</p></div>
+<div class="post-body">La semana pasada tuve uno de esos días en los que te preguntas si emprender merece la pena.
+
+Un cliente potencial nos dijo que no tras semanas de conversaciones.
+Una funcionalidad que llevábamos 3 sprints desarrollando no pasó el testing.
+Y a las 22:00 seguía delante del portátil preparando una demo para el día siguiente.
+
+Pero esta mañana, al abrir LinkedIn, tenía un mensaje de un empleado de uno de nuestros clientes diciendo que nuestra plataforma le ayudó a pedir ayuda psicológica por primera vez en su vida.
+
+Eso. Exactamente eso.
+
+No emprendo por los "sí". Emprendo por los momentos en los que alguien me dice que lo que construimos le cambió algo.
+
+A todos los que emprenden y hoy están teniendo un día difícil: no estáis solos. Y probablemente estáis más cerca de lo que parece.
+
+<span class="hashtags">#Emprendimiento #Startup #MentalHealth</span></div>
+</div>
+<!-- POST 13 -->
+<div class="post-card" id="post-13">
+<div class="post-header"><h3>Post 13 — las 3 preguntas del ceo</h3><div class="post-meta"><span class="tag tag-blue"> Engagement</span><span class="tag tag-green">Framing effect</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Se pone en la piel del ceo (no del responsables de salud, seguridad laboral y de rrhh) para llegar a un público diferente. Las 3 preguntas son las objeciones reales que escucha en reuniones — responderlas de antemano reduce la fricción de compra. Genera engagement porque los ceos se sienten identificados.</p></div>
+<div class="post-body">Cuando presento openhealth por opensalud a un ceo, siempre me hace las mismas 3 preguntas:
+
+1. "¿Cuánto me va a costar esto?"
+→ Menos que una baja de 3 meses de un manager senior. Mucho menos.
+
+2. "¿Cómo sé que funciona?"
+→ Dashboard en tiempo real. kpis mensuales. Revisión trimestral con tu equipo de responsables de Salud, Seguridad Laboral y de rrhh.
+
+3. "¿Y si nadie lo usa?"
+→ Nuestro ratio de adopción medio supera el 45% en el primer mes. Porque no es una app más — es un ecosistema con acompañamiento humano.
+
+Estas 3 preguntas son legítimas. Y me alegra que me las hagan, porque tenemos respuestas basadas en datos.
+
+Si eres ceo o cfo y te estás haciendo estas preguntas, te las respondo en 15 min → link en mi perfil.
+
+<span class="hashtags">#CEO #BienestarCorporativo #ROI #openhealth</span></div>
+</div>
+<!-- POST 14 -->
+<div class="post-card" id="post-14">
+<div class="post-header"><h3>Post 14 — caso retail</h3><div class="post-meta"><span class="tag tag-green"> Social Proof</span><span class="tag tag-orange">Availability Heuristic</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Segundo caso práctico en un sector diferente (retail) para ampliar el público. Muestra que el modelo funciona en distintos contextos — reduciendo la objeción "esto no aplica a mi industria". Datos concretos + timeline hacen el resultado creíble y replicable.</p></div>
+<div class="post-body">Un dato que me sorprendió cuando empezamos a trabajar con una cadena de retail de 400 empleados:
+
+El 34% de sus bajas laborales estaban clasificadas como "no específicas".
+
+Tradución: estrés, ansiedad y agotamiento emocional no diagnosticado.
+
+Lo que hicimos con openhealth por opensalud:
+→ Evaluación inicial de bienestar por departamento
+→ Acceso 24/7 a psicólogos y coaches de bienestar
+→ Programa de comunidad con retos semanales por tienda
+
+A los 6 meses:
+ Bajas "no específicas": de 34% a 19%
+ Participación activa: 52% del equipo
+ Ahorro estimado: 87.000€ anuales solo en costes de reemplazo temporal
+
+El director de operaciones me dijo algo que no olvido: "Siempre pensé que el bienestar era un rollo de responsables de Salud, Seguridad Laboral y de rrhh. Ahora sé que es un tema de p&amp;l."
+
+Si gestionas equipos grandes y el absentismo es un problema silencioso, hablemos → link en mi perfil.
+
+<span class="hashtags">#Retail #BienestarLaboral #Operaciones #RRHH</span></div>
+</div>
+<!-- POST 15 -->
+<div class="post-card" id="post-15">
+<div class="post-header"><h3>Post 15 — generación z</h3><div class="post-meta"><span class="tag tag-blue"> Thought Leadership</span><span class="tag tag-red">Urgencia</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Conecta el bienestar con un tema candente (gen z en empresas). Los responsables de Salud, Seguridad Laboral y de rrhh están gestionando este choque generacional ahora mismo — el post les da un marco para entenderlo. Genera urgencia: si no adaptamos el entorno, perderemos a esta generación entera.</p></div>
+<div class="post-body">La Generación z está rompiendo un pacto silencioso que existía en las empresas desde hace décadas:
+
+"Cállate, aguanta y ya descansarás cuando te jubiles."
+
+Los menores de 28 años no aceptan esas reglas. Y hacen bien.
+
+→ El 67% de la gen z considera la salud mental un factor decisivo al elegir empresa
+→ Son 2x más propensos a dejar un trabajo por burnout que los Millennials
+→ Y los que se quedan lo hacen porque sienten que la empresa cuida de ellos, no porque "hay que aguantar"
+
+Esto no es que sean "blandos". Es que tienen más información, más opciones y menos tolerancia al sufrimiento innecesario.
+
+Las empresas que adapten su cultura al nuevo estándar van a retener a los mejores. Las que digan "antes no era así" van a quedarse con los que no tienen otra opción.
+
+¿Tu empresa está preparada para la generación que no negocia con su salud mental?
+
+Si quieres un modelo de bienestar que conecta con este nuevo perfil → link en mi perfil.
+
+<span class="hashtags">#GenZ #FuturoDelTrabajo #SaludMental #RRHH</span></div>
+</div>
+<!-- POST 16 -->
+<div class="post-card" id="post-16">
+<div class="post-header"><h3>Post 16 — el burn rate humano</h3><div class="post-meta"><span class="tag tag-red"> Hot Take</span><span class="tag tag-orange">Reframing</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Toma un concepto de startups (burn rate) y lo aplica a personas — reframing potente que conecta el lenguaje financiero con el bienestar. Habla el idioma de los cfos y ceos, no solo de responsables de Salud, Seguridad Laboral y de rrhh. Posiciona el desgaste humano como una métrica de negocio, no un tema "soft".</p></div>
+<div class="post-body">En el mundo startup todos hablan del burn rate financiero.
+
+Pero nadie habla del burn rate humano.
+
+El burn rate humano es la velocidad a la que una empresa consume la energía, motivación y salud mental de su equipo.
+
+Y al igual que el financiero, cuando se agota… la empresa muere. Solo que más lento y más doloroso.
+
+Señales de que tu burn rate humano es demasiado alto:
+→ La gente se va los viernes a las 15:00 con cara de derrota
+→ Las reuniones de lunes empiezan con suspiros colectivos
+→ Tus mejores performers están "cumpliendo" en vez de brillando
+→ Nadie dice que está quemado, pero todos lo están
+
+El burn rate financiero lo controlas con métricas. El humano también se puede controlar — pero solo si lo mides y actúas.
+
+En openhealth por opensalud ayudamos a las empresas a calcular y reducir este burn rate invisible.
+
+¿Sabes cuál es el burn rate humano de tu empresa? Si la respuesta es "no", ese es el primer problema → link en mi perfil.
+
+<span class="hashtags">#BurnRate #StartupLife #BienestarCorporativo #RRHH</span></div>
+</div>
+<!-- POST 17 -->
+<div class="post-card" id="post-17">
+<div class="post-header"><h3>Post 17 — checklist responsables de salud, seguridad laboral y de rrhh</h3><div class="post-meta"><span class="tag tag-green"> Educación</span><span class="tag tag-blue">Reciprocity</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Carrusel educativo que los responsables de Salud, Seguridad Laboral y de rrhh guardan y comparten. Activar Reciprocity — dar algo útil gratis genera obligación implícita de devolver (= engagement + confianza). Formato checklist es altamente accionable y tiene alta tasa de guardado en LinkedIn.</p></div>
+<div class="post-body">Checklist rápido para responsables de Salud, Seguridad Laboral y de rrhh:
+
+¿Tu programa de bienestar está al nivel que tu equipo necesita?
+
+Responde honestamente:
+
+ ¿Tienes datos de salud mental actualizados de tu equipo?
+ ¿Puedes demostrar ROI del bienestar a tu CEO con números reales?
+ ¿Los empleados usan el programa activamente (+30% participación)?
+ ¿Hay acceso continuo a apoyo psicológico (no solo puntual)?
+ ¿El programa cubre físico, mental y social de forma integrada?
+ ¿Tienes un dashboard con métricas de bienestar en tiempo real?
+ ¿La dirección lo defiende como inversión estratégica?
+
+Si marcaste menos de 4: tu programa probablemente no está generando el impacto que debería.
+
+Si marcaste menos de 2: estás gastando dinero, no invirtiéndolo.
+
+No pasa nada. Es el punto de partida de la mayoría de empresas. Lo importante es saber dónde estás para mejorar.
+
+Si quieres evaluar tu situación en 15 min → link en mi perfil.
+
+<span class="hashtags">#Checklist #RRHH #BienestarCorporativo</span></div>
+</div>
+<!-- POST 18 -->
+<div class="post-card" id="post-18">
+<div class="post-header"><h3>Post 18 — lección de un fracaso</h3><div class="post-meta"><span class="tag tag-purple"> Personal</span><span class="tag tag-orange">Pratfall Effect</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>El error propio contado con honestidad activa el Pratfall Effect — personas competentes se vuelven más creíbles cuando admiten un fallo. Muestra que Manuel aprende rápido y que el producto ha evolucionado desde la experiencia real, no desde la teoría.</p></div>
+<div class="post-body">Voy a contarte un error que cometimos al principio de openhealth por opensalud.
+
+Cuando lanzamos el primer programa con una empresa, nos centramos al 100% en la tecnología. Plataforma impecable, métricas perfectas, UX cuidada.
+
+¿Resultado? El 15% de uso activo el primer mes.
+
+Un desastre.
+
+¿Qué había pasado? Habíamos dado la herramienta pero no el acompañamiento. Nadie explicó al equipo para qué servía. Nadie resolvió las dudas iniciales. Nadie hizo seguimiento.
+
+Aprendizaje brutal: la tecnología sin acompañamiento humano no funciona en bienestar.
+
+A partir de ahí cambiamos todo:
+→ Onboarding personalizado con cada equipo
+→ Sesiones de lanzamiento con managers
+→ Acompañamiento continuo los primeros 90 días
+
+El siguiente cliente: 47% de adopción el primer mes.
+
+A veces el mayor aprendizaje no viene del éxito, sino de la primera hostia.
+
+Si estás explorando soluciones de bienestar, pregunta siempre: "¿Qué pasa después de firmar el contrato?" Si no te dan una respuesta clara, desconfía.
+
+<span class="hashtags">#LeccionesAprendidas #Startup #BienestarCorporativo</span></div>
+</div>
+<!-- POST 19 -->
+<div class="post-card" id="post-19">
+<div class="post-header"><h3>Post 19 — datos españa 2026</h3><div class="post-meta"><span class="tag tag-blue"> Thought Leadership</span><span class="tag tag-green">Authority + Data</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Datos macro del mercado español dan gravedad y urgencia. Posiciona a Manuel como alguien que domina el contexto local, no solo las tendencias globales. Los números activan la toma de conciencia en directivos que aún ven el bienestar como algo secundario.</p></div>
+<div class="post-body">5 datos sobre la salud laboral en España que todo CEO debería conocer:
+
+1️⃣ Las bajas por trastornos mentales han crecido un 30% desde 2022.
+(Fuente: Seguridad Social)
+
+2️⃣ El coste medio del absentismo en España supera los 7.000€ por empleado/año.
+(Fuente: Adecco)
+
+3️⃣ El 40% de los trabajadores españoles afirma sentirse estresado "frecuentemente".
+(Fuente: Eurostat)
+
+4️⃣ Solo el 12% de las empresas españolas tiene un programa de bienestar integral.
+(Fuente: AEDIPE)
+
+5️⃣ Las empresas con programas estructurados de bienestar reducen la rotación hasta un 25%.
+(Fuente: Deloitte)
+
+La pregunta no es si tu empresa necesita un programa de bienestar.
+
+La pregunta es cuánto dinero estás perdiendo cada mes por no tenerlo.
+
+Si quieres entender qué significan estos datos para tu empresa concreta → link en mi perfil.
+
+<span class="hashtags">#DatosEspaña #SaludLaboral #RRHH #BienestarCorporativo</span></div>
+</div>
+<!-- POST 20 -->
+<div class="post-card" id="post-20">
+<div class="post-header"><h3>Post 20 — manifiesto: el bienestar no es opcional</h3><div class="post-meta"><span class="tag tag-red"> Provocación</span><span class="tag tag-purple">Commitment &amp; Consistency</span></div></div>
+<div class="post-strategy"><h4>Ángulo y valor</h4><p>Cierra el ciclo de 10 semanas con un manifiesto — un post que define la posición de Manuel y openhealth de forma tajante. Activa Commitment &amp; Consistency: quienes han interactuado con posts anteriores sienten coherencia al apoyar este mensaje. Es el post más compartible de toda la serie.</p></div>
+<div class="post-body">El bienestar corporativo no es un beneficio.
+No es un extra.
+No es un "nice to have".
+
+Es la base sobre la que se sostiene todo lo demás.
+
+No puedes pedir innovación a un equipo agotado.
+No puedes pedir compromiso a personas que se sienten ignoradas.
+No puedes pedir rendimiento a gente que llega el lunes contando las horas para el viernes.
+
+Las empresas gastan millones en tecnología, en procesos, en estrategia. Y luego le piden a personas rotas que ejecuten todo eso con una sonrisa.
+
+No funciona así.
+
+El futuro pertenece a las empresas que entiendan algo muy simple:
+
+Personas sanas → equipos fuertes → empresas que ganan.
+
+No al revés.
+
+Esto es lo que construimos cada día en openhealth por opensalud. No es un discurso. Es nuestro producto, nuestra misión y la razón por la que existo como CEO.
+
+Si crees que el bienestar es el futuro de las empresas competitivas, conectemos. Este camino se recorre mejor acompañado.
+
+<span class="hashtags">#Manifiesto #BienestarCorporativo #FuturoDelTrabajo #openhealth</span></div>
+</div>
+</div>
+</section>
+<footer>
+<p>© 2026 4Ventures · Todos los derechos reservados.</p>
+</footer>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth',block:'start'})})});
+</script>
+</body>
+</html>
